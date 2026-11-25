@@ -1,0 +1,68 @@
+{
+  "sourceVersion": "0.1.40+41",
+  "sourceSnapshotSHA256": "e0374771342b28cd2b2d11f45dd28e1799503449be04f60c0b1245c1c074bfe3",
+  "customer": "jd_mbnrscuhukvy",
+  "first": {
+    "id": "ocr:4885cf46a703d396fbe199fcf1ae6e56cb31bfdbc851b4d10ce5521496a221c9",
+    "body": "不管选横向还是纵向，打印出来都是纵向",
+    "captured_at": "2026-11-09T03:50:32.468Z",
+    "sent_at": "2026-11-09T03:50:24.000Z",
+    "observation_turn_key": "ocr-bubble:1794196232468:21931786bb06cdbc8fd474bc5148b62aaee6d23c0cc110316403a4cf61f2e956:0",
+    "capture_evidence_id": "2d0ae5899be5cb01ab8a47fcba4901f55740094587cab209c46099bb29780020",
+    "service_evidence_revision": 0,
+    "observed_ids": null
+  },
+  "refined": {
+    "id": "ocr:4885cf46a703d396fbe199fcf1ae6e56cb31bfdbc851b4d10ce5521496a221c9",
+    "body": "不管选横向还是纵向，打印出来的都是纵向",
+    "captured_at": "2026-11-09T03:50:45.729Z",
+    "sent_at": "2026-11-09T03:50:24.000Z",
+    "observation_turn_key": "ocr-bubble:1794196232468:21931786bb06cdbc8fd474bc5148b62aaee6d23c0cc110316403a4cf61f2e956:0",
+    "capture_evidence_id": "031e460109f9a741a60e024f280c7393e996527981fc57fb19ca079943937a6f",
+    "service_evidence_revision": 1,
+    "observed_ids": [
+      "ocr:f944a2bc9e17e58d2459262bd9a4ec60898a672e864be59163a8d672b02436ba"
+    ]
+  },
+  "refinedObservationId": "ocr:f944a2bc9e17e58d2459262bd9a4ec60898a672e864be59163a8d672b02436ba",
+  "sourceEvents": [
+    {
+      "event": "draft.generate.start",
+      "time": "2026-11-09T03:50:46.014691Z",
+      "sourceLine": 398531
+    },
+    {
+      "event": "capture.message_decision",
+      "time": "2026-11-09T03:50:56.052487Z",
+      "sourceLine": 398606
+    },
+    {
+      "event": "draft.generate.end",
+      "time": "2026-11-09T03:51:08.443983Z",
+      "sourceLine": 398709
+    },
+    {
+      "event": "draft.generate.start",
+      "time": "2026-11-09T03:51:08.737961Z",
+      "sourceLine": 398712
+    },
+    {
+      "event": "draft.generate.end",
+      "time": "2026-11-09T03:51:28.723819Z",
+      "sourceLine": 398844
+    },
+    {
+      "event": "draft.save_result",
+      "time": "2026-11-09T03:51:28.737543Z",
+      "sourceLine": 398846
+    },
+    {
+      "event": "delivery.turn_completed",
+      "time": "2026-11-09T03:51:31.045011Z",
+      "sourceLine": 398864
+    }
+  ],
+  "nativeClickUtc": "2026-11-09T03:51:30.321Z",
+  "actualFirstObservedToClickMs": 57853,
+  "oldLoggedFirstObservedToClickMs": 44592
+}

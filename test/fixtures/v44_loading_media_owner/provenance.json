@@ -1,0 +1,41 @@
+{
+  "source": "v0.1.42+43 actual run-1794202753577725-a506d371a2a587309c1fe5b5c5663599",
+  "senderUtc": "2026-11-09T05:51:56Z",
+  "physicalIncomingBubbles": 1,
+  "note": "Raw pixels/OCR unchanged. Gray play-card foreground detector returns inner crop; four seconds later loaded cover gives full crop for same unmoved physical card.",
+  "frames": {
+    "gray-inner": {
+      "recordedEvidenceId": "bb83b5c9b565e45ee040966668e0a58c57e19393a88ba5cd8cd6e28f745f3a43",
+      "region": [
+        0.27326388888888886,
+        0.496309963099631,
+        0.11180555555555556,
+        0.23247232472324722
+      ],
+      "pngSHA256": "4b3a2cc37126722f793c160c4db98bd28a935d69f04e8b070f8000bae65925cd",
+      "ocrSHA256": "9c7f7f0b2bbab8168d93e91b7c8ef6ec7c7c98dffc40e7223636f497ce32e02d"
+    },
+    "loaded": {
+      "recordedEvidenceId": "527ea3658062f7a4c48f5a3af82182f622f6512f87c0b530eff199159332772e",
+      "region": [
+        0.27326388888888886,
+        0.470479704797048,
+        0.11180555555555556,
+        0.25830258302583026
+      ],
+      "pngSHA256": "172661cc69e8f7ee02fa6bb12496ac3d0c5dcb48cc2519b8f0aaa1b76291599a",
+      "ocrSHA256": "d02e09ba8cb6e8cc0aa085cc91514583fa87b31a428bde750ea8aecf1650d921"
+    },
+    "later-loaded": {
+      "recordedEvidenceId": "503a2bd30a941460eda844971aa3a3b61d2f37a35d775ed40b8bf850ee8ef1d1",
+      "region": [
+        0.27326388888888886,
+        0.3769987699876999,
+        0.11180555555555556,
+        0.24723247232472323
+      ],
+      "pngSHA256": "d1f391bccd2d5eb3e905524734f8a13afdab3e53a04b64168cd50735ff43cdb1",
+      "ocrSHA256": "14655f9a8445dee5aa2c52bf173f4ada3833b56d1fb2c1a99b648848d71dc6ab"
+    }
+  }
+}

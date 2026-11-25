@@ -1,0 +1,1 @@
+Real v44 frames, SHA-256 checked by tests. Two separate incoming image sends at JD17:07:57 and17:09:49. Second send first appears as a blank loading card, then a loaded phone screenshot with a later independent text question. No screenshot pixels or OCR lines were edited. Captures are replayed with temporary storage/session paths only.

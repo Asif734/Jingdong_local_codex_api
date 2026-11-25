@@ -5,6 +5,7 @@ import 'package:path/path.dart' as p;
 
 /// Read-only resources travel with the app; customer state never does.
 class AppRuntime {
+  static const version = '0.1.103+104';
   static const standalone = bool.fromEnvironment('JD_STANDALONE');
   static const appName =
       String.fromEnvironment('JD_APP_NAME', defaultValue: 'JD Automation');

@@ -1,0 +1,448 @@
+{
+  "sourceVersion": "0.1.36+37",
+  "session": "run-1794109654428077-1cb709fdbacb20be65f385fcf8544ae0",
+  "note": "Read-only copies of six necessary frames from three actual media occurrences; no full-hour dump. True sender clocks and occurrence identity were visually checked in media-review.json.",
+  "frames": {
+    "first-gray": {
+      "evidenceId": "3088b52c9b59a2048baf6645550390c7af33b840c21aa7741366e6f00efe7f70",
+      "capturedAtMs": 1794109970838,
+      "customer": "jd_41aeec7741d05",
+      "chatRegion": {
+        "left": 0.24027777777777778,
+        "top": 0.20418204182041821,
+        "right": 0.7479166666666667,
+        "bottom": 0.7921279212792128
+      },
+      "region": [
+        0.2714567482471466,
+        0.4564058184623718,
+        0.16794371604919434,
+        0.1697111427783966
+      ],
+      "classifiedKind": "video",
+      "fingerprint": "00000019ffffffff",
+      "purpose": "active_discovery"
+    },
+    "first-loaded": {
+      "evidenceId": "3a0d36d18e2e08126d9e8ea6c8b95a4845eedf985e10e613e35fd79ebf20ebe6",
+      "capturedAtMs": 1794109972957,
+      "customer": "jd_41aeec7741d05",
+      "chatRegion": {
+        "left": 0.24027777777777778,
+        "bottom": 0.7921279212792128,
+        "right": 0.7479166666666667,
+        "top": 0.20418204182041821
+      },
+      "region": [
+        0.27326388888888886,
+        0.45571955719557194,
+        0.1673611111111111,
+        0.16851168511685116
+      ],
+      "classifiedKind": "video",
+      "fingerprint": "3f3f81bf8181cfff",
+      "purpose": "live_signal"
+    },
+    "tray-original": {
+      "evidenceId": "73a78943d6b4ac97e2c99ad02fc876a8959e6ef1e125451943f9c84cf2c947fc",
+      "capturedAtMs": 1794110620548,
+      "customer": "jd_41aeec7741d05",
+      "chatRegion": {
+        "top": 0.20418204182041821,
+        "bottom": 0.7921279212792128,
+        "left": 0.24027777777777778,
+        "right": 0.7479166666666667
+      },
+      "region": [
+        0.271198034286499,
+        0.3848852515220642,
+        0.16767215728759766,
+        0.16584762930870056
+      ],
+      "classifiedKind": "video",
+      "fingerprint": "00000019ffffffff",
+      "purpose": "live_signal"
+    },
+    "tray-old-backfill": {
+      "evidenceId": "77f7a037a30f1e0ca1d5debc6bcc382dfa05476cb47205e4228ea7ea19487b2a",
+      "capturedAtMs": 1794113195155,
+      "customer": "jd_41aeec7741d05",
+      "chatRegion": {
+        "right": 0.7479166666666667,
+        "left": 0.24027777777777778,
+        "top": 0.20418204182041821,
+        "bottom": 0.7921279212792128
+      },
+      "region": [
+        0.2657341957092285,
+        0.5203649401664734,
+        0.17752987146377563,
+        0.2056463360786438
+      ],
+      "classifiedKind": null,
+      "fingerprint": null,
+      "purpose": "durable_unanswered"
+    },
+    "ribbon-live": {
+      "evidenceId": "03ec9d1f49d7f095a31a2188d6fcd3f1e5a40fb2009b601d373128c04888fffa",
+      "capturedAtMs": 1794111269277,
+      "customer": "jd_59f3bfa8c55eb",
+      "chatRegion": {
+        "left": 0.24027777777777778,
+        "top": 0.20418204182041821,
+        "bottom": 0.7921279212792128,
+        "right": 0.7479166666666667
+      },
+      "region": [
+        0.27563682198524475,
+        0.3667981028556824,
+        0.12015172839164734,
+        0.23859119415283203
+      ],
+      "classifiedKind": "video",
+      "fingerprint": "dcfcfefcf8e08187",
+      "purpose": "history_backfill"
+    },
+    "ribbon-orphan": {
+      "evidenceId": "0a917d02a59559f189dba661d56054e591ffa1a7f251ea617ed3640b62ce51d8",
+      "capturedAtMs": 1794111248106,
+      "customer": "jd_59f3bfa8c55eb",
+      "chatRegion": {
+        "left": 0.24027777777777778,
+        "top": 0.20418204182041821,
+        "right": 0.7479166666666667,
+        "bottom": 0.7921279212792128
+      },
+      "region": null,
+      "classifiedKind": null,
+      "fingerprint": null,
+      "purpose": "live_signal"
+    },
+    "tray-v37-root": {
+      "itemId": "81a723b7a9d53930b200bda1431eb38728ca612a8aeda7d9fbef35dc71f549f3",
+      "messageId": "media-pending:81a723b7a9d53930b200bda1431eb38728ca612a8aeda7d9fbef35dc71f549f3",
+      "senderMs": 1794110576000,
+      "slot": 0,
+      "media": [
+        {
+          "type": "video",
+          "path": "/Users/m1air/Desktop/JD Automation/data/media/jd_41aeec7741d05/videos/965101e03818457ea9d4785222fa2df3.mp4",
+          "mime_type": "video/mp4",
+          "original_name": "965101e03818457ea9d4785222fa2df3.mp4",
+          "capture_source": "jd_video_cache",
+          "is_partial": false,
+          "description": "Original customer video; visual evidence is stored in the sampled frame images.\n[Video audio: audible content exists, but no speech was recognized]",
+          "visual_fingerprint": "1cc486bc39cacfe6a431038cf0bdb9d3ef43db88d2902b826b540917ae885587"
+        },
+        {
+          "type": "image",
+          "path": "/Users/m1air/Desktop/JD Automation/data/media/jd_41aeec7741d05/videos/frames_cf7fb5a192295028_full_v3/frame_00.jpg",
+          "mime_type": "image/jpeg",
+          "original_name": "video_frame_00s.jpg",
+          "capture_source": "jd_video_frame_1fps",
+          "is_partial": false,
+          "description": "First decoded video frame (t=0); pending Codex visual analysis.",
+          "visual_fingerprint": null
+        },
+        {
+          "type": "image",
+          "path": "/Users/m1air/Desktop/JD Automation/data/media/jd_41aeec7741d05/videos/frames_cf7fb5a192295028_full_v3/frame_01.jpg",
+          "mime_type": "image/jpeg",
+          "original_name": "video_sample_01.jpg",
+          "capture_source": "jd_video_frame_1fps",
+          "is_partial": false,
+          "description": "Pending Codex visual analysis.",
+          "visual_fingerprint": null
+        },
+        {
+          "type": "image",
+          "path": "/Users/m1air/Desktop/JD Automation/data/media/jd_41aeec7741d05/videos/frames_cf7fb5a192295028_full_v3/frame_02.jpg",
+          "mime_type": "image/jpeg",
+          "original_name": "video_sample_02.jpg",
+          "capture_source": "jd_video_frame_1fps",
+          "is_partial": false,
+          "description": "Pending Codex visual analysis.",
+          "visual_fingerprint": null
+        },
+        {
+          "type": "image",
+          "path": "/Users/m1air/Desktop/JD Automation/data/media/jd_41aeec7741d05/videos/frames_cf7fb5a192295028_full_v3/frame_03.jpg",
+          "mime_type": "image/jpeg",
+          "original_name": "video_sample_03.jpg",
+          "capture_source": "jd_video_frame_1fps",
+          "is_partial": false,
+          "description": "Pending Codex visual analysis.",
+          "visual_fingerprint": null
+        },
+        {
+          "type": "image",
+          "path": "/Users/m1air/Desktop/JD Automation/data/media/jd_41aeec7741d05/videos/frames_cf7fb5a192295028_full_v3/frame_04.jpg",
+          "mime_type": "image/jpeg",
+          "original_name": "video_sample_04.jpg",
+          "capture_source": "jd_video_frame_1fps",
+          "is_partial": false,
+          "description": "Pending Codex visual analysis.",
+          "visual_fingerprint": null
+        },
+        {
+          "type": "image",
+          "path": "/Users/m1air/Desktop/JD Automation/data/media/jd_41aeec7741d05/videos/frames_cf7fb5a192295028_full_v3/frame_05.jpg",
+          "mime_type": "image/jpeg",
+          "original_name": "video_sample_05.jpg",
+          "capture_source": "jd_video_frame_1fps",
+          "is_partial": false,
+          "description": "Pending Codex visual analysis.",
+          "visual_fingerprint": null
+        },
+        {
+          "type": "image",
+          "path": "/Users/m1air/Desktop/JD Automation/data/media/jd_41aeec7741d05/videos/frames_cf7fb5a192295028_full_v3/frame_06.jpg",
+          "mime_type": "image/jpeg",
+          "original_name": "video_sample_06.jpg",
+          "capture_source": "jd_video_frame_1fps",
+          "is_partial": false,
+          "description": "Pending Codex visual analysis.",
+          "visual_fingerprint": null
+        },
+        {
+          "type": "image",
+          "path": "/Users/m1air/Desktop/JD Automation/data/media/jd_41aeec7741d05/videos/frames_cf7fb5a192295028_full_v3/frame_07.jpg",
+          "mime_type": "image/jpeg",
+          "original_name": "video_frame_tail.jpg",
+          "capture_source": "jd_video_frame_1fps",
+          "is_partial": false,
+          "description": "Final decoded video frame (video end); pending Codex visual analysis.",
+          "visual_fingerprint": null
+        },
+        {
+          "type": "image",
+          "path": "/Users/m1air/Desktop/JD Automation/data/media/jd_41aeec7741d05/41f8788602cb8d40.jpg",
+          "mime_type": "image/jpeg",
+          "original_name": "video-cover.jpg",
+          "capture_source": "jd_video_cover",
+          "is_partial": true,
+          "description": "Verified visible cover of this same customer video.",
+          "visual_fingerprint": null
+        }
+      ]
+    },
+    "first-v37-root": {
+      "itemId": "a6c645715028288e6fd38645e096973675b2543917f8ab7594191b5d213585e4",
+      "messageId": "media-pending:a6c645715028288e6fd38645e096973675b2543917f8ab7594191b5d213585e4",
+      "senderMs": 1794109969000,
+      "slot": 0,
+      "media": [
+        {
+          "type": "video",
+          "path": "/Users/m1air/Desktop/JD Automation/data/media/jd_41aeec7741d05/videos/d2c357faf5a7437e8b93874d540890b7.mp4",
+          "mime_type": "video/mp4",
+          "original_name": "d2c357faf5a7437e8b93874d540890b7.mp4",
+          "capture_source": "jd_video_cache",
+          "is_partial": false,
+          "description": "Original customer video; visual evidence is stored in the sampled frame images.\n[Video audio: audible content exists, but no speech was recognized]",
+          "visual_fingerprint": "f2a6276321a042a0cd9eb80a0468d8fba082678fd62aa67806adea7d6559ba06"
+        },
+        {
+          "type": "image",
+          "path": "/Users/m1air/Desktop/JD Automation/data/media/jd_41aeec7741d05/videos/frames_1b6763fd1e85aa94_full_v3/frame_00.jpg",
+          "mime_type": "image/jpeg",
+          "original_name": "video_frame_00s.jpg",
+          "capture_source": "jd_video_frame_1fps",
+          "is_partial": false,
+          "description": "First decoded video frame (t=0); pending Codex visual analysis.",
+          "visual_fingerprint": null
+        },
+        {
+          "type": "image",
+          "path": "/Users/m1air/Desktop/JD Automation/data/media/jd_41aeec7741d05/videos/frames_1b6763fd1e85aa94_full_v3/frame_01.jpg",
+          "mime_type": "image/jpeg",
+          "original_name": "video_sample_01.jpg",
+          "capture_source": "jd_video_frame_1fps",
+          "is_partial": false,
+          "description": "Pending Codex visual analysis.",
+          "visual_fingerprint": null
+        },
+        {
+          "type": "image",
+          "path": "/Users/m1air/Desktop/JD Automation/data/media/jd_41aeec7741d05/videos/frames_1b6763fd1e85aa94_full_v3/frame_02.jpg",
+          "mime_type": "image/jpeg",
+          "original_name": "video_sample_02.jpg",
+          "capture_source": "jd_video_frame_1fps",
+          "is_partial": false,
+          "description": "Pending Codex visual analysis.",
+          "visual_fingerprint": null
+        },
+        {
+          "type": "image",
+          "path": "/Users/m1air/Desktop/JD Automation/data/media/jd_41aeec7741d05/videos/frames_1b6763fd1e85aa94_full_v3/frame_03.jpg",
+          "mime_type": "image/jpeg",
+          "original_name": "video_sample_03.jpg",
+          "capture_source": "jd_video_frame_1fps",
+          "is_partial": false,
+          "description": "Pending Codex visual analysis.",
+          "visual_fingerprint": null
+        },
+        {
+          "type": "image",
+          "path": "/Users/m1air/Desktop/JD Automation/data/media/jd_41aeec7741d05/videos/frames_1b6763fd1e85aa94_full_v3/frame_04.jpg",
+          "mime_type": "image/jpeg",
+          "original_name": "video_sample_04.jpg",
+          "capture_source": "jd_video_frame_1fps",
+          "is_partial": false,
+          "description": "Pending Codex visual analysis.",
+          "visual_fingerprint": null
+        },
+        {
+          "type": "image",
+          "path": "/Users/m1air/Desktop/JD Automation/data/media/jd_41aeec7741d05/videos/frames_1b6763fd1e85aa94_full_v3/frame_05.jpg",
+          "mime_type": "image/jpeg",
+          "original_name": "video_sample_05.jpg",
+          "capture_source": "jd_video_frame_1fps",
+          "is_partial": false,
+          "description": "Pending Codex visual analysis.",
+          "visual_fingerprint": null
+        },
+        {
+          "type": "image",
+          "path": "/Users/m1air/Desktop/JD Automation/data/media/jd_41aeec7741d05/videos/frames_1b6763fd1e85aa94_full_v3/frame_06.jpg",
+          "mime_type": "image/jpeg",
+          "original_name": "video_frame_tail.jpg",
+          "capture_source": "jd_video_frame_1fps",
+          "is_partial": false,
+          "description": "Final decoded video frame (video end); pending Codex visual analysis.",
+          "visual_fingerprint": null
+        },
+        {
+          "type": "image",
+          "path": "/Users/m1air/Desktop/JD Automation/data/media/jd_41aeec7741d05/c432df72ee896297.jpg",
+          "mime_type": "image/jpeg",
+          "original_name": "video-cover.jpg",
+          "capture_source": "jd_video_cover",
+          "is_partial": true,
+          "description": "Verified visible cover of this same customer video.",
+          "visual_fingerprint": null
+        }
+      ]
+    },
+    "ribbon-v37-root": {
+      "itemId": "68be0adfe569176323e911bea462533faf265394fae5775deee8fbaaf6bad88d",
+      "messageId": "visible-video:1f7c8a7fa8f0f94275f481e6f668c3cd86254d1dc7c1082f966d4e6c303c3086:observed:8056773afc1b9fa8",
+      "senderMs": null,
+      "slot": 0,
+      "media": [
+        {
+          "type": "image",
+          "path": "/Users/m1air/Desktop/JD Automation/data/media/jd_59f3bfa8c55eb/videos/frames_1f7c8a7fa8f0f942_full_v3/frame_00.jpg",
+          "mime_type": "image/jpeg",
+          "original_name": "video_frame_00s.jpg",
+          "capture_source": "jd_video_frame_1fps",
+          "is_partial": false,
+          "description": "Video preview reconstructed from its first decoded frame; no separate card cover was retained.",
+          "visual_fingerprint": null
+        },
+        {
+          "type": "video",
+          "path": "/Users/m1air/Desktop/JD Automation/data/media/jd_59f3bfa8c55eb/videos/9838cc42c05179101baa5757ec1193f9607ebf0fc18ba4bb1acfa08b9539acdd.mp4",
+          "mime_type": "video/mp4",
+          "original_name": "b020f88404cb4977a85bfff00589bc13.mp4",
+          "capture_source": "jd_video_cache",
+          "is_partial": false,
+          "description": "Original customer video; visual evidence is stored in the sampled frame images.\n[Video audio: audible content exists, but no speech was recognized]",
+          "visual_fingerprint": "f8fcfefcf0c0830f"
+        },
+        {
+          "type": "image",
+          "path": "/Users/m1air/Desktop/JD Automation/data/media/jd_59f3bfa8c55eb/videos/frames_1f7c8a7fa8f0f942_full_v3/frame_01.jpg",
+          "mime_type": "image/jpeg",
+          "original_name": "video_sample_01.jpg",
+          "capture_source": "jd_video_frame_1fps",
+          "is_partial": false,
+          "description": "Pending Codex visual analysis.",
+          "visual_fingerprint": null
+        },
+        {
+          "type": "image",
+          "path": "/Users/m1air/Desktop/JD Automation/data/media/jd_59f3bfa8c55eb/videos/frames_1f7c8a7fa8f0f942_full_v3/frame_02.jpg",
+          "mime_type": "image/jpeg",
+          "original_name": "video_sample_02.jpg",
+          "capture_source": "jd_video_frame_1fps",
+          "is_partial": false,
+          "description": "Pending Codex visual analysis.",
+          "visual_fingerprint": null
+        },
+        {
+          "type": "image",
+          "path": "/Users/m1air/Desktop/JD Automation/data/media/jd_59f3bfa8c55eb/videos/frames_1f7c8a7fa8f0f942_full_v3/frame_03.jpg",
+          "mime_type": "image/jpeg",
+          "original_name": "video_sample_03.jpg",
+          "capture_source": "jd_video_frame_1fps",
+          "is_partial": false,
+          "description": "Pending Codex visual analysis.",
+          "visual_fingerprint": null
+        },
+        {
+          "type": "image",
+          "path": "/Users/m1air/Desktop/JD Automation/data/media/jd_59f3bfa8c55eb/videos/frames_1f7c8a7fa8f0f942_full_v3/frame_04.jpg",
+          "mime_type": "image/jpeg",
+          "original_name": "video_sample_04.jpg",
+          "capture_source": "jd_video_frame_1fps",
+          "is_partial": false,
+          "description": "Pending Codex visual analysis.",
+          "visual_fingerprint": null
+        },
+        {
+          "type": "image",
+          "path": "/Users/m1air/Desktop/JD Automation/data/media/jd_59f3bfa8c55eb/videos/frames_1f7c8a7fa8f0f942_full_v3/frame_05.jpg",
+          "mime_type": "image/jpeg",
+          "original_name": "video_sample_05.jpg",
+          "capture_source": "jd_video_frame_1fps",
+          "is_partial": false,
+          "description": "Pending Codex visual analysis.",
+          "visual_fingerprint": null
+        },
+        {
+          "type": "image",
+          "path": "/Users/m1air/Desktop/JD Automation/data/media/jd_59f3bfa8c55eb/videos/frames_1f7c8a7fa8f0f942_full_v3/frame_06.jpg",
+          "mime_type": "image/jpeg",
+          "original_name": "video_sample_06.jpg",
+          "capture_source": "jd_video_frame_1fps",
+          "is_partial": false,
+          "description": "Pending Codex visual analysis.",
+          "visual_fingerprint": null
+        },
+        {
+          "type": "image",
+          "path": "/Users/m1air/Desktop/JD Automation/data/media/jd_59f3bfa8c55eb/videos/frames_1f7c8a7fa8f0f942_full_v3/frame_07.jpg",
+          "mime_type": "image/jpeg",
+          "original_name": "video_sample_07.jpg",
+          "capture_source": "jd_video_frame_1fps",
+          "is_partial": false,
+          "description": "Pending Codex visual analysis.",
+          "visual_fingerprint": null
+        },
+        {
+          "type": "image",
+          "path": "/Users/m1air/Desktop/JD Automation/data/media/jd_59f3bfa8c55eb/videos/frames_1f7c8a7fa8f0f942_full_v3/frame_08.jpg",
+          "mime_type": "image/jpeg",
+          "original_name": "video_frame_tail.jpg",
+          "capture_source": "jd_video_frame_1fps",
+          "is_partial": false,
+          "description": "Final decoded video frame (video end); pending Codex visual analysis.",
+          "visual_fingerprint": null
+        }
+      ],
+      "historyAlternates": [
+        {
+          "type": "image",
+          "path": "/Users/m1air/Desktop/JD Automation/data/media/jd_59f3bfa8c55eb/videos/frames_1f7c8a7fa8f0f942_full_v3/frame_00.jpg",
+          "mime_type": "image/jpeg",
+          "original_name": null,
+          "capture_source": "jd_video_cover",
+          "is_partial": true,
+          "description": "Video preview reconstructed from its first decoded frame; no separate card cover was retained.",
+          "visual_fingerprint": null
+        }
+      ]
+    }
+  }
+}

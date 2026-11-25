@@ -6,6 +6,118 @@ import 'package:jd_automation/capture/ocr_capture_extractor.dart';
 import 'package:jd_automation/platform/macos_capture_adapter.dart';
 
 void main() {
+  test('the exact narrow photo survives recovery beneath its timestamp', () {
+    // Bounds from the incident, with the customer label anonymized.
+    const card = OcrVisualRegion(
+        x: .294444, y: .501230, width: .059375, height: .123616, confidence: 1);
+    const fragment = OcrVisualRegion(
+        x: .294274, y: .506319, width: .059868, height: .120203, confidence: 1);
+    OcrInspection view({required bool complete}) => OcrInspection(
+        image: Uint8List(0),
+        imageWidth: 2880,
+        imageHeight: 1626,
+        windowTitle: '咚咚融合工作台',
+        recognizedText: '',
+        capturedAt: DateTime.utc(2026, 11, 17, 9, 41),
+        activeCustomerId: 'jd_test',
+        chatLeft: .233333,
+        chatRight: .747917,
+        chatTop: .204182,
+        chatBottom: .792128,
+        observations: const [
+          OcrObservation(
+              text: 'jd_test 17:38:44',
+              confidence: .5,
+              x: .264747,
+              y: .478292,
+              width: .118923,
+              height: .016173),
+          OcrObservation(
+              text: 'jd_test 17:38:48',
+              confidence: 1,
+              x: .264747,
+              y: .650438,
+              width: .118923,
+              height: .01589),
+        ],
+        visualRegions: const [fragment],
+        physicalMediaRegions: complete ? const [card] : const []);
+    const selector = OcrImageCandidateSelector();
+    final confirmed = view(complete: true);
+    final selected =
+        selector.select(confirmed, 'jd_test', includeTextDense: true);
+    expect(selected.single, same(card));
+    final recovered = <OcrVisualRegion>{};
+    expect(
+        selector
+            .recoverCustomerBlocks(confirmed, 'jd_test',
+                owned: selected, recovered: recovered)
+            .single,
+        same(card));
+    expect(recovered, isEmpty);
+
+    final partial = view(complete: false);
+    final partialRecovery = <OcrVisualRegion>{};
+    final pending = selector.recoverCustomerBlocks(partial, 'jd_test',
+        owned: selector.select(partial, 'jd_test', includeTextDense: true),
+        recovered: partialRecovery);
+    expect(pending.single.confidence, 0);
+    expect(partialRecovery, contains(pending.single));
+  });
+
+  test(
+      'new text does not rescan old media while captioned new media stays eligible',
+      () {
+    const oldImage =
+        OcrVisualRegion(x: .15, y: .34, width: .2, height: .2, confidence: 1);
+    const newImage =
+        OcrVisualRegion(x: .15, y: .68, width: .2, height: .2, confidence: 1);
+    OcrInspection inspection(List<OcrVisualRegion> regions) => OcrInspection(
+        image: Uint8List(0),
+        imageWidth: 1600,
+        imageHeight: 1300,
+        windowTitle: '咚咚融合工作台',
+        recognizedText: '',
+        capturedAt: DateTime.now(),
+        activeCustomerId: 'jd_test',
+        chatLeft: .12,
+        chatRight: .72,
+        chatBottom: .9,
+        observations: const [
+          OcrObservation(
+              text: 'jd_test 11:13:35',
+              confidence: 1,
+              x: .13,
+              y: .3,
+              width: .15,
+              height: .025),
+          OcrObservation(
+              text: 'jd_test 11:13:42',
+              confidence: 1,
+              x: .13,
+              y: .65,
+              width: .15,
+              height: .025),
+          OcrObservation(
+              text: 'check this',
+              confidence: 1,
+              x: .14,
+              y: .89,
+              width: .1,
+              height: .02),
+        ],
+        visualRegions: regions);
+    const selector = OcrImageCandidateSelector();
+    expect(
+        selector.select(inspection([oldImage]), 'jd_test',
+            includeTextDense: true, onlyLatestCustomerBlock: true),
+        isEmpty);
+    expect(
+        selector.select(inspection([oldImage, newImage]), 'jd_test',
+            includeTextDense: true, onlyLatestCustomerBlock: true),
+        [newImage]);
+  });
+
   test('creates a bounded screenshot fallback for an image-only block', () {
     final inspection = OcrInspection(
       image: Uint8List(0),
@@ -58,6 +170,42 @@ void main() {
     expect(fallback!.y, greaterThan(.32));
     expect(fallback.y + fallback.height, lessThan(.62));
     expect(fallback.x + fallback.width, lessThanOrEqualTo(.72));
+  });
+
+  test('a verified header without a rectangle retains its media block', () {
+    final inspection = OcrInspection(
+        image: Uint8List(0),
+        imageWidth: 1600,
+        imageHeight: 1200,
+        windowId: 7,
+        windowTitle: '咚咚融合工作台',
+        recognizedText: '',
+        capturedAt: DateTime.utc(2026, 11, 8, 6),
+        activeCustomerId: 'jd_test',
+        chatLeft: .2,
+        chatRight: .8,
+        chatTop: .25,
+        chatBottom: .85,
+        observations: const [
+          OcrObservation(
+              text: 'jd_test 14:00:00',
+              confidence: 1,
+              x: .24,
+              y: .30,
+              width: .2,
+              height: .02),
+        ]);
+    final extraction = const OcrCaptureExtractor().analyze(inspection);
+    expect(extraction.customerId, 'jd_test');
+    expect(extraction.latestIncomingHasText, isFalse);
+    final block = const OcrImageCandidateSelector()
+        .fallbackLatestCustomerBlock(inspection, 'jd_test');
+    expect(block, isNotNull);
+    expect(
+        const OcrCaptureExtractor()
+            .mediaClockForRegion(inspection, block!)
+            .source,
+        'ocr_media_sender_header');
   });
 
   test('does not screenshot an ordinary text-only block', () {

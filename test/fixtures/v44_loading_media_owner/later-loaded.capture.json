@@ -1,0 +1,89 @@
+{
+  "chatRegion": {
+    "right": 0.7479166666666667,
+    "left": 0.24027777777777778,
+    "top": 0.20418204182041821,
+    "bottom": 0.7921279212792128
+  },
+  "windowId": 17539,
+  "evidenceId": "503a2bd30a941460eda844971aa3a3b61d2f37a35d775ed40b8bf850ee8ef1d1",
+  "chatContentSHA256": "9514f3fd8d104ebc0144fa3e9cd246645176b15610e64e0b747a41386b3a86d9",
+  "imageWidth": 2880,
+  "windowTitle": "格志打印机小耿-咚咚融合工作台",
+  "windowBounds": {
+    "height": 813.0,
+    "x": 0.0,
+    "windowId": 17539,
+    "title": "格志打印机小耿-咚咚融合工作台",
+    "y": 30.0,
+    "width": 1440.0
+  },
+  "capturedAtMs": 1794203543225,
+  "pngSHA256": "d1f391bccd2d5eb3e905524734f8a13afdab3e53a04b64168cd50735ff43cdb1",
+  "customer": "jd_41aeec7741d05",
+  "imagePath": "/Users/m1air/Desktop/JD Automation/data/capture_evidence/503a2bd30a941460eda844971aa3a3b61d2f37a35d775ed40b8bf850ee8ef1d1.png",
+  "automationSessionId": "run-1794202753577725-a506d371a2a587309c1fe5b5c5663599",
+  "manifestPath": "/Users/m1air/Desktop/JD Automation/data/capture_evidence/503a2bd30a941460eda844971aa3a3b61d2f37a35d775ed40b8bf850ee8ef1d1.json",
+  "imageHeight": 1626,
+  "automationSessionStartedAtMs": 1794202753577,
+  "unreadArrivalKey": "arrival:cycle:response-cycle:1794203518489:jd_41aeec7741d05",
+  "admissionFrontier": {
+    "id": "incoming-media:run-1794202753577725-a506d371a2a587309c1fe5b5c5663599:19",
+    "sent_at": "2026-11-09T05:51:56.000Z",
+    "body": "[Customer sent media; acquisition pending.]",
+    "direction": "incoming",
+    "visibleTextAnchors": [
+      {
+        "id": "ocr:bd7061e581a9096c2463ca48d3796c670cb392cf6262c64feb9eb2ab7c21f479",
+        "body": "i have other issue with m880",
+        "direction": "incoming",
+        "sent_at": "2026-11-09T05:49:21.000Z"
+      },
+      {
+        "id": "ocr:98145ca207f913842057dc2839c41555ab0e070af66aceb92dd3fc06665f46fc",
+        "body": "thanks",
+        "direction": "incoming",
+        "sent_at": "2026-11-09T05:49:08.000Z"
+      },
+      {
+        "id": "ocr:8ed059a85b6f1f069a9360ed72067903b6d7ad4b39ee773b88fb9dd15160fe36",
+        "body": "it will help",
+        "direction": "incoming",
+        "sent_at": "2026-11-09T05:49:04.000Z"
+      },
+      {
+        "id": "assistant:ab29e6e6e49d2763ef39937d9be2a72dc6153d4f39313d3c43f7e6844563759f",
+        "body": "For your TD630, load single sheets from the front tray. Keep the paper flat and adjust the guides so they lightly touch its edges. The red paper light should go out when the paper is detected. For continuous paper, use the rear tractors: fit the holes onto both sets of pins, close and lock the tractor covers, then press the middle Feed/Eject button. This tutorial shows both loading methods:\nhttps://jvod.300hu.com/vod/product/1621450426/21852/8eef92f862b74a22884fcb26a7d0c01c.mp4",
+        "direction": "outgoing",
+        "sent_at": "2026-11-09T05:48:40.628032Z"
+      },
+      {
+        "id": "ocr:80d854f06030db62ac64cea9ed41141dbf75809d79616157490f39db065fd64e",
+        "body": "what is the issue there.. solve this",
+        "direction": "incoming",
+        "sent_at": "2026-11-09T05:46:31.000Z"
+      },
+      {
+        "id": "ocr:801bc1572c7d7b427961ffd4aea8e27a5d2645419d62e7b51cc011838d8dfbb3",
+        "body": "how to power it on?",
+        "direction": "incoming",
+        "sent_at": "2026-11-09T05:44:25.000Z"
+      }
+    ]
+  },
+  "captureRequestedBackfill": false,
+  "navigationCutoffSource": "current_viewport",
+  "replyActivationAllowed": true,
+  "mediaAcquisitionPending": true,
+  "capturePurpose": "durable_unanswered",
+  "discoveryAnchorId": "86bba94692067c4c324161bf994962d72d7efdeb072138213406a58bd2a21039",
+  "pinnedMedia": {
+    "kind": "video",
+    "cacheKey": "14fb2ddd966f72da9761fbcdea4713a5d27da703cf13fc1ade6abe53a9ba9335",
+    "cacheModifiedAtMs": 1794203520768,
+    "path": "/Users/m1air/Desktop/JD Automation/data/media/jd_41aeec7741d05/videos/70F26C9B-2964-4FF2-9F32-4955B5C1DAAE.mp4",
+    "originalName": "74c6868453974d96b5fcae362193b7d4.mp4",
+    "mimeType": "video/mp4"
+  },
+  "mediaCoverageCutoffMs": 1794203522023
+}

@@ -16,6 +16,8 @@ class CustomerCodexSession {
     required this.lastReply,
     required this.updatedAt,
     this.turnCount = 1,
+    this.replyLanguagePolicy,
+    this.businessDay,
   });
 
   final String threadId;
@@ -25,10 +27,16 @@ class CustomerCodexSession {
   final String lastReply;
   final DateTime updatedAt;
   final int turnCount;
+  final String? replyLanguagePolicy;
+  final String? businessDay;
 
-  bool canResume(List<Map<String, dynamic>> messages, String currentModel) {
+  bool canResume(List<Map<String, dynamic>> messages, String currentModel,
+      {String? replyLanguagePolicy, String? businessDay}) {
     if (threadId.isEmpty ||
         model != currentModel ||
+        (replyLanguagePolicy != null &&
+            this.replyLanguagePolicy != replyLanguagePolicy) ||
+        (businessDay != null && this.businessDay != businessDay) ||
         turnCount >= 4 ||
         historyCount > messages.length ||
         messages.length - historyCount > 24 ||
@@ -67,6 +75,9 @@ class CustomerCodexSession {
         'last_reply': lastReply,
         'updated_at': updatedAt.toUtc().toIso8601String(),
         'turn_count': turnCount,
+        if (replyLanguagePolicy != null)
+          'reply_language_policy': replyLanguagePolicy,
+        if (businessDay != null) 'business_day': businessDay,
       };
 
   static CustomerCodexSession? fromJson(Object? value) {
@@ -80,6 +91,8 @@ class CustomerCodexSession {
       historyCount: count,
       historyFingerprint: value['history_fingerprint']?.toString() ?? '',
       lastReply: value['last_reply']?.toString() ?? '',
+      replyLanguagePolicy: value['reply_language_policy']?.toString(),
+      businessDay: value['business_day']?.toString(),
       updatedAt: updatedAt,
       turnCount: value['turn_count'] is int ? value['turn_count'] as int : 4,
     );
@@ -87,7 +100,17 @@ class CustomerCodexSession {
 }
 
 class CustomerCodexSessionStore {
-  CustomerCodexSessionStore(this.directory);
+  CustomerCodexSessionStore(Directory directory, {String? businessDay})
+      : directory = businessDay == null
+            ? directory
+            : Directory(p.join(directory.path, _checkedDay(businessDay)));
+
+  static String _checkedDay(String day) {
+    if (!RegExp(r'^\d{4}-\d{2}-\d{2}$').hasMatch(day)) {
+      throw ArgumentError.value(day, 'businessDay', 'Expected YYYY-MM-DD.');
+    }
+    return day;
+  }
 
   final Directory directory;
 

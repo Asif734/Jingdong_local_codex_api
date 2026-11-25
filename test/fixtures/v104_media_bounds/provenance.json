@@ -1,0 +1,13 @@
+{
+  "customer": "jd_41aeec7741d05",
+  "messageTimeUtc": "2026-11-24T09:29:19Z",
+  "fullFrameCapturedAtUtc": "2026-11-24T09:29:31.352Z",
+  "fullFrameOcr": "Recomputed offline with the unchanged production Apple Vision recognizer for the original immutable screenshot.",
+  "clippedFrameCapturedAtUtc": "2026-11-24T09:29:45.412Z",
+  "clippedFrameOcr": "Original saved runtime OCR, including six-pixel printed label incorrectly submitted as customer text.",
+  "files": {
+    "loaded-card.ocr.json": "bd952075ba1e458aec31157f1c6a8e04cf18f1c7553114a636801bd369938ab7",
+    "loaded-card.png": "8c6f3dc1a8c9bdd599b292be7b94b7e80b5318ae0088303f0bd7c525d2748d3d",
+    "clipped-card.ocr.json": "edc425a77abd3e9024a3673e3793259f171d9c0f41dbf35d4cbd2a307d8092a2"
+  }
+}

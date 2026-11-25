@@ -6,6 +6,344 @@ import 'package:jd_automation/capture/unread_capture_recovery.dart';
 import 'package:jd_automation/platform/macos_capture_adapter.dart';
 
 void main() {
+  test(
+      'short low-confidence customer bubble is targeted without trusting low-confidence text',
+      () {
+    final inspection = OcrInspection(
+        image: Uint8List(0),
+        imageWidth: 2880,
+        imageHeight: 1626,
+        windowTitle: 'saved',
+        recognizedText: '',
+        activeCustomerId: 'buyer',
+        capturedAt: DateTime.utc(2026, 11, 3),
+        chatLeft: .24,
+        chatRight: .75,
+        chatTop: .2,
+        chatBottom: .85,
+        observations: const [
+          OcrObservation(
+              text: 'buyer 17:23:34',
+              confidence: 1,
+              x: .273,
+              y: .3,
+              width: .2,
+              height: .02),
+          OcrObservation(
+              text: '是',
+              confidence: .3,
+              x: .28,
+              y: .35,
+              width: .02,
+              height: .02),
+          OcrObservation(
+              text: '请尽快回复客户咨询，即将为客户推荐相似商品哦~',
+              confidence: .3,
+              x: .28,
+              y: .6,
+              width: .35,
+              height: .02)
+        ]);
+    final regions =
+        const OcrCaptureExtractor().shortCustomerTextRegions(inspection);
+    expect(regions, hasLength(1));
+    expect(regions.single.y, lessThan(.35));
+    final refined = inspection.withObservations([
+      inspection.observations.first,
+      const OcrObservation(
+          text: '是的', confidence: .5, x: .28, y: .35, width: .04, height: .02),
+      inspection.observations.last
+    ]);
+    final result = const OcrCaptureExtractor().analyze(refined);
+    expect(result.capture!.messages.map((m) => m.body), contains('是的'));
+    expect(
+        result.capture!.messages.any((m) => m.body.contains('请尽快')), isFalse);
+  });
+  test(
+      'broken right-aligned sender labels remain headers instead of customer text',
+      () {
+    final inspection = OcrInspection(
+        image: Uint8List(0),
+        imageWidth: 2880,
+        imageHeight: 1626,
+        windowTitle: 'saved',
+        recognizedText: '',
+        activeCustomerId: 'buyer',
+        capturedAt: DateTime.utc(2026, 11, 3, 9, 39, 16),
+        chatLeft: .24,
+        chatRight: .75,
+        chatTop: .2,
+        chatBottom: .85,
+        observations: const [
+          OcrObservation(
+              text: 'buyer 17:38:27',
+              confidence: 1,
+              x: .273,
+              y: .3,
+              width: .2,
+              height: .02),
+          OcrObservation(
+              text: 'Please help',
+              confidence: 1,
+              x: .28,
+              y: .34,
+              width: .15,
+              height: .02),
+          OcrObservation(
+              text: '17:38:31 格志打印机小］',
+              confidence: 1,
+              x: .54,
+              y: .45,
+              width: .19,
+              height: .02),
+          OcrObservation(
+              text: 'I am checking',
+              confidence: 1,
+              x: .6,
+              y: .49,
+              width: .1,
+              height: .02),
+        ]);
+    final c = const OcrCaptureExtractor().extract(inspection)!;
+    expect(c.messages.where((m) => m.direction == 'incoming').single.body,
+        'Please help');
+    expect(c.messages.where((m) => m.direction == 'outgoing').single.body,
+        'I am checking');
+  });
+
+  test(
+      'pixel-classified or rotated overlays are not customer text, regardless of spelling',
+      () {
+    final inspection = OcrInspection(
+        image: Uint8List(0),
+        imageWidth: 2880,
+        imageHeight: 1626,
+        windowTitle: 'saved',
+        recognizedText: '',
+        activeCustomerId: 'buyer',
+        capturedAt: DateTime.utc(2026, 11, 3, 9, 33, 1),
+        chatLeft: .24,
+        chatRight: .75,
+        chatTop: .2,
+        chatBottom: .85,
+        observations: const [
+          OcrObservation(
+              text: 'buyer 17:32:55',
+              confidence: 1,
+              x: .273,
+              y: .3,
+              width: .2,
+              height: .02),
+          OcrObservation(
+              text: 'Please check this',
+              confidence: 1,
+              x: .28,
+              y: .34,
+              width: .15,
+              height: .02),
+          OcrObservation(
+              text: '任意中文覆盖文字',
+              confidence: 1,
+              x: .42,
+              y: .4,
+              width: .1,
+              height: .02,
+              isWatermark: true),
+          OcrObservation(
+              text: '另一种没有列入关键词的水印',
+              confidence: 1,
+              x: .43,
+              y: .5,
+              width: .1,
+              height: .02,
+              rotationDegrees: 18),
+        ]);
+    final c = const OcrCaptureExtractor().extract(inspection)!;
+    expect(c.messages.single.body, 'Please check this');
+  });
+
+  test('other agent header separates the seller reply from the customer link',
+      () {
+    final inspection = OcrInspection(
+        image: Uint8List(0),
+        imageWidth: 2880,
+        imageHeight: 1626,
+        windowTitle: 'saved',
+        recognizedText: '',
+        activeCustomerId: 'buyer',
+        capturedAt: DateTime.utc(2026, 11, 3, 9, 39, 16),
+        chatLeft: .24,
+        chatRight: .75,
+        chatTop: .2,
+        chatBottom: .85,
+        observations: const [
+          OcrObservation(
+              text: 'buyer 17:38:27',
+              confidence: 1,
+              x: .273,
+              y: .3,
+              width: .2,
+              height: .02),
+          OcrObservation(
+              text: 'https://item.jd.com/123.html',
+              confidence: 1,
+              x: .28,
+              y: .34,
+              width: .2,
+              height: .02),
+          OcrObservation(
+              text: '17:38:31 格志打印机小华 其他客服',
+              confidence: 1,
+              x: .54,
+              y: .45,
+              width: .19,
+              height: .02),
+          OcrObservation(
+              text: '您好老板',
+              confidence: 1,
+              x: .66,
+              y: .49,
+              width: .07,
+              height: .02),
+        ]);
+    final c = const OcrCaptureExtractor().extract(inspection)!;
+    expect(c.messages.where((m) => m.direction == 'incoming').single.body,
+        'https://item.jd.com/123.html');
+    expect(
+        c.messages.where((m) => m.direction == 'outgoing').single.body, '您好老板');
+  });
+
+  test(
+      'garbled Chinese sender label keeps its own clock, not preceding video clock',
+      () {
+    final inspection = OcrInspection(
+        image: Uint8List(0),
+        imageWidth: 2880,
+        imageHeight: 1626,
+        windowTitle: 'saved',
+        recognizedText: '',
+        activeCustomerId: '上海世亦小关',
+        capturedAt: DateTime.utc(2026, 11, 3, 8, 24, 8),
+        chatLeft: .24,
+        chatRight: .75,
+        chatTop: .2,
+        chatBottom: .85,
+        observations: const [
+          OcrObservation(
+              text: '上海世亦小关 16:23:49',
+              confidence: 1,
+              x: .273,
+              y: .37,
+              width: .13,
+              height: .018),
+          OcrObservation(
+              text: '上海世亦小犬 16:24:03',
+              confidence: 1,
+              x: .273,
+              y: .67,
+              width: .13,
+              height: .018),
+          OcrObservation(
+              text: '现在都不开机了',
+              confidence: 1,
+              x: .28,
+              y: .70,
+              width: .09,
+              height: .02),
+        ]);
+    final capture = const OcrCaptureExtractor().extract(inspection);
+    expect(capture, isNotNull);
+    final text =
+        capture!.messages.singleWhere((m) => m.body.contains('现在都不开机了'));
+    expect(text.sentAt, DateTime.utc(2026, 11, 3, 8, 24, 3));
+    expect(capture.customerExternalId, '上海世亦小关');
+  });
+
+  test('each photo in a frozen burst retains its own sender clock', () {
+    final inspection = OcrInspection(
+        image: Uint8List(0),
+        imageWidth: 1600,
+        imageHeight: 1300,
+        windowTitle: 'saved',
+        recognizedText: '',
+        activeCustomerId: 'jd_customer',
+        windowId: 7,
+        capturedAt: DateTime.utc(2026, 10, 31, 10, 0, 20),
+        chatLeft: .12,
+        chatRight: .72,
+        chatBottom: .95,
+        observations: const [
+          OcrObservation(
+              text: 'jd_customer 18:00:01',
+              confidence: 1,
+              x: .15,
+              y: .2,
+              width: .2,
+              height: .02),
+          OcrObservation(
+              text: 'fake clock 23:59:59',
+              confidence: 1,
+              x: .2,
+              y: .3,
+              width: .2,
+              height: .02),
+          OcrObservation(
+              text: 'jd_customer 18:00:10',
+              confidence: 1,
+              x: .15,
+              y: .6,
+              width: .2,
+              height: .02),
+        ]);
+    const extractor = OcrCaptureExtractor();
+    expect(extractor.incomingClockAbove(inspection, .25),
+        DateTime.utc(2026, 10, 31, 10, 0, 1));
+    expect(extractor.incomingClockAbove(inspection, .65),
+        DateTime.utc(2026, 10, 31, 10, 0, 10));
+  });
+
+  test('historical image does not block fast capture of a new text question',
+      () {
+    final inspection = OcrInspection(
+        image: Uint8List(0),
+        imageWidth: 1500,
+        imageHeight: 1000,
+        windowTitle: '咚咚融合工作台',
+        recognizedText: '',
+        activeCustomerId: 'jd_customer',
+        capturedAt: DateTime.utc(2026, 10, 31, 8, 6, 35),
+        observations: const [
+          OcrObservation(
+              text: 'jd_customer 16:04:49',
+              confidence: 1,
+              x: .2,
+              y: .2,
+              width: .2,
+              height: .02),
+          OcrObservation(
+              text: 'jd_customer 16:06:30',
+              confidence: 1,
+              x: .2,
+              y: .65,
+              width: .2,
+              height: .02),
+          OcrObservation(
+              text: 'New question here',
+              confidence: 1,
+              x: .22,
+              y: .70,
+              width: .2,
+              height: .025),
+        ],
+        visualRegions: const [
+          OcrVisualRegion(x: .21, y: .25, width: .2, height: .2, confidence: 1),
+        ]);
+    final capture =
+        const OcrCaptureExtractor().verifiedFastTextCapture(inspection);
+    expect(capture, isNotNull);
+    expect(capture!.messages.last.body, contains('New question here'));
+  });
+
   test('sender clock starts the deadline without OCR reading the new body', () {
     final sentAt = DateTime.utc(2026, 10, 7, 6, 25, 10);
     final result = const OcrCaptureExtractor().analyze(OcrInspection(
@@ -408,7 +746,90 @@ void main() {
     });
   }
 
-  test('discovers a Chinese customer identity when AX supplies no identity',
+  for (final identity in [null, '', 'pending-row:unbound', 'jd_shared…']) {
+    test('OCR cannot replace incomplete AX identity $identity', () {
+      final result = const OcrCaptureExtractor().analyze(OcrInspection(
+          image: Uint8List(0),
+          imageWidth: 1600,
+          imageHeight: 1000,
+          windowTitle: 'saved',
+          recognizedText: '',
+          capturedAt: DateTime.utc(2026, 11, 2, 12),
+          activeCustomerId: identity,
+          observations: const [
+            OcrObservation(
+                text: 'jd_abc1',
+                confidence: 1,
+                x: .62,
+                y: .20,
+                width: .12,
+                height: .02),
+            OcrObservation(
+                text: 'jd_abc1 12:24:00',
+                confidence: 1,
+                x: .16,
+                y: .40,
+                width: .18,
+                height: .02),
+            OcrObservation(
+                text: 'hello',
+                confidence: 1,
+                x: .16,
+                y: .44,
+                width: .12,
+                height: .02)
+          ]));
+      expect(result.capture, isNull);
+      expect(result.reason, contains('AX customer identity unavailable'));
+    });
+  }
+  test('corrupted OCR sender cannot rewrite the AX customer owning the message',
+      () {
+    final capture = const OcrCaptureExtractor().extract(OcrInspection(
+        image: Uint8List(0),
+        imageWidth: 1600,
+        imageHeight: 1000,
+        windowTitle: 'saved',
+        recognizedText: '',
+        capturedAt: DateTime.utc(2026, 11, 2, 12, 24),
+        activeCustomerId: 'jd_abc1',
+        chatLeft: .12,
+        chatRight: .70,
+        chatTop: .18,
+        chatBottom: .9,
+        observations: const [
+          OcrObservation(
+              text: 'jd_abcl',
+              confidence: 1,
+              x: .62,
+              y: .20,
+              width: .12,
+              height: .02),
+          OcrObservation(
+              text: 'jd_abcl 12:24:00',
+              confidence: 1,
+              x: .16,
+              y: .40,
+              width: .18,
+              height: .02),
+          OcrObservation(
+              text: 'hello',
+              confidence: 1,
+              x: .16,
+              y: .44,
+              width: .12,
+              height: .02)
+        ]));
+    expect(capture, isNotNull);
+    expect(capture!.customerExternalId, 'jd_abc1');
+    expect(
+        capture.messages
+            .where((m) => m.direction == 'incoming')
+            .map((m) => m.body),
+        ['hello']);
+  });
+
+  test('does not guess a Chinese customer identity from OCR when AX is missing',
       () {
     final inspection = OcrInspection(
       image: Uint8List(0),
@@ -445,9 +866,7 @@ void main() {
 
     final capture = const OcrCaptureExtractor().extract(inspection);
 
-    expect(capture, isNotNull);
-    expect(capture!.customerExternalId, '上海思停志科技');
-    expect(capture.messages.single.body, 'hello');
+    expect(capture, isNull);
   });
 
   test('AX chat bounds exclude another customer sidebar preview', () {
@@ -660,7 +1079,7 @@ void main() {
       imageHeight: 1600,
       windowTitle: '接待中心',
       recognizedText: '',
-      capturedAt: DateTime.fromMillisecondsSinceEpoch(1234),
+      capturedAt: DateTime.utc(2026, 8, 25, 1, 40, 21),
       activeCustomerId: 'stoneshishininger',
       observations: const [
         OcrObservation(

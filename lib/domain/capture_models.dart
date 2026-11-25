@@ -15,6 +15,7 @@ class CapturedConversation {
     this.customerExternalId,
     required this.messages,
     required this.capturedAt,
+    this.automationSessionId,
   });
 
   factory CapturedConversation.fromMap(Map<Object?, Object?> map) {
@@ -29,6 +30,7 @@ class CapturedConversation {
           .toList(growable: false),
       capturedAt:
           DateTime.fromMillisecondsSinceEpoch(map['capturedAtMs']! as int),
+      automationSessionId: map['automationSessionId'] as String?,
     );
   }
 
@@ -37,6 +39,7 @@ class CapturedConversation {
   final String? customerExternalId;
   final List<CapturedMessage> messages;
   final DateTime capturedAt;
+  final String? automationSessionId;
 }
 
 class CapturedMessage {
@@ -49,6 +52,9 @@ class CapturedMessage {
     required this.axPath,
     this.media = const [],
     this.deliveryConfirmed = false,
+    this.observationTurnKey,
+    this.mediaReceiptId,
+    this.captureEvidenceId,
   });
 
   factory CapturedMessage.fromMap(Map<Object?, Object?> map) => CapturedMessage(
@@ -61,6 +67,9 @@ class CapturedMessage {
             : null,
         axPath: (map['axPath'] as String?) ?? '',
         deliveryConfirmed: map['deliveryConfirmed'] == true,
+        observationTurnKey: map['observationTurnKey'] as String?,
+        mediaReceiptId: map['mediaReceiptId'] as String?,
+        captureEvidenceId: map['captureEvidenceId'] as String?,
         media: (map['media'] as List<Object?>? ?? const [])
             .whereType<Map<Object?, Object?>>()
             .map(CapturedMedia.fromMap)
@@ -78,6 +87,23 @@ class CapturedMessage {
   /// Positive receipt observed next to this exact outgoing bubble. This is
   /// used only to recover uncertain sends, never to gate ordinary sending.
   final bool deliveryConfirmed;
+  final String? observationTurnKey;
+  final String? mediaReceiptId;
+
+  /// Exact immutable frame containing this observation; never a customer ID.
+  final String? captureEvidenceId;
+  CapturedMessage withMediaReceipt(String? id) => CapturedMessage(
+      stableId: stableId,
+      direction: direction,
+      body: body,
+      sender: sender,
+      sentAt: sentAt,
+      axPath: axPath,
+      media: media,
+      deliveryConfirmed: deliveryConfirmed,
+      observationTurnKey: observationTurnKey,
+      mediaReceiptId: id,
+      captureEvidenceId: captureEvidenceId);
 }
 
 class CapturedMedia {
@@ -88,21 +114,33 @@ class CapturedMedia {
     this.originalName,
     this.captureSource,
     this.isPartial = false,
+    this.isLoadingPreview = false,
     this.description,
     this.visualFingerprint,
+    this.mediaRoles = const [],
+    this.captureQuality = const {},
   });
 
   factory CapturedMedia.fromMap(Map<Object?, Object?> map) => CapturedMedia(
         type: map['type'] as String? ?? 'file',
         path: map['path'] as String? ?? '',
-        mimeType: map['mimeType'] as String?,
-        originalName: map['originalName'] as String?,
+        mimeType: (map['mimeType'] ?? map['mime_type']) as String?,
+        originalName: (map['originalName'] ?? map['original_name']) as String?,
         captureSource:
             (map['captureSource'] ?? map['capture_source']) as String?,
         isPartial: (map['isPartial'] ?? map['is_partial']) == true,
+        isLoadingPreview:
+            (map['isLoadingPreview'] ?? map['is_loading_preview']) == true,
         description: map['description'] as String?,
         visualFingerprint:
             (map['visualFingerprint'] ?? map['visual_fingerprint']) as String?,
+        mediaRoles:
+            ((map['mediaRoles'] ?? map['media_roles']) as List? ?? const [])
+                .whereType<String>()
+                .toList(),
+        captureQuality: Map<String, Object?>.from(
+            (map['captureQuality'] ?? map['capture_quality']) as Map? ??
+                const {}),
       );
 
   final String type;
@@ -111,8 +149,11 @@ class CapturedMedia {
   final String? originalName;
   final String? captureSource;
   final bool isPartial;
+  final bool isLoadingPreview;
   final String? description;
   final String? visualFingerprint;
+  final List<String> mediaRoles;
+  final Map<String, Object?> captureQuality;
 
   Map<String, Object?> toJson() => {
         'type': type,
@@ -121,8 +162,11 @@ class CapturedMedia {
         'original_name': originalName,
         'capture_source': captureSource,
         'is_partial': isPartial,
+        if (isLoadingPreview) 'is_loading_preview': true,
         'description': description,
         'visual_fingerprint': visualFingerprint,
+        if (mediaRoles.isNotEmpty) 'media_roles': mediaRoles,
+        if (captureQuality.isNotEmpty) 'capture_quality': captureQuality,
       };
 }
 
@@ -282,6 +326,34 @@ class AiDraft {
     this.imageDescriptions = const {},
     this.ticket,
   });
+
+  int? get mediaContextRevision {
+    try {
+      final data = jsonDecode(rawJson);
+      return data is Map && data['media_dependent'] == true
+          ? data['media_context_revision'] as int?
+          : null;
+    } catch (_) {
+      return null;
+    }
+  }
+
+  AiDraft withMediaContext(int revision, bool dependent) => AiDraft(
+      reply: reply,
+      decision: decision,
+      confidence: confidence,
+      riskLevel: riskLevel,
+      model: model,
+      usedRecordIds: usedRecordIds,
+      actions: actions,
+      attachments: attachments,
+      imageDescriptions: imageDescriptions,
+      ticket: ticket,
+      rawJson: jsonEncode({
+        ...jsonDecode(rawJson) as Map<String, dynamic>,
+        'media_context_revision': revision,
+        'media_dependent': dependent
+      }));
 
   factory AiDraft.fromJson(Map<String, Object?> json,
       {required Uri mediaBaseUrl}) {

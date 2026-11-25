@@ -1,0 +1,1822 @@
+[
+  {
+    "file": "test/v30_handoff_business_test.dart",
+    "test": "legacy explicitly unclicked failure recovers once and can serve the order"
+  },
+  {
+    "file": "test/v34_loading_card_transition_test.dart",
+    "test": "loading preview upgrades one pending input without treating its holding as a formal answer"
+  },
+  {
+    "file": "test/v34_loading_card_transition_test.dart",
+    "test": "same clock cannot merge a different card when transcript prefix changed"
+  },
+  {
+    "file": "test/v34_loading_card_transition_test.dart",
+    "test": "a direct original-image promotion keeps the same still-unanswered input"
+  },
+  {
+    "file": "test/v34_discovery_state_test.dart",
+    "test": "unknown old IDs and canonical aliases stay excluded after live reread and repair"
+  },
+  {
+    "file": "test/v34_discovery_state_test.dart",
+    "test": "baseline cannot absorb an input already positively captured as current live work"
+  },
+  {
+    "file": "test/v45_media_receipt_scope_test.dart",
+    "test": "real service with three answered old videos cannot substitute them for picture receipt"
+  },
+  {
+    "file": "test/v45_media_receipt_scope_test.dart",
+    "test": "pending image receipt can be answered while image itself remains pending until full analysis"
+  },
+  {
+    "file": "test/v45_media_receipt_scope_test.dart",
+    "test": "real service scopes current admission gap to the frozen receipt question"
+  },
+  {
+    "file": "test/v45_media_receipt_scope_test.dart",
+    "test": "real service scopes future admission gap to the frozen receipt question"
+  },
+  {
+    "file": "test/v45_media_receipt_scope_test.dart",
+    "test": "real service scopes unproven admission gap to the frozen receipt question"
+  },
+  {
+    "file": "test/v45_media_receipt_scope_test.dart",
+    "test": "every receipt question in one frozen text batch gets its own typed answer"
+  },
+  {
+    "file": "test/v45_media_receipt_scope_test.dart",
+    "test": "mixed receipt and operation is never discharged by receipt or before full image analysis"
+  },
+  {
+    "file": "test/ocr_queue_protection_test.dart",
+    "test": "production mixed capture keeps original media queued despite 格志打印"
+  },
+  {
+    "file": "test/ocr_queue_protection_test.dart",
+    "test": "production mixed capture keeps original media queued despite an unverified seller fragment"
+  },
+  {
+    "file": "test/v33_media_inventory_test.dart",
+    "test": "answered receipt keeps acquisition duty without an age deadline"
+  },
+  {
+    "file": "test/v33_media_inventory_test.dart",
+    "test": "unknown card is a pending received item without invented files"
+  },
+  {
+    "file": "test/v33_media_inventory_test.dart",
+    "test": "verified original upgrades the same durable placeholder identity"
+  },
+  {
+    "file": "test/v33_media_inventory_test.dart",
+    "test": "frozen receipt scope excludes future pending and late-acquired files"
+  },
+  {
+    "file": "test/v33_media_inventory_test.dart",
+    "test": "revision guard follows frozen inputs rather than later pending cards"
+  },
+  {
+    "file": "test/v33_media_inventory_test.dart",
+    "test": "Start isolates old unresolved acquisitions from this run"
+  },
+  {
+    "file": "test/v37_message_records_test.dart",
+    "test": "receive order is distinct from sender clock and same-second bubbles"
+  },
+  {
+    "file": "test/v37_message_records_test.dart",
+    "test": "native click is the reply time and status follows actual ownership"
+  },
+  {
+    "file": "test/v37_message_records_test.dart",
+    "test": "legacy confirmed ledger projects its honest confirmation time"
+  },
+  {
+    "file": "test/v37_message_records_test.dart",
+    "test": "review promise is parked and never completes its real question"
+  },
+  {
+    "file": "test/v37_message_records_test.dart",
+    "test": "proven media family has one row while related text stays independent"
+  },
+  {
+    "file": "test/v37_message_records_test.dart",
+    "test": "confirmed substantive media stays completed through late derived aliases"
+  },
+  {
+    "file": "test/v37_message_records_test.dart",
+    "test": "unbound observations never create business and Start remains isolated"
+  },
+  {
+    "file": "test/v37_message_records_test.dart",
+    "test": "all video phases and exact caption finish before one formal reply"
+  },
+  {
+    "file": "test/backfill_progress_test.dart",
+    "test": "verified older pages extend recovery; repeated pages cannot reopen exhaustion"
+  },
+  {
+    "file": "test/v38_capture_frontier_test.dart",
+    "test": "empty verified baseline discovers a new card without red or unread"
+  },
+  {
+    "file": "test/v38_capture_frontier_test.dart",
+    "test": "a real AX transition cannot revive an older offscreen bubble"
+  },
+  {
+    "file": "test/v38_capture_frontier_test.dart",
+    "test": "same-second identical visible cards have distinct occurrence ordinals"
+  },
+  {
+    "file": "test/v38_capture_frontier_test.dart",
+    "test": "new text needs frontier proof; an OCR alias attaches to the existing input"
+  },
+  {
+    "file": "test/v35_generation_ownership_test.dart",
+    "test": "recorded scope 50ee -> e3c57 survives delivery overlap"
+  },
+  {
+    "file": "test/v35_generation_ownership_test.dart",
+    "test": "recorded scope 8c131 -> 27ac9 survives delivery overlap"
+  },
+  {
+    "file": "test/v35_generation_ownership_test.dart",
+    "test": "recorded scope 27ac9 -> 208fc survives delivery overlap"
+  },
+  {
+    "file": "test/v35_generation_ownership_test.dart",
+    "test": "recorded scope 47606 -> bbdf6 survives delivery overlap"
+  },
+  {
+    "file": "test/v35_generation_ownership_test.dart",
+    "test": "recorded scope cba8b -> a5671 survives delivery overlap"
+  },
+  {
+    "file": "test/v35_generation_ownership_test.dart",
+    "test": "ready draft owns input without blocking another customer"
+  },
+  {
+    "file": "test/v35_generation_ownership_test.dart",
+    "test": "retry draft owns input without blocking another customer"
+  },
+  {
+    "file": "test/v35_generation_ownership_test.dart",
+    "test": "sending draft owns input without blocking another customer"
+  },
+  {
+    "file": "test/v35_generation_ownership_test.dart",
+    "test": "delivery_unknown draft owns input without blocking another customer"
+  },
+  {
+    "file": "test/v35_generation_ownership_test.dart",
+    "test": "committing draft owns input without blocking another customer"
+  },
+  {
+    "file": "test/ocr_capture_extractor_test.dart",
+    "test": "sender clock starts the deadline without OCR reading the new body"
+  },
+  {
+    "file": "test/v35_generation_ownership_test.dart",
+    "test": "simultaneous generation claims lease one exact customer scope"
+  },
+  {
+    "file": "test/ocr_capture_extractor_test.dart",
+    "test": "extracts latest incoming message for full customer identity"
+  },
+  {
+    "file": "test/v35_generation_ownership_test.dart",
+    "test": "delivery commit between history read and lease excludes answered input"
+  },
+  {
+    "file": "test/v35_generation_ownership_test.dart",
+    "test": "holding is independent of generation custody and cannot answer work"
+  },
+  {
+    "file": "test/v35_generation_ownership_test.dart",
+    "test": "old-run generation cannot lease new Start work with a reused queue ID"
+  },
+  {
+    "file": "test/v35_generation_ownership_test.dart",
+    "test": "baseline aliases stay history and never consume current active input"
+  },
+  {
+    "file": "test/v35_generation_ownership_test.dart",
+    "test": "sender order is stable for same-second messages and late old media"
+  },
+  {
+    "file": "test/v35_generation_ownership_test.dart",
+    "test": "late older-clock anchor freezes already known unanswered text in order"
+  },
+  {
+    "file": "test/v35_generation_ownership_test.dart",
+    "test": "proven card forks generate once and formal confirmation covers aliases"
+  },
+  {
+    "file": "test/v35_generation_ownership_test.dart",
+    "test": "UI pending count includes unsent drafts and unanswered acquisition"
+  },
+  {
+    "file": "test/v31_media_calendar_test.dart",
+    "test": "explicit YYYY dates and alternate separators retain date"
+  },
+  {
+    "file": "test/v31_media_calendar_test.dart",
+    "test": "all active opener success branches use the focus contract"
+  },
+  {
+    "file": "test/v39_recorded_text_correction_test.dart",
+    "test": "recorded clipped tutorial request becomes one text reply; holding first=false"
+  },
+  {
+    "file": "test/codex_reply_service_test.dart",
+    "test": "first human request offers help and the repeated request transfers"
+  },
+  {
+    "file": "test/v42_recorded_media_identity_test.dart",
+    "test": "CaptureHome recorded video has one formal despite late old OCR"
+  },
+  {
+    "file": "test/v30_native_media_detection_test.dart",
+    "test": "recorded upper play glyph is video while photo and circular controls are not"
+  },
+  {
+    "file": "test/v42_recorded_media_identity_test.dart",
+    "test": "recorded media registrar recorded loading observations retain their group before any parent exists"
+  },
+  {
+    "file": "test/v42_recorded_media_identity_test.dart",
+    "test": "recorded media registrar two separate same-second cards retain independent business owners"
+  },
+  {
+    "file": "test/v42_recorded_media_identity_test.dart",
+    "test": "recorded media registrar same file resent in a new automation session keeps its own business"
+  },
+  {
+    "file": "test/v39_recorded_text_correction_test.dart",
+    "test": "recorded clipped tutorial request becomes one text reply; holding first=true"
+  },
+  {
+    "file": "test/capture_database_test.dart",
+    "test": "human transfer counter expires, resets, and ignores retried messages"
+  },
+  {
+    "file": "test/capture_database_test.dart",
+    "test": "new request pair overwrites and retries an agents-busy review"
+  },
+  {
+    "file": "test/capture_database_test.dart",
+    "test": "later customer messages do not restart the fallback clock"
+  },
+  {
+    "file": "test/capture_database_test.dart",
+    "test": "deduplicates a recently re-ordered OCR reading of one message"
+  },
+  {
+    "file": "test/capture_database_test.dart",
+    "test": "deduplicates an OCR spelling correction at the same bubble time"
+  },
+  {
+    "file": "test/capture_database_test.dart",
+    "test": "upgrades a clipped incoming bubble without replying twice"
+  },
+  {
+    "file": "test/capture_database_test.dart",
+    "test": "repairs a missing pending turn with an orphaned OCR cursor"
+  },
+  {
+    "file": "test/capture_database_test.dart",
+    "test": "a real reply starts a fresh fallback window after an old holding"
+  },
+  {
+    "file": "test/capture_database_test.dart",
+    "test": "explicitly confirmed seller reply clears selected input and cannot trigger another draft"
+  },
+  {
+    "file": "test/capture_database_test.dart",
+    "test": "same customer text at a new timestamp is a new pending message"
+  },
+  {
+    "file": "test/capture_database_test.dart",
+    "test": "known generated reply below a late-captured question does not answer it"
+  },
+  {
+    "file": "test/capture_database_test.dart",
+    "test": "older seller OCR above a newer customer message keeps AI pending"
+  },
+  {
+    "file": "test/capture_database_test.dart",
+    "test": "older seller OCR appended after a newer customer stays pending"
+  },
+  {
+    "file": "test/v35_unanswered_sidebar_test.dart",
+    "test": "sidebar shows exact customer IDs and durable unanswered counts, not transfers"
+  },
+  {
+    "file": "test/v36_reply_progress_test.dart",
+    "test": "no-content media waits without an early loading draft or model turn"
+  },
+  {
+    "file": "test/v36_reply_progress_test.dart",
+    "test": "legacy pure loading result parks both inputs without clearing business"
+  },
+  {
+    "file": "test/v36_reply_progress_test.dart",
+    "test": "real frames wake a parked input and formal receipt completes only it"
+  },
+  {
+    "file": "test/v36_reply_progress_test.dart",
+    "test": "receipt question sends once while unknown delivery and media remain safe"
+  },
+  {
+    "file": "test/v36_reply_progress_test.dart",
+    "test": "independent text and another customer proceed while media is waiting"
+  },
+  {
+    "file": "test/v36_reply_progress_test.dart",
+    "test": "a media association cannot reclassify readable customer text as a card"
+  },
+  {
+    "file": "test/v36_reply_progress_test.dart",
+    "test": "a status-waiting text input stays parked until real content advances"
+  },
+  {
+    "file": "test/v36_reply_progress_test.dart",
+    "test": "mixed media and dependent text status do not regenerate the same input"
+  },
+  {
+    "file": "test/v36_reply_progress_test.dart",
+    "test": "mixed status parks dependent text without delaying independent text"
+  },
+  {
+    "file": "test/v36_reply_progress_test.dart",
+    "test": "positive reconciliation of a v35 loading send cannot mark media answered"
+  },
+  {
+    "file": "test/v36_reply_progress_test.dart",
+    "test": "Start isolates old evidence waits and lets a fresh text question run"
+  },
+  {
+    "file": "test/v43_text_refinement_test.dart",
+    "test": "durable message refinement and exact receive timing recorded v41 18-to-19 reading during generation saves the first reply"
+  },
+  {
+    "file": "test/v43_text_refinement_test.dart",
+    "test": "durable message refinement and exact receive timing batch timing uses only formally covered message activations"
+  },
+  {
+    "file": "test/v43_text_refinement_test.dart",
+    "test": "durable message refinement and exact receive timing two visible same-second text bubbles keep independent work"
+  },
+  {
+    "file": "test/v43_text_refinement_test.dart",
+    "test": "durable message refinement and exact receive timing same media asset path does not merge two admitted message parents"
+  },
+  {
+    "file": "test/v37_message_timeline_ui_test.dart",
+    "test": "center customer selection only reads its left message timeline"
+  },
+  {
+    "file": "test/v54_handoff_attempt_limit_test.dart",
+    "test": "ten actual session failures include the initial attempt, with no eleventh"
+  },
+  {
+    "file": "test/v54_handoff_attempt_limit_test.dart",
+    "test": "recovery, due, reserve and status share the same exhaustion boundary"
+  },
+  {
+    "file": "test/v54_handoff_attempt_limit_test.dart",
+    "test": "legacy initial attempt plus nine retries also stops at ten total"
+  },
+  {
+    "file": "test/v30_handoff_flow_test.dart",
+    "test": "business handoff reaches a real outcome: new_request_reception_ready"
+  },
+  {
+    "file": "test/v43_main_media_scheduling_test.dart",
+    "test": "admitted video starts before older OCR while another customer replies"
+  },
+  {
+    "file": "test/v44_candidate_media_wake_test.dart",
+    "test": "candidate progress wakes verification without assigning ownership"
+  },
+  {
+    "file": "test/v44_candidate_media_wake_test.dart",
+    "test": "unrelated progress does not wake candidate and exact progress coalesces"
+  },
+  {
+    "file": "test/main_red_monitor_test.dart",
+    "test": "new red clock is persisted while another customer holds the send UI lease"
+  },
+  {
+    "file": "test/v44_candidate_media_wake_test.dart",
+    "test": "candidate cannot bypass an older raw OCR via the admitted media fast lane"
+  },
+  {
+    "file": "test/v44_candidate_media_wake_test.dart",
+    "test": "a candidate relation from an earlier run cannot wake current evidence"
+  },
+  {
+    "file": "test/v45_pending_media_visibility_test.dart",
+    "test": "a proved admission gap stays visible and is not double counted"
+  },
+  {
+    "file": "test/v30_handoff_flow_test.dart",
+    "test": "business handoff reaches a real outcome: new_request_composer_occupied"
+  },
+  {
+    "file": "test/v40_reply_media_scope_test.dart",
+    "test": "all unanswered texts remain work despite unrelated unbound captures"
+  },
+  {
+    "file": "test/v40_reply_media_scope_test.dart",
+    "test": "identified analysed media remains usable for real question: how many frame, you analyzed?"
+  },
+  {
+    "file": "test/v40_reply_media_scope_test.dart",
+    "test": "identified analysed media remains usable for real question: how many frame was there?"
+  },
+  {
+    "file": "test/v40_reply_media_scope_test.dart",
+    "test": "identified analysed media remains usable for real question: What should I do about the video?"
+  },
+  {
+    "file": "test/v40_reply_media_scope_test.dart",
+    "test": "only actual referenced card invalidates a completed answer"
+  },
+  {
+    "file": "test/v40_reply_media_scope_test.dart",
+    "test": "later text does not hide an earlier unanswered media question"
+  },
+  {
+    "file": "test/v40_reply_media_scope_test.dart",
+    "test": "a current real video keeps full analysis and precise dependency"
+  },
+  {
+    "file": "test/v40_reply_media_scope_test.dart",
+    "test": "leased text references earlier-received media; late admission=false"
+  },
+  {
+    "file": "test/v40_reply_media_scope_test.dart",
+    "test": "leased text references earlier-received media; late admission=true"
+  },
+  {
+    "file": "test/v31_capture_commit_race_test.dart",
+    "test": "old incoming commit cannot change a new run"
+  },
+  {
+    "file": "test/v31_capture_commit_race_test.dart",
+    "test": "old manual answer commit cannot change a new run"
+  },
+  {
+    "file": "test/v39_text_audit_terminal_test.dart",
+    "test": "a clarified text audit cannot reopen on late native or model results"
+  },
+  {
+    "file": "test/v39_text_audit_terminal_test.dart",
+    "test": "text audit confirmation requires exact corrected parent and current run"
+  },
+  {
+    "file": "test/v37_prequeue_kind_gate_test.dart",
+    "test": "prequeue type uncertainty blocks only frozen owned media and resumes without a new key"
+  },
+  {
+    "file": "test/v37_prequeue_kind_gate_test.dart",
+    "test": "a later type-pending card cannot invalidate an independent text lease"
+  },
+  {
+    "file": "test/v37_media_card_flow_test.dart",
+    "test": "Nov8 six derived observations retain first receipt and one business message"
+  },
+  {
+    "file": "test/v37_media_card_flow_test.dart",
+    "test": "the same cover at another sender clock or separate same-second slot remains independent"
+  },
+  {
+    "file": "test/v27_recorded_capture_test.dart",
+    "test": "unique deferred clock refines in place without orphaning a reply cursor"
+  },
+  {
+    "file": "test/main_row_binding_test.dart",
+    "test": "row discovery sends holding to canonical AX customer; unknown AX timer=false"
+  },
+  {
+    "file": "test/v45_inherited_image_pin_test.dart",
+    "test": "loaded real card inherits only its own proven loading-frame original"
+  },
+  {
+    "file": "test/v45_inherited_image_pin_test.dart",
+    "test": "same group label without a physical correspondence link cannot lend a pin"
+  },
+  {
+    "file": "test/v45_inherited_image_pin_test.dart",
+    "test": "missing original and a non-image pin cannot satisfy image inheritance"
+  },
+  {
+    "file": "test/v45_inherited_image_pin_test.dart",
+    "test": "another customer or session cannot borrow a proved original"
+  },
+  {
+    "file": "test/v46_main_generation_commit_test.dart",
+    "test": "formal commit wakes a captured later question before its collection timer"
+  },
+  {
+    "file": "test/main_row_binding_test.dart",
+    "test": "row discovery sends holding to canonical AX customer; unknown AX timer=true"
+  },
+  {
+    "file": "test/v41_database_schema_test.dart",
+    "test": "a real v34 message table upgrades without changing customer work or receipts"
+  },
+  {
+    "file": "test/v41_database_schema_test.dart",
+    "test": "same-version35 missing only input_key repairs idempotently without resetting rows"
+  },
+  {
+    "file": "test/v41_database_schema_test.dart",
+    "test": "the explicit pre-Start check also repairs an already-open safe missing column"
+  },
+  {
+    "file": "test/v41_database_schema_test.dart",
+    "test": "unknown missing structure fails before recovery and rolls back the safe column repair"
+  },
+  {
+    "file": "test/v41_database_schema_test.dart",
+    "test": "cleanup retains exact uncertain ledger ownership without confirming delivery"
+  },
+  {
+    "file": "test/v46_admitted_loading_image_test.dart",
+    "test": "physical image repair proof cannot cross customer or automation session"
+  },
+  {
+    "file": "test/v35_unbound_media_reply_test.dart",
+    "test": "unbound capture does not replace identified media; exact parent still required"
+  },
+  {
+    "file": "test/v46_admitted_loading_image_test.dart",
+    "test": "loading repair cannot consume a stale proof once that owner is ready"
+  },
+  {
+    "file": "test/v46_admitted_loading_image_test.dart",
+    "test": "recorded first existing split repairs from strong image proof and only an actual native formal receipt covers it"
+  },
+  {
+    "file": "test/v46_admitted_loading_image_test.dart",
+    "test": "recorded second existing split repairs from strong image proof and only an actual native formal receipt covers it"
+  },
+  {
+    "file": "test/v46_admitted_loading_image_test.dart",
+    "test": "strong image alias without formal native receipt stays genuinely unanswered"
+  },
+  {
+    "file": "test/v46_admitted_loading_image_test.dart",
+    "test": "crash after atomic owner transaction is recovered before next admission without a second send"
+  },
+  {
+    "file": "test/v46_admitted_loading_image_test.dart",
+    "test": "legacy mixed audit tuple is restored from exact unfinished parent before physical repair"
+  },
+  {
+    "file": "test/v46_main_unknown_body_test.dart",
+    "test": "CaptureHome registers actual unread question beside an unfinished photo then refines the same owner and sends once"
+  },
+  {
+    "file": "test/v29_response_turn_test.dart",
+    "test": "continuous red re-arms for real q2 after a confirmed holding"
+  },
+  {
+    "file": "test/v29_response_turn_test.dart",
+    "test": "formal-send confirmation freezes its input boundary despite newer pending q2"
+  },
+  {
+    "file": "test/v29_response_turn_test.dart",
+    "test": "new clock session discards elapsed time without current AX digits"
+  },
+  {
+    "file": "test/v29_response_turn_test.dart",
+    "test": "resume without AX digits starts fresh, not at the old persisted deadline"
+  },
+  {
+    "file": "test/v29_response_turn_test.dart",
+    "test": "matching incoming history cannot backdate a resumed AX red cycle"
+  },
+  {
+    "file": "test/revision_safety_test.dart",
+    "test": "uncaptured recovery obtains a durable native-send lease"
+  },
+  {
+    "file": "test/revision_safety_test.dart",
+    "test": "original arriving during generation rejects the obsolete result atomically"
+  },
+  {
+    "file": "test/revision_safety_test.dart",
+    "test": "media revision replaces only safe queued work: ready"
+  },
+  {
+    "file": "test/revision_safety_test.dart",
+    "test": "clicked recovery uncertainty cannot become an ordinary retry"
+  },
+  {
+    "file": "test/revision_safety_test.dart",
+    "test": "new fault supersedes only a harmless queued acknowledgement"
+  },
+  {
+    "file": "test/v46_unknown_incoming_blocks_test.dart",
+    "test": "before-frontier recovery requires a real current parent and no history divider"
+  },
+  {
+    "file": "test/v46_unknown_incoming_blocks_test.dart",
+    "test": "Start red-marked media retains original AX/frontier admission policy"
+  },
+  {
+    "file": "test/v46_unknown_incoming_blocks_test.dart",
+    "test": "actual fdd gap reaches one owner only through a current physical anchor"
+  },
+  {
+    "file": "test/v46_unknown_incoming_blocks_test.dart",
+    "test": "unknown admission never comes from another session or passive history"
+  },
+  {
+    "file": "test/media_identity_and_artifact_test.dart",
+    "test": "unique cache original gets its missing clock without changing message ID after turn key moves"
+  },
+  {
+    "file": "test/media_identity_and_artifact_test.dart",
+    "test": "missing/refined clock reuses the same observed image without moving its cursor"
+  },
+  {
+    "file": "test/media_identity_and_artifact_test.dart",
+    "test": "known clock followed by a missing clock does not duplicate an image"
+  },
+  {
+    "file": "test/v33_main_flow_test.dart",
+    "test": "unverified owned card becomes durable unanswered media work"
+  },
+  {
+    "file": "test/v47_unknown_video_owner_test.dart",
+    "test": "actual wide unknown14 and overlapping native video are one atomic owner with its original retained"
+  },
+  {
+    "file": "test/v47_unknown_video_owner_test.dart",
+    "test": "actual weak first header refines its clock before parsing and independent same-file second send stays separate"
+  },
+  {
+    "file": "test/v47_unknown_video_owner_test.dart",
+    "test": "an unreadable first timestamp cannot borrow the later independent same-file video sender pixels"
+  },
+  {
+    "file": "test/v47_unknown_video_owner_test.dart",
+    "test": "a missing first play detector keeps a deferred arrival then a strong later same-card proof admits without a new red mark"
+  },
+  {
+    "file": "test/v30_video_business_recovery_test.dart",
+    "test": "video business recovery: waiting_holding"
+  },
+  {
+    "file": "test/v33_main_flow_test.dart",
+    "test": "video owned card becomes durable unanswered media work"
+  },
+  {
+    "file": "test/v33_main_flow_test.dart",
+    "test": "crop_failure owned card becomes durable unanswered media work"
+  },
+  {
+    "file": "test/v32_handoff_continuation_test.dart",
+    "test": "yielded selection continues with fresh validation: confirmed"
+  },
+  {
+    "file": "test/v33_main_flow_test.dart",
+    "test": "busy_acquisition owned card becomes durable unanswered media work"
+  },
+  {
+    "file": "test/v40_recorded_live_registration_test.dart",
+    "test": "recorded new texts survive failed history restore and each reply exactly once"
+  },
+  {
+    "file": "test/v32_handoff_continuation_test.dart",
+    "test": "yielded selection continues with fresh validation: offline"
+  },
+  {
+    "file": "test/v33_main_flow_test.dart",
+    "test": "two_same_second owned card becomes durable unanswered media work"
+  },
+  {
+    "file": "test/v47_main_recorded_video_flow_test.dart",
+    "test": "two recorded video sends retain independent duties through A4 generation, moving bubbles and late OCR"
+  },
+  {
+    "file": "test/v44_main_capture_promotion_test.dart",
+    "test": "CaptureHome promotes held same-frame OCR with one native recognition and one registration"
+  },
+  {
+    "file": "test/systematic_delivery_test.dart",
+    "test": "reused queue row cannot attach an old generation to another customer"
+  },
+  {
+    "file": "test/systematic_delivery_test.dart",
+    "test": "stopped or superseded generation lease cannot overwrite a later turn"
+  },
+  {
+    "file": "test/systematic_delivery_test.dart",
+    "test": "legacy interrupted SLA has explicit reconciliation work after restart"
+  },
+  {
+    "file": "test/systematic_delivery_test.dart",
+    "test": "new SLA attempt not started natively is safely rearmed after restart"
+  },
+  {
+    "file": "test/systematic_delivery_test.dart",
+    "test": "next frozen batch has its own SLA identity and does not inherit old holding receipt"
+  },
+  {
+    "file": "test/systematic_delivery_test.dart",
+    "test": "interrupted formal send preserves uncertainty and receipt only answers its frozen batch"
+  },
+  {
+    "file": "test/systematic_delivery_test.dart",
+    "test": "bad draft is quarantined and does not block a healthy customer"
+  },
+  {
+    "file": "test/systematic_delivery_test.dart",
+    "test": "native submitted journal recovers a crashed confirmation without resending"
+  },
+  {
+    "file": "test/v44_main_capture_promotion_test.dart",
+    "test": "CaptureHome old stopped OCR cannot release a promoted new-run lease"
+  },
+  {
+    "file": "test/systematic_delivery_test.dart",
+    "test": "late rejection restores uncertainty and cannot consume newer unanswered content"
+  },
+  {
+    "file": "test/v33_main_flow_test.dart",
+    "test": "continuous_inputs owned card becomes durable unanswered media work"
+  },
+  {
+    "file": "test/repeated_question_clock_test.dart",
+    "test": "repeated question with punctuation change and distinct clock survives 0:00:01.000000"
+  },
+  {
+    "file": "test/repeated_question_clock_test.dart",
+    "test": "repeated question with punctuation change and distinct clock survives 1104:00:00.000000"
+  },
+  {
+    "file": "test/repeated_question_clock_test.dart",
+    "test": "OCR recovery wording cannot cancel a new question: 请稍等，我正在核对您刚发来的消息。"
+  },
+  {
+    "file": "test/repeated_question_clock_test.dart",
+    "test": "OCR recovery wording cannot cancel a new question: Please wait a moment while I check your latest message."
+  },
+  {
+    "file": "test/repeated_question_clock_test.dart",
+    "test": "OCR recovery wording cannot cancel a new question: Sorry, I could not clearly read the content you just sent. Could you describe the problem again or resend the photo or video? I will continue checking it for you."
+  },
+  {
+    "file": "test/v47_incoming_message_ownership_test.dart",
+    "test": "recorded weak sender locates the first video without guessing its ID or clock"
+  },
+  {
+    "file": "test/v32_handoff_continuation_test.dart",
+    "test": "yielded selection continues with fresh validation: source_changed"
+  },
+  {
+    "file": "test/systematic_delivery_test.dart",
+    "test": "Stop cancels an old generation before it can save or transfer"
+  },
+  {
+    "file": "test/v32_handoff_continuation_test.dart",
+    "test": "inspection can exceed 2.5s but yields for a red deadline"
+  },
+  {
+    "file": "test/v35_main_media_parallel_test.dart",
+    "test": "a suspended video acquisition cannot block another customer text reply"
+  },
+  {
+    "file": "test/v38_media_parent_flow_test.dart",
+    "test": "three cache/headerless observations are not three incoming businesses"
+  },
+  {
+    "file": "test/v38_media_parent_flow_test.dart",
+    "test": "all observations and decoded assets retain one admitted parent and received time"
+  },
+  {
+    "file": "test/v38_media_parent_flow_test.dart",
+    "test": "real04:02:56 video is not re-admitted by the04:46 headerless a7 frame"
+  },
+  {
+    "file": "test/v38_media_parent_flow_test.dart",
+    "test": "same second genuine bubbles and later same-file resend remain independent admissions"
+  },
+  {
+    "file": "test/v38_media_parent_flow_test.dart",
+    "test": "same live admission key redirects an extra observation without another business"
+  },
+  {
+    "file": "test/v38_media_parent_flow_test.dart",
+    "test": "real59 orphan first frame and reconstructed cover retain both roles in one file"
+  },
+  {
+    "file": "test/v38_media_parent_flow_test.dart",
+    "test": "v37 snapshot alternate cover role repairs only its original admitted business"
+  },
+  {
+    "file": "test/v38_media_parent_flow_test.dart",
+    "test": "ready A cannot absorb same-clock same-slot B preview from another live admission"
+  },
+  {
+    "file": "test/v43_media_scheduling_test.dart",
+    "test": "admitted saved-OCR media bypasses older captured screenshot"
+  },
+  {
+    "file": "test/v43_media_scheduling_test.dart",
+    "test": "admitted saved-OCR media bypasses older processing screenshot"
+  },
+  {
+    "file": "test/v43_media_scheduling_test.dart",
+    "test": "admitted saved-OCR media bypasses older retry screenshot"
+  },
+  {
+    "file": "test/v43_media_scheduling_test.dart",
+    "test": "held old OCR does not block media or new textual business"
+  },
+  {
+    "file": "test/v43_media_scheduling_test.dart",
+    "test": "no-ocr cannot use the owner media fast lane"
+  },
+  {
+    "file": "test/v43_media_scheduling_test.dart",
+    "test": "wrong-ax cannot use the owner media fast lane"
+  },
+  {
+    "file": "test/v43_media_scheduling_test.dart",
+    "test": "wrong-pixels cannot use the owner media fast lane"
+  },
+  {
+    "file": "test/v43_media_scheduling_test.dart",
+    "test": "out-of-acquisition-scope cannot use the owner media fast lane"
+  },
+  {
+    "file": "test/v43_media_scheduling_test.dart",
+    "test": "admitted media cannot bypass an unfinished Start baseline"
+  },
+  {
+    "file": "test/v43_media_scheduling_test.dart",
+    "test": "two stores cannot process two representations of one owner together"
+  },
+  {
+    "file": "test/v43_media_scheduling_test.dart",
+    "test": "an active media owner does not lock a different owner of that customer"
+  },
+  {
+    "file": "test/v43_media_scheduling_test.dart",
+    "test": "pin wakes only exact owner and preserves previously stored metadata"
+  },
+  {
+    "file": "test/v43_media_scheduling_test.dart",
+    "test": "a pin without an admitted frame owner cannot wake unrelated media"
+  },
+  {
+    "file": "test/v43_media_scheduling_test.dart",
+    "test": "Restart cannot claim or complete an old-session media job"
+  },
+  {
+    "file": "test/suspended_delivery_recovery_test.dart",
+    "test": "current-session unread probes its suspended draft; scenario=platform_rejected"
+  },
+  {
+    "file": "test/v31_live_message_activation_test.dart",
+    "test": "activated headerless question queues while old baseline stays history"
+  },
+  {
+    "file": "test/v38_completion_and_cycles_test.dart",
+    "test": "Nov8 old04:02 Hi OCR reread04:46 cannot clear unknown-clock04:21 media"
+  },
+  {
+    "file": "test/v38_completion_and_cycles_test.dart",
+    "test": "dated manual OCR is only a candidate; explicit confirmation selects exact prior inputs"
+  },
+  {
+    "file": "test/v38_completion_and_cycles_test.dart",
+    "test": "automatic mark sent requires owned positive native proof"
+  },
+  {
+    "file": "test/v38_completion_and_cycles_test.dart",
+    "test": "one native reply completes two real inputs and aliases do not inflate coverage"
+  },
+  {
+    "file": "test/v38_completion_and_cycles_test.dart",
+    "test": "partial formal scope leaves the other frozen question pending"
+  },
+  {
+    "file": "test/v38_completion_and_cycles_test.dart",
+    "test": "Nov8 old pending04:21 cannot backdate a fresh04:39 red cycle"
+  },
+  {
+    "file": "test/v38_completion_and_cycles_test.dart",
+    "test": "observation is not admission and duplicate live admission keeps one root and receive time"
+  },
+  {
+    "file": "test/v38_completion_and_cycles_test.dart",
+    "test": "same occurrence cannot steal an observation from another admitted parent"
+  },
+  {
+    "file": "test/v38_completion_and_cycles_test.dart",
+    "test": "one physical confirmed reply marks three real messages with one coverage group"
+  },
+  {
+    "file": "test/v38_completion_and_cycles_test.dart",
+    "test": "mixed capture preserves old OCR as context and queues only authorized new input"
+  },
+  {
+    "file": "test/v38_completion_and_cycles_test.dart",
+    "test": "baseline OCR alias in a mixed frame never gains a live frontier stamp"
+  },
+  {
+    "file": "test/v51_reply_result_test.dart",
+    "test": "frozen request accounting two real requests before latest hello count once each across retries"
+  },
+  {
+    "file": "test/v51_reply_result_test.dart",
+    "test": "frozen request accounting previous observed-alias event does not increment the canonical event"
+  },
+  {
+    "file": "test/v51_reply_result_test.dart",
+    "test": "frozen request accounting satisfied self and suppressed old request cannot consume a new target"
+  },
+  {
+    "file": "test/v32_handoff_continuation_test.dart",
+    "test": "Stop Start does not resume a previous deferred selection"
+  },
+  {
+    "file": "test/recovery_pipeline_test.dart",
+    "test": "restart archives the retained draft without probing anonymous old rows"
+  },
+  {
+    "file": "test/v39_unknown_text_matcher_test.dart",
+    "test": "a second real bubble in the same second remains distinct"
+  },
+  {
+    "file": "test/v33_message_work_test.dart",
+    "test": "same live bubble can activate after it was saved but excluded"
+  },
+  {
+    "file": "test/v33_message_work_test.dart",
+    "test": "repair consumes durable current live stamp without a visible frame"
+  },
+  {
+    "file": "test/v33_message_work_test.dart",
+    "test": "old sender clock and outgoing cursor do not expire a late question"
+  },
+  {
+    "file": "test/v33_message_work_test.dart",
+    "test": "generation freezes only known input despite a later earlier-position question"
+  },
+  {
+    "file": "test/v33_message_work_test.dart",
+    "test": "repeated captions never cancel or retire a frozen current-session media answer"
+  },
+  {
+    "file": "test/v33_message_work_test.dart",
+    "test": "new tail cannot starve an older pending generation and cannot replace its active lease"
+  },
+  {
+    "file": "test/v33_message_work_test.dart",
+    "test": "no-lease generation snapshot excludes questions discovered after the service read"
+  },
+  {
+    "file": "test/v33_message_work_test.dart",
+    "test": "positive receipt completes exact frozen input and retains later-discovered work"
+  },
+  {
+    "file": "test/v33_message_work_test.dart",
+    "test": "unknown physical click retains work and cannot become a ready resend"
+  },
+  {
+    "file": "test/v33_message_work_test.dart",
+    "test": "holding and transfer acknowledgement never complete a question"
+  },
+  {
+    "file": "test/v33_message_work_test.dart",
+    "test": "new evidence retires an unclicked draft but never reopens a formally answered input"
+  },
+  {
+    "file": "test/v33_message_work_test.dart",
+    "test": "old successful native attempt cannot answer a new evidence revision"
+  },
+  {
+    "file": "test/v33_message_work_test.dart",
+    "test": "manual outgoing confirms only messages already known before its capture"
+  },
+  {
+    "file": "test/v33_message_work_test.dart",
+    "test": "early persisted same-frame question is excluded from manual outgoing coverage"
+  },
+  {
+    "file": "test/v33_message_work_test.dart",
+    "test": "same-frame manual exclusion preserves an already ready independent answer"
+  },
+  {
+    "file": "test/v33_message_work_test.dart",
+    "test": "empty manual coverage keeps same-frame pending and other customers independent"
+  },
+  {
+    "file": "test/v33_message_work_test.dart",
+    "test": "late discovery of this apps old reply cannot masquerade as a manual answer"
+  },
+  {
+    "file": "test/v33_message_work_test.dart",
+    "test": "confirmed handoff delegates its frozen input without answering a newer question"
+  },
+  {
+    "file": "test/v33_message_work_test.dart",
+    "test": "schema migration keeps durable work and existing receipts"
+  },
+  {
+    "file": "test/v43_image_bubble_identity_test.dart",
+    "test": "same-second different sender blocks across summary are still separate"
+  },
+  {
+    "file": "test/v43_image_bubble_identity_test.dart",
+    "test": "one physical image with a one-digit OCR clock drift retains its owner"
+  },
+  {
+    "file": "test/v43_image_bubble_identity_test.dart",
+    "test": "one recorded physical video with OCR clock drift retains its owner"
+  },
+  {
+    "file": "test/v43_image_bubble_identity_test.dart",
+    "test": "same image file in a new session remains a new received message"
+  },
+  {
+    "file": "test/run_permissions_test.dart",
+    "test": "Start stays disabled through pending/denied permissions and rechecks revocation"
+  },
+  {
+    "file": "test/customer_media_inventory_regression_test.dart",
+    "test": "late preview at another slot is not guessed to be the original"
+  },
+  {
+    "file": "test/customer_media_inventory_regression_test.dart",
+    "test": "a preview using an already canonical receipt becomes an alias of the ready original"
+  },
+  {
+    "file": "test/customer_media_inventory_regression_test.dart",
+    "test": "canonical preview retirement never covers a real new customer question"
+  },
+  {
+    "file": "test/customer_media_inventory_regression_test.dart",
+    "test": "two videos at distinct clocks retain separate receipts and availability"
+  },
+  {
+    "file": "test/customer_media_inventory_regression_test.dart",
+    "test": "same-second different slots and different customers never merge"
+  },
+  {
+    "file": "test/customer_media_inventory_regression_test.dart",
+    "test": "preview upgrades in place and preserves both message aliases"
+  },
+  {
+    "file": "test/customer_media_inventory_regression_test.dart",
+    "test": "different thumbnails at a recycled clock/slot cannot replace a preview"
+  },
+  {
+    "file": "test/customer_media_inventory_regression_test.dart",
+    "test": "media upgrade retires only a safe preview draft: ready"
+  },
+  {
+    "file": "test/customer_media_inventory_regression_test.dart",
+    "test": "media upgrade retires only a safe preview draft: sending"
+  },
+  {
+    "file": "test/v27_sla_preparation_test.dart",
+    "test": "prepare confirmed customer before twenty seconds without sending early"
+  },
+  {
+    "file": "test/customer_media_inventory_regression_test.dart",
+    "test": "media upgrade retires only a safe preview draft: delivery_unknown"
+  },
+  {
+    "file": "test/customer_media_inventory_regression_test.dart",
+    "test": "media upgrade retires only a safe preview draft: quarantined"
+  },
+  {
+    "file": "test/customer_media_inventory_regression_test.dart",
+    "test": "cancelling an old media generation cannot release a newer lease"
+  },
+  {
+    "file": "test/customer_media_inventory_regression_test.dart",
+    "test": "a radically changed loading-cover remains ambiguous without card linkage"
+  },
+  {
+    "file": "test/customer_media_inventory_regression_test.dart",
+    "test": "same original stored under v22 receipt aliases is counted once"
+  },
+  {
+    "file": "test/customer_media_inventory_regression_test.dart",
+    "test": "two different originals at the same sender second are never fused"
+  },
+  {
+    "file": "test/media_visual_link_test.dart",
+    "test": "decorated crop binds the same-clock original and a distinct image does not"
+  },
+  {
+    "file": "test/media_visual_link_test.dart",
+    "test": "late original promotes a crop without changing durable message ID"
+  },
+  {
+    "file": "test/customer_media_inventory_regression_test.dart",
+    "test": "real reply request reattaches both previously analysed clips on followup"
+  },
+  {
+    "file": "test/v32_handoff_continuation_test.dart",
+    "test": "native pre-click yield requires durable no-click proof: true"
+  },
+  {
+    "file": "test/v40_capture_admission_test.dart",
+    "test": "real new text bubbles are admitted individually inside a history-marked frame"
+  },
+  {
+    "file": "test/v51_draft_save_result_test.dart",
+    "test": "a canonical transfer request cannot increment a legacy alias twice"
+  },
+  {
+    "file": "test/v36_proven_media_quality_test.dart",
+    "test": "proven video aliases retain all frames and late audio in both SQL and history"
+  },
+  {
+    "file": "test/v36_proven_media_quality_test.dart",
+    "test": "interleaved repair and exact-owner late speech retain frames and audio without touching a resend"
+  },
+  {
+    "file": "test/v39_evidence_progress_test.dart",
+    "test": "an explicitly owned gap retains its original receipt clock"
+  },
+  {
+    "file": "test/v39_evidence_progress_test.dart",
+    "test": "coverage progress wakes only its pending owner, not old siblings"
+  },
+  {
+    "file": "test/main_new_unread_test.dart",
+    "test": "a new unread starts recovery while the archived old draft stays unsent"
+  },
+  {
+    "file": "test/v32_handoff_continuation_test.dart",
+    "test": "native pre-click yield requires durable no-click proof: false"
+  },
+  {
+    "file": "test/main_new_unread_test.dart",
+    "test": "startup parks old process row references without UI retries"
+  },
+  {
+    "file": "test/v44_capture_lease_test.dart",
+    "test": "held general OCR adopts live activation without a second extraction lease"
+  },
+  {
+    "file": "test/v44_capture_lease_test.dart",
+    "test": "promotion and producer pin preserve the active media processing lease"
+  },
+  {
+    "file": "test/v44_capture_lease_test.dart",
+    "test": "current admitted media goes before much older unbound retries without deleting them"
+  },
+  {
+    "file": "test/v31_main_session_test.dart",
+    "test": "new Start archives old blocked work and fast current answer does not need holding"
+  },
+  {
+    "file": "test/v44_capture_lease_test.dart",
+    "test": "admitted media scheduling rotates customers within the same ready class"
+  },
+  {
+    "file": "test/v44_capture_lease_test.dart",
+    "test": "exact admission progress cannot wake historical unbound observations"
+  },
+  {
+    "file": "test/v40_message_commit_test.dart",
+    "test": "recorded v39 history2/ledger1 freezes one consistent version"
+  },
+  {
+    "file": "test/v40_message_commit_test.dart",
+    "test": "text media wait wakes only for its exact dependency"
+  },
+  {
+    "file": "test/v40_message_commit_test.dart",
+    "test": "a substantive label cannot formally answer a reference before its actual media is ready"
+  },
+  {
+    "file": "test/v40_message_commit_test.dart",
+    "test": "a receipt fact can answer text while its separate actual media remains pending"
+  },
+  {
+    "file": "test/v40_message_commit_test.dart",
+    "test": "wait records the actual selected dependency rather than the entry snapshot"
+  },
+  {
+    "file": "test/v40_message_commit_test.dart",
+    "test": "factual text coverage is not determined by a question whitelist"
+  },
+  {
+    "file": "test/v40_message_commit_test.dart",
+    "test": "a new real input clears status backoff; a reread cannot clear it"
+  },
+  {
+    "file": "test/v40_message_commit_test.dart",
+    "test": "unrelated media cannot retire a ready answer or invalidate its native guard"
+  },
+  {
+    "file": "test/v40_message_commit_test.dart",
+    "test": "ready draft waits for a same-key kind recheck without blocking another customer"
+  },
+  {
+    "file": "test/main_original_media_test.dart",
+    "test": "real capture flow puts pinned cache original in history instead of window crop"
+  },
+  {
+    "file": "test/main_original_media_test.dart",
+    "test": "a current pinned image without a detected rectangle keeps its original"
+  },
+  {
+    "file": "test/v49_message_time_conflicts_test.dart",
+    "test": "pre-Start clocks stay observational while the Start second is accepted"
+  },
+  {
+    "file": "test/v40_resolved_observation_group_test.dart",
+    "test": "resolved same-card parent closes later crop; unbound bridge=false"
+  },
+  {
+    "file": "test/v40_resolved_observation_group_test.dart",
+    "test": "resolved same-card parent closes later crop; unbound bridge=true"
+  },
+  {
+    "file": "test/v40_resolved_observation_group_test.dart",
+    "test": "retry of its own bound observation sees completed exact parent"
+  },
+  {
+    "file": "test/v57_transfer_queue_without_order_test.dart",
+    "test": "two requests can reserve transfer without order details: 请帮我转人工"
+  },
+  {
+    "file": "test/v57_transfer_queue_without_order_test.dart",
+    "test": "two requests can reserve transfer without order details: 我要退货，请转客服"
+  },
+  {
+    "file": "test/v57_transfer_queue_without_order_test.dart",
+    "test": "two requests can reserve transfer without order details: 我要换货，请转客服"
+  },
+  {
+    "file": "test/v57_transfer_queue_without_order_test.dart",
+    "test": "two requests can reserve transfer without order details: Please transfer me."
+  },
+  {
+    "file": "test/v31_main_session_test.dart",
+    "test": "slow current generation gets one holding then still sends its real answer"
+  },
+  {
+    "file": "test/v45_main_recorded_image_recovery_test.dart",
+    "test": "CaptureHome recovers actual two same-file image sends through loading and another customer"
+  },
+  {
+    "file": "test/v57_transfer_request_policy_test.dart",
+    "test": "two distinct transfer requests need no order or model information"
+  },
+  {
+    "file": "test/v57_transfer_request_policy_test.dart",
+    "test": "configured three-request gate applies to Please transfer me to a human."
+  },
+  {
+    "file": "test/v57_transfer_request_policy_test.dart",
+    "test": "configured three-request gate applies to I need a refund."
+  },
+  {
+    "file": "test/v57_transfer_request_policy_test.dart",
+    "test": "the same request or its alias is not a second request"
+  },
+  {
+    "file": "test/v57_transfer_request_policy_test.dart",
+    "test": "plain transfer requests need no named colleague or extra qualifier"
+  },
+  {
+    "file": "test/v57_transfer_request_policy_test.dart",
+    "test": "first after-sales intent confirms and repeated intent transfers: 我要退货"
+  },
+  {
+    "file": "test/v57_transfer_request_policy_test.dart",
+    "test": "first after-sales intent confirms and repeated intent transfers: 我要换货"
+  },
+  {
+    "file": "test/v57_transfer_request_policy_test.dart",
+    "test": "first after-sales intent confirms and repeated intent transfers: 我要退款"
+  },
+  {
+    "file": "test/v57_transfer_request_policy_test.dart",
+    "test": "first after-sales intent confirms and repeated intent transfers: I want to return this printer."
+  },
+  {
+    "file": "test/v57_transfer_request_policy_test.dart",
+    "test": "first after-sales intent confirms and repeated intent transfers: I want to exchange this printer."
+  },
+  {
+    "file": "test/v57_transfer_request_policy_test.dart",
+    "test": "first after-sales intent confirms and repeated intent transfers: I need a refund."
+  },
+  {
+    "file": "test/v57_transfer_request_policy_test.dart",
+    "test": "sent original transfer-intent confirmation makes 确认 the second confirmation"
+  },
+  {
+    "file": "test/v57_transfer_request_policy_test.dart",
+    "test": "sent original transfer-intent confirmation makes yes the second confirmation"
+  },
+  {
+    "file": "test/v57_transfer_request_policy_test.dart",
+    "test": "sent original transfer-intent confirmation makes ok the second confirmation"
+  },
+  {
+    "file": "test/v38_sla_prepared_window_test.dart",
+    "test": "AX-red holding preparation and commit: reuse"
+  },
+  {
+    "file": "test/v57_transfer_request_policy_test.dart",
+    "test": "sent original after-sales confirmation authorizes 确认"
+  },
+  {
+    "file": "test/v57_transfer_request_policy_test.dart",
+    "test": "sent original after-sales confirmation authorizes 是的"
+  },
+  {
+    "file": "test/v57_transfer_request_policy_test.dart",
+    "test": "sent original after-sales confirmation authorizes yes"
+  },
+  {
+    "file": "test/v57_transfer_request_policy_test.dart",
+    "test": "sent original after-sales confirmation authorizes yes please"
+  },
+  {
+    "file": "test/v57_transfer_request_policy_test.dart",
+    "test": "sent original after-sales confirmation authorizes yes, please"
+  },
+  {
+    "file": "test/v31_main_session_test.dart",
+    "test": "ACK then failed transfer continues A real answer while B is served"
+  },
+  {
+    "file": "test/v57_transfer_request_policy_test.dart",
+    "test": "confirmed repeated transfer survives product photo policy and omitted model intent IDs"
+  },
+  {
+    "file": "test/v31_main_session_test.dart",
+    "test": "Stop Start drops old generation but current message can get a new worker"
+  },
+  {
+    "file": "test/v38_sla_prepared_window_test.dart",
+    "test": "AX-red holding preparation and commit: changed_customer"
+  },
+  {
+    "file": "test/v35_capture_discovery_test.dart",
+    "test": "same-second duplicate bubbles retain distinct stable occurrence IDs"
+  },
+  {
+    "file": "test/v35_capture_discovery_test.dart",
+    "test": "durable phases and unbound duties unbound observations group exact card continuation and ignore old video"
+  },
+  {
+    "file": "test/v38_sla_prepared_window_test.dart",
+    "test": "AX-red holding preparation and commit: no_red"
+  },
+  {
+    "file": "test/v38_sla_prepared_window_test.dart",
+    "test": "AX-red holding preparation and commit: formal_at_19"
+  },
+  {
+    "file": "test/main_row_resolution_budget_test.dart",
+    "test": "persistent unresolved row is rate limited across capture and SLA; stop cancels retries"
+  },
+  {
+    "file": "test/media_persistence_test.dart",
+    "test": "two different images with the same sender clock and placeholder must both survive"
+  },
+  {
+    "file": "test/media_persistence_test.dart",
+    "test": "different videos with identical preview fingerprints must not merge"
+  },
+  {
+    "file": "test/media_persistence_test.dart",
+    "test": "database queue points to the last media while retaining the entire burst"
+  },
+  {
+    "file": "test/v31_handoff_reception_session_test.dart",
+    "test": "fresh AX ownership registers the new task in its current session"
+  },
+  {
+    "file": "test/v31_handoff_reception_session_test.dart",
+    "test": "a previous-session ticket cannot gain new-session transfer authority"
+  },
+  {
+    "file": "test/v31_handoff_reception_session_test.dart",
+    "test": "a current ticket cannot authorize a request absent from current input"
+  },
+  {
+    "file": "test/v31_main_session_test.dart",
+    "test": "A no-agent todo keeps AI serving while B gets its holding and final answer"
+  },
+  {
+    "file": "test/v31_main_session_test.dart",
+    "test": "first passive frame establishes history baseline once; current red frame can generate"
+  },
+  {
+    "file": "test/v41_recorded_database_flow_test.dart",
+    "test": "existing v34 database upgrades before three recorded customer texts enter real reply flow"
+  },
+  {
+    "file": "test/v39_tutorial_request_routing_test.dart",
+    "test": "corrected text routes through real service catalog with old unbound context: substantive"
+  },
+  {
+    "file": "test/v39_tutorial_request_routing_test.dart",
+    "test": "corrected text routes through real service catalog with old unbound context: review_status"
+  },
+  {
+    "file": "test/conversation_availability_test.dart",
+    "test": "a previous turn fallback cannot discharge a new unread recovery"
+  },
+  {
+    "file": "test/conversation_availability_test.dart",
+    "test": "late historical capture cannot backdate a new turn past a confirmed reply"
+  },
+  {
+    "file": "test/v31_session_database_test.dart",
+    "test": "new shared-clock message is not held by an archived order handoff"
+  },
+  {
+    "file": "test/v31_session_database_test.dart",
+    "test": "restarting again cannot reactivate old known IDs or late frozen frames"
+  },
+  {
+    "file": "test/v31_session_database_test.dart",
+    "test": "activation allowlist never promotes every historical bubble in a live frame"
+  },
+  {
+    "file": "test/ocr_queue_delivery_regression_test.dart",
+    "test": "reread incoming plus uncertain outgoing preserves queue and SLA"
+  },
+  {
+    "file": "test/ocr_queue_delivery_regression_test.dart",
+    "test": "new batch may get one holding; historical reply never reopens it"
+  },
+  {
+    "file": "test/v31_session_database_test.dart",
+    "test": "failed handoff becomes independent todo and AI can answer the same unresolved batch"
+  },
+  {
+    "file": "test/v31_session_database_test.dart",
+    "test": "late archived positive bubble cannot act as a manual answer to the new problem"
+  },
+  {
+    "file": "test/v28_delivery_regression_test.dart",
+    "test": "history is saved without activating replies, but a fresh live message queues"
+  },
+  {
+    "file": "test/v28_delivery_regression_test.dart",
+    "test": "a ready cached cover upgrades to the same verified video card, without false missing-text alert"
+  },
+  {
+    "file": "test/v28_delivery_regression_test.dart",
+    "test": "only definitely pre-click handoff failures get three bounded retries; unknown click and notice never do"
+  },
+  {
+    "file": "test/v30_media_card_identity_test.dart",
+    "test": "same video bytes in another visible card slot remain an independent send"
+  },
+  {
+    "file": "test/v30_media_card_identity_test.dart",
+    "test": "a known pending video also coalesces a proven second crop without a restart"
+  },
+  {
+    "file": "test/v29_unknown_turn_test.dart",
+    "test": "spelling reread of q1 is not a new task allowed to detach its unknown"
+  },
+  {
+    "file": "test/v30_media_card_identity_test.dart",
+    "test": "same frozen card survives corrected clock and image-to-video classification"
+  },
+  {
+    "file": "test/v30_media_card_identity_test.dart",
+    "test": "distinct receipt keeps identical file and identical displayed clock as separate sends"
+  },
+  {
+    "file": "test/v30_media_card_identity_test.dart",
+    "test": "explicit canonical card corrects a clock without replacing message or answered cursor"
+  },
+  {
+    "file": "test/v30_media_card_identity_test.dart",
+    "test": "explicit canonical anchor wins over legacy duplicate receipt rows"
+  },
+  {
+    "file": "test/v29_unknown_turn_test.dart",
+    "test": "distinct verified video cards can detach at the same or unknown sender clock: undated=false"
+  },
+  {
+    "file": "test/v30_media_card_identity_test.dart",
+    "test": "ordinary cached cover can become video preview and original on one durable ID"
+  },
+  {
+    "file": "test/v30_media_card_identity_test.dart",
+    "test": "a current unfinished real video survives the cover answer acquisition floor"
+  },
+  {
+    "file": "test/v30_media_card_identity_test.dart",
+    "test": "restart preserves only genuine unanswered video acquisition work"
+  },
+  {
+    "file": "test/v35_media_identity_flow_test.dart",
+    "test": "an ambiguous crop rebinds to its exact original, not a new question"
+  },
+  {
+    "file": "test/v35_media_identity_flow_test.dart",
+    "test": "an old frame after Start stays observation-only and cannot reactivate business"
+  },
+  {
+    "file": "test/v46_generation_submission_test.dart",
+    "test": "35:17 freeze plus 35:21 input before actual CLI submit has one complete request and exact coverage"
+  },
+  {
+    "file": "test/v46_generation_submission_test.dart",
+    "test": "no new ready input preserves the token and all old frozen inputs"
+  },
+  {
+    "file": "test/v46_generation_submission_test.dart",
+    "test": "pending receipt cannot poison an otherwise ready substantive expansion"
+  },
+  {
+    "file": "test/jd_ui_scheduler_test.dart",
+    "test": "holding triggered at red clock 20 seconds overtakes scans before platform 30-second warning"
+  },
+  {
+    "file": "test/v46_generation_submission_test.dart",
+    "test": "input after CLI submission remains next work; another customer proceeds while first CLI is held"
+  },
+  {
+    "file": "test/native_identity_test.dart",
+    "test": "native AX identity rules reject wrong sources, truncation and canonical rebinding"
+  },
+  {
+    "file": "test/v30_media_capture_integration_test.dart",
+    "test": "frozen positive video overrides a pinned jpg and preserves its overlapping own header clock"
+  },
+  {
+    "file": "test/v34_main_discovery_test.dart",
+    "test": "video arriving with old reply is discovered without a new AX red marker"
+  },
+  {
+    "file": "test/v45_recorded_image_recovery_test.dart",
+    "test": "real two same-file sends register pending before load and each survives late callbacks and formal coverage"
+  },
+  {
+    "file": "test/v30_media_capture_integration_test.dart",
+    "test": "an admitted video survives later clipping and 好的 without changing its own clock"
+  },
+  {
+    "file": "test/v34_main_discovery_test.dart",
+    "test": "Start awaits AX red ownership before passive baseline (selected=false)"
+  },
+  {
+    "file": "test/media_text_clarification_guard_test.dart",
+    "test": "previously verified image cannot become weak text after its card scrolls away"
+  },
+  {
+    "file": "test/main_backfill_dispatch_test.dart",
+    "test": "Start archives a previous run backfill without navigating old business"
+  },
+  {
+    "file": "test/response_slot_regression_test.dart",
+    "test": "unresolved red client overtakes old ready answer after holding"
+  },
+  {
+    "file": "test/v29_handoff_recovery_test.dart",
+    "test": "restart resumes known pre-click pending without repeating acknowledgement"
+  },
+  {
+    "file": "test/v29_handoff_recovery_test.dart",
+    "test": "restart resumes known pre-click ready without repeating acknowledgement"
+  },
+  {
+    "file": "test/v29_handoff_recovery_test.dart",
+    "test": "restart resumes known pre-click cancelled without repeating acknowledgement"
+  },
+  {
+    "file": "test/response_slot_regression_test.dart",
+    "test": "caption following image retires only an unclicked draft and keeps all inputs"
+  },
+  {
+    "file": "test/v30_media_capture_integration_test.dart",
+    "test": "an older owned video still acquires its verified original without promoting the JPG cover"
+  },
+  {
+    "file": "test/v34_main_discovery_test.dart",
+    "test": "Start awaits AX red ownership before passive baseline (selected=true)"
+  },
+  {
+    "file": "test/v29_native_resume_notice_test.dart",
+    "test": "Stop/Start stale unread clock cannot claim the new red deadline"
+  },
+  {
+    "file": "test/v39_unknown_text_storage_test.dart",
+    "test": "clipped placeholder and readable text remain one sendable legacy-prefix input"
+  },
+  {
+    "file": "test/v39_unknown_text_storage_test.dart",
+    "test": "repeat clarification is idempotent and does not restart AX red clock"
+  },
+  {
+    "file": "test/v39_unknown_text_storage_test.dart",
+    "test": "two actual same-second bubbles cannot be joined through correction"
+  },
+  {
+    "file": "test/v39_unknown_text_storage_test.dart",
+    "test": "real image/video, another customer and another run cannot be downgraded"
+  },
+  {
+    "file": "test/v39_unknown_text_storage_test.dart",
+    "test": "late old native crops cannot turn corrected text back into media"
+  },
+  {
+    "file": "test/v39_unknown_text_storage_test.dart",
+    "test": "persisted correction repairs a missing DB commit without another business"
+  },
+  {
+    "file": "test/v39_unknown_text_storage_test.dart",
+    "test": "holding does not complete the placeholder and clarification still sends formal"
+  },
+  {
+    "file": "test/v39_unknown_text_storage_test.dart",
+    "test": "a failed history write rolls back acquisition claim and retains pending work"
+  },
+  {
+    "file": "test/v29_media_history_test.dart",
+    "test": "live exact observation promotes canonical history without replacing its ID"
+  },
+  {
+    "file": "test/v29_media_history_test.dart",
+    "test": "live saved-frame observation promotes canonical history without replacing its ID"
+  },
+  {
+    "file": "test/v29_media_history_test.dart",
+    "test": "live known-alias observation promotes canonical history without replacing its ID"
+  },
+  {
+    "file": "test/v29_media_history_test.dart",
+    "test": "live spelling observation promotes canonical history without replacing its ID"
+  },
+  {
+    "file": "test/v29_media_history_test.dart",
+    "test": "live deferred-clock observation promotes canonical history without replacing its ID"
+  },
+  {
+    "file": "test/v29_media_history_test.dart",
+    "test": "live incomplete observation promotes canonical history without replacing its ID"
+  },
+  {
+    "file": "test/v29_media_history_test.dart",
+    "test": "live partial-live observation promotes canonical history without replacing its ID"
+  },
+  {
+    "file": "test/v29_media_history_test.dart",
+    "test": "live word-order observation promotes canonical history without replacing its ID"
+  },
+  {
+    "file": "test/v29_media_history_test.dart",
+    "test": "live correction preserves an already answered canonical cursor"
+  },
+  {
+    "file": "test/v29_media_history_test.dart",
+    "test": "a true later repetition remains a separate incoming message"
+  },
+  {
+    "file": "test/v38_file_store_admission_scope_test.dart",
+    "test": "mixed frame stamps only selected actual new incoming, not old context OCR"
+  },
+  {
+    "file": "test/v38_file_store_admission_scope_test.dart",
+    "test": "unselected newly saved historical context cannot be repaired into current business"
+  },
+  {
+    "file": "test/v38_file_store_admission_scope_test.dart",
+    "test": "selected proven alias promotes exactly its canonical input once without refreshing receive time"
+  },
+  {
+    "file": "test/v34_main_discovery_test.dart",
+    "test": "passive Start baseline stays historical; later no-red text queues (media=false)"
+  },
+  {
+    "file": "test/v33_reply_service_work_test.dart",
+    "test": "late question before an outgoing answer remains in the exact formal batch"
+  },
+  {
+    "file": "test/v33_reply_service_work_test.dart",
+    "test": "a generation lease excludes a later-arriving input from its prompt"
+  },
+  {
+    "file": "test/v33_reply_service_work_test.dart",
+    "test": "a frozen earlier input with customer ellipsis is never silently excluded"
+  },
+  {
+    "file": "test/v33_reply_service_work_test.dart",
+    "test": "pending media is a real input, never a greeting or invented analyzed file"
+  },
+  {
+    "file": "test/v36_late_video_speech_test.dart",
+    "test": "owned audio failures keep waiting; verified terminal results wake the same input"
+  },
+  {
+    "file": "test/v55_transfer_open_recovery_test.dart",
+    "test": "twelve open recoveries keep target and ACK without consuming attempts"
+  },
+  {
+    "file": "test/v34_main_discovery_test.dart",
+    "test": "passive Start baseline stays historical; later no-red text queues (media=true)"
+  },
+  {
+    "file": "test/codex_session_flow_test.dart",
+    "test": "Codex-classified second transfer request requires review"
+  },
+  {
+    "file": "test/v44_loading_media_owner_test.dart",
+    "test": "existing split rejoins by physical proof and the actual native receipt covers aliases"
+  },
+  {
+    "file": "test/v44_loading_media_owner_test.dart",
+    "test": "same-second same-file separately visible incoming blocks remain independent"
+  },
+  {
+    "file": "test/v44_loading_media_owner_test.dart",
+    "test": "real timestamp glyph change with same file and preceding seller stays a separate send"
+  },
+  {
+    "file": "test/v27_handoff_test.dart",
+    "test": "handoff completion requires native confirmation; outcome=failure"
+  },
+  {
+    "file": "test/v33_conversation_work_test.dart",
+    "test": "live reread stamps a previously saved canonical input for queue repair"
+  },
+  {
+    "file": "test/v33_conversation_work_test.dart",
+    "test": "placeholder preview and original stay one message; each real upgrade revises once"
+  },
+  {
+    "file": "test/v33_conversation_work_test.dart",
+    "test": "an ordinary photo keeps only its complete original active"
+  },
+  {
+    "file": "test/v33_conversation_work_test.dart",
+    "test": "different receipts and customers never merge placeholder ownership"
+  },
+  {
+    "file": "test/v34_main_discovery_test.dart",
+    "test": "failed baseline remains recoverable and later frame cannot activate old history"
+  },
+  {
+    "file": "test/v34_main_discovery_test.dart",
+    "test": "a genuine new AX red can recover business while the passive baseline is unreadable"
+  },
+  {
+    "file": "test/v34_main_discovery_test.dart",
+    "test": "backfill activates only an actual unfinished acquisition (pending=true)"
+  },
+  {
+    "file": "test/v34_main_discovery_test.dart",
+    "test": "backfill activates only an actual unfinished acquisition (pending=false)"
+  },
+  {
+    "file": "test/v27_media_state_test.dart",
+    "test": "late original invalidates attachment status, ordinary text remains independent: media=true"
+  },
+  {
+    "file": "test/v27_media_state_test.dart",
+    "test": "late original invalidates attachment status, ordinary text remains independent: media=false"
+  },
+  {
+    "file": "test/v60_invoice_handoff_policy_test.dart",
+    "test": "invoice detail completeness controls the actual saved queue: true"
+  },
+  {
+    "file": "test/v27_handoff_test.dart",
+    "test": "handoff completion requires native confirmation; outcome=unconfirmed"
+  },
+  {
+    "file": "test/v27_handoff_test.dart",
+    "test": "handoff completion requires native confirmation; outcome=success"
+  },
+  {
+    "file": "test/outer_card_native_test.dart",
+    "test": "white screenshot keeps its complete outside card boundary"
+  },
+  {
+    "file": "test/v27_handoff_test.dart",
+    "test": "handoff completion requires native confirmation; outcome=priority"
+  }
+]

@@ -1,0 +1,81 @@
+{
+  "chatRegion": {
+    "left": 0.24027777777777778,
+    "top": 0.20418204182041821,
+    "right": 0.7479166666666667,
+    "bottom": 0.7921279212792128
+  },
+  "evidenceId": "bb83b5c9b565e45ee040966668e0a58c57e19393a88ba5cd8cd6e28f745f3a43",
+  "windowId": 17539,
+  "chatContentSHA256": "beb11c6c2b16122173b7d9866ff6c6e719bed7361bbd882a430fb0467963b9a8",
+  "imageWidth": 2880,
+  "windowTitle": "格志打印机小耿-咚咚融合工作台",
+  "windowBounds": {
+    "y": 30,
+    "height": 813,
+    "title": "格志打印机小耿-咚咚融合工作台",
+    "width": 1440,
+    "windowId": 17539,
+    "x": 0
+  },
+  "capturedAtMs": 1794203517994,
+  "pngSHA256": "4b3a2cc37126722f793c160c4db98bd28a935d69f04e8b070f8000bae65925cd",
+  "customer": "jd_41aeec7741d05",
+  "imagePath": "/Users/m1air/Desktop/JD Automation/data/capture_evidence/bb83b5c9b565e45ee040966668e0a58c57e19393a88ba5cd8cd6e28f745f3a43.png",
+  "automationSessionId": "run-1794202753577725-a506d371a2a587309c1fe5b5c5663599",
+  "manifestPath": "/Users/m1air/Desktop/JD Automation/data/capture_evidence/bb83b5c9b565e45ee040966668e0a58c57e19393a88ba5cd8cd6e28f745f3a43.json",
+  "imageHeight": 1626,
+  "automationSessionStartedAtMs": 1794202753577,
+  "admissionFrontier": {
+    "id": "ocr:bd7061e581a9096c2463ca48d3796c670cb392cf6262c64feb9eb2ab7c21f479",
+    "sent_at": "2026-11-09T05:49:21.000Z",
+    "body": "i have other issue with m880",
+    "direction": "incoming",
+    "visibleTextAnchors": [
+      {
+        "id": "ocr:bd7061e581a9096c2463ca48d3796c670cb392cf6262c64feb9eb2ab7c21f479",
+        "body": "i have other issue with m880",
+        "direction": "incoming",
+        "sent_at": "2026-11-09T05:49:21.000Z"
+      },
+      {
+        "id": "ocr:98145ca207f913842057dc2839c41555ab0e070af66aceb92dd3fc06665f46fc",
+        "body": "thanks",
+        "direction": "incoming",
+        "sent_at": "2026-11-09T05:49:08.000Z"
+      },
+      {
+        "id": "ocr:8ed059a85b6f1f069a9360ed72067903b6d7ad4b39ee773b88fb9dd15160fe36",
+        "body": "it will help",
+        "direction": "incoming",
+        "sent_at": "2026-11-09T05:49:04.000Z"
+      },
+      {
+        "id": "assistant:ab29e6e6e49d2763ef39937d9be2a72dc6153d4f39313d3c43f7e6844563759f",
+        "body": "For your TD630, load single sheets from the front tray. Keep the paper flat and adjust the guides so they lightly touch its edges. The red paper light should go out when the paper is detected. For continuous paper, use the rear tractors: fit the holes onto both sets of pins, close and lock the tractor covers, then press the middle Feed/Eject button. This tutorial shows both loading methods:\nhttps://jvod.300hu.com/vod/product/1621450426/21852/8eef92f862b74a22884fcb26a7d0c01c.mp4",
+        "direction": "outgoing",
+        "sent_at": "2026-11-09T05:48:40.628032Z"
+      },
+      {
+        "id": "ocr:80d854f06030db62ac64cea9ed41141dbf75809d79616157490f39db065fd64e",
+        "body": "what is the issue there.. solve this",
+        "direction": "incoming",
+        "sent_at": "2026-11-09T05:46:31.000Z"
+      },
+      {
+        "id": "ocr:801bc1572c7d7b427961ffd4aea8e27a5d2645419d62e7b51cc011838d8dfbb3",
+        "body": "how to power it on?",
+        "direction": "incoming",
+        "sent_at": "2026-11-09T05:44:25.000Z"
+      }
+    ]
+  },
+  "captureRequestedBackfill": false,
+  "navigationCutoffSource": "current_viewport",
+  "replyActivationAllowed": true,
+  "capturePurpose": "live_signal",
+  "discoveryAnchorId": "86bba94692067c4c324161bf994962d72d7efdeb072138213406a58bd2a21039",
+  "unreadArrivalKey": "arrival:cycle:response-cycle:1794203518489:jd_41aeec7741d05",
+  "mediaCoverageCutoffMs": 1794203517994,
+  "mediaWakeProgressKey": "coverage:1794203826031:covered"
+}

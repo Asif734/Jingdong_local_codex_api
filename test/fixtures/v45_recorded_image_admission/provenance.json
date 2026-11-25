@@ -1,0 +1,33 @@
+{
+  "appVersion": "0.1.43+44",
+  "session": "run-1794214078014381-819d3ac557816f08e24af8371daec864",
+  "source": "work/jd-v44-log-review/capture-evidence; PNG/OCR unmodified real captures; .capture.json frozen SQLite payload",
+  "frames": {
+    "first": {
+      "recordedEvidenceId": "5afa6a607ce334c583cfc2ed26d2f64587fdb2bf439c47350f74d55de5004534",
+      "pngSHA256": "49cd5d31acbdf71608c84938116eeec1e8179a21be1cd2dba3612d920cdd6a34",
+      "ocrSHA256": "43b65cabe37df8683ff3e09e11276b987bca08aebb34fbbc83531107842468c8",
+      "captureSHA256": "61760a43604e4d71496a1105e8c81b1a05a3c0d26d4a004d5b32518c139ba965",
+      "originalSHA256": "a2f1331c56ac455029b7bb18743bb7f757ad0c44cb42aeabf88ddd5f51c77094"
+    },
+    "first-late": {
+      "recordedEvidenceId": "c040a29d8e7c41424186275276001ca41ba1189a36768804f72cb5fb79cad1fd",
+      "pngSHA256": "44980409e91aad001cfdb51f6b1302c6fb1377551f8a0652abd6f5ed489b72ac",
+      "ocrSHA256": "d1e191fad04c754fca4fe5c704be7560d151ee257ae2292c42ba1b556a268203",
+      "captureSHA256": "9fce134b9b185cd9857f5ffae104809f21d292cfa3495ce76290aa9764d6db56"
+    },
+    "second-loading": {
+      "recordedEvidenceId": "cf5dd08d0f20aded3d05383373d94f62bbb031caeb0c762b73c8a962a38a9067",
+      "pngSHA256": "2cb543cf809a4766c97e2ed8151cafbd0f3e321045dd1e11ba3f3263234f214e",
+      "ocrSHA256": "9fb159499e36dd4e63cb4948f175ea96cc26a32706fb1dc2edc781abca83554b",
+      "captureSHA256": "77a48326afe8830969dccfb14f49649859eac66f701ddcdf9c0fd2e459cfe5f2",
+      "originalSHA256": "a2f1331c56ac455029b7bb18743bb7f757ad0c44cb42aeabf88ddd5f51c77094"
+    },
+    "second-loaded": {
+      "recordedEvidenceId": "1677b65d7af9ee598fb3ae97d0979708fe368d1549b9c419e3d02ab739479091",
+      "pngSHA256": "324ddf4bdd93e163db9bbbd1b58bbc6b7dd338d5cb4f757861fab81dd59f983b",
+      "ocrSHA256": "c4e985364ba3abd96821bbf7fb7a878b5dc036bf0828c088af8f1edbc96eb730",
+      "captureSHA256": "4beadbaf13cf408e6ef62de807c16ecd159db78b4de19742c23984a1f7ac0dfc"
+    }
+  }
+}

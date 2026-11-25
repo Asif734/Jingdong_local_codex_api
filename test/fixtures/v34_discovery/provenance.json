@@ -1,0 +1,57 @@
+{
+  "frames" : [
+    {
+      "automationSessionId" : "run-1793857730296546-e50c1ccadc8b7b5e31f7940b4010d015",
+      "capturedAtMs" : 1793857863619,
+      "chatContentSHA256" : "35b023dfd79fde6d6fd83b1b7308547186347c50bf00bfafb52849cdf45b8e97",
+      "chatRegion" : {
+        "bottom" : 0.80442804428044279,
+        "left" : 0.24027777777777778,
+        "right" : 0.74791666666666667,
+        "top" : 0.20418204182041821
+      },
+      "customer" : "jd_41aeec7741d05",
+      "expectedVideoHeader" : "13:51:02",
+      "expectedVideoRegion" : {
+        "confidence" : 1,
+        "height" : 0.24764207005500793,
+        "width" : 0.11300835013389587,
+        "x" : 0.27102944254875183,
+        "y" : 0.39275306463241577
+      },
+      "name" : "video-gray-after-reply",
+      "ocr" : "offline actual QianniuOCRInspector.recognizeFrame accurate, same unmodified recorded pixels; no live AX\/UI",
+      "pngSHA256" : "b8c4fedae0817621c6c4ea42e77ec2cad395a39a3c25e6a613c7be015776a163",
+      "previousReply" : "What issue are you having with your TD630G?",
+      "sourceEvidenceId" : "bc204c8ff95f27d42185f9e4418513e4055da21b76ee5c3832c9652c4059448e",
+      "visualFingerprint" : "00000119ffffffff"
+    },
+    {
+      "automationSessionId" : "run-1793857730296546-e50c1ccadc8b7b5e31f7940b4010d015",
+      "capturedAtMs" : 1793857865613,
+      "chatContentSHA256" : "184c21b9baf26f3ec87ac9075618a58ced82de6048b99eacbbd2f955d682d799",
+      "chatRegion" : {
+        "bottom" : 0.80442804428044279,
+        "left" : 0.24027777777777778,
+        "right" : 0.74791666666666667,
+        "top" : 0.20418204182041821
+      },
+      "customer" : "jd_41aeec7741d05",
+      "expectedVideoHeader" : "13:51:02",
+      "expectedVideoRegion" : {
+        "confidence" : 1,
+        "height" : 0.2621769905090332,
+        "width" : 0.12126484513282776,
+        "x" : 0.26660436391830444,
+        "y" : 0.38619488477706909
+      },
+      "name" : "video-cover-after-reply",
+      "ocr" : "offline actual QianniuOCRInspector.recognizeFrame accurate, same unmodified recorded pixels; no live AX\/UI",
+      "pngSHA256" : "f86acecb7e6d7b0af21c58b418b671bdee2b2a0003a5028d537fd91d8f113b81",
+      "previousReply" : "What issue are you having with your TD630G?",
+      "sourceEvidenceId" : "eafeff9245491b282ee8c27f5a6a276bb521094c5787632b952580035acee1d2",
+      "visualFingerprint" : "fde181f19fe11f03"
+    }
+  ],
+  "sourceVersion" : "0.1.32+33"
+}

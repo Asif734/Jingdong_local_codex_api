@@ -9,6 +9,66 @@ import 'package:jd_automation/storage/capture_database.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
+  test(
+      'invalid model output preserves exact parse reason and a bounded local artifact',
+      () async {
+    final root = await Directory.systemTemp.createTemp('jd_bad_model_');
+    final database =
+        CaptureDatabase(storageRoot: Directory('${root.path}/data'));
+    addTearDown(() async {
+      await database.close();
+      await root.delete(recursive: true);
+    });
+    final workspace = await Directory('${root.path}/workspace').create();
+    final knowledge = await Directory('${root.path}/knowledge').create();
+    await File('${knowledge.path}/test_support_kb.md')
+        .writeAsString('Turn off before reconnecting USB.');
+    final fake = File('${root.path}/fake.sh');
+    await fake.writeAsString(r'''#!/bin/sh
+output=''
+while [ "$#" -gt 0 ]; do
+  if [ "$1" = '--output-last-message' ]; then shift; output="$1"; fi
+  shift
+done
+cat >/dev/null
+printf '%s' 'not-json' > "$output"
+''');
+    expect((await Process.run('chmod', ['+x', fake.path])).exitCode, 0);
+    await database.saveCapture(CapturedConversation(
+        stableKey: 'buyer',
+        customerName: 'buyer',
+        customerExternalId: 'buyer',
+        capturedAt: DateTime.now(),
+        messages: const [
+          CapturedMessage(
+              stableId: 'question',
+              direction: 'incoming',
+              body: 'How do I change the product date?',
+              axPath: 'fixture')
+        ]));
+    final service = CodexReplyService(
+        executable: fake.path,
+        workspace: workspace,
+        knowledgeDirectory: knowledge,
+        outputSchema: File('${root.path}/reply.schema.json'));
+    await expectLater(
+        service.generate(
+            conversation: (await database.conversations()).single,
+            database: database),
+        throwsA(isA<CodexReplyException>()));
+    final artifacts = await Directory('${root.path}/data/generation_failures')
+        .list()
+        .toList();
+    final artifact =
+        jsonDecode(await File(artifacts.single.path).readAsString()) as Map;
+    expect(artifact['customer'], 'buyer');
+    expect(artifact['rawOutput'], 'not-json');
+    expect(artifact['reason'], isNotEmpty);
+    expect(artifact['truncated'], isFalse);
+    expect(artifact['rawSha256'], hasLength(64));
+    expect(await database.pendingMessageId('buyer'), 'question');
+  });
+
   test('capacity failure retries primary model then uses fallback', () async {
     final root = await Directory.systemTemp.createTemp('jd_capacity_fallback_');
     final database =
@@ -19,6 +79,8 @@ void main() {
     });
     final workspace = await Directory('${root.path}/workspace').create();
     final knowledge = await Directory('${root.path}/knowledge').create();
+    await File('${knowledge.path}/test_support_kb.md').writeAsString(
+        'Test support evidence: turn off the test printer before reconnecting its USB cable.');
     final modelLog = File('${root.path}/models.log');
     final fakeCodex = File('${root.path}/fake-codex.sh');
     await fakeCodex.writeAsString('''#!/bin/sh
@@ -89,6 +151,8 @@ printf '%s\n' '{"type":"thread.started","thread_id":"fallback-thread"}'
     });
     final workspace = await Directory('${root.path}/workspace').create();
     final knowledge = await Directory('${root.path}/knowledge').create();
+    await File('${knowledge.path}/test_support_kb.md').writeAsString(
+        'Test support evidence: turn off the test printer before reconnecting its USB cable.');
     final photo = File('${root.path}/customer.png');
     await photo.writeAsBytes([1, 2, 3]);
     await database.saveCapture(CapturedConversation(
@@ -151,17 +215,14 @@ printf '%s\n' '{"type":"thread.started","thread_id":"fallback-thread"}'
             userId: 'buyer', messageId: job.messageId, dueAt: job.dueAt),
         isFalse);
 
-    await fakeCodex.writeAsString('''#!/bin/sh
-output=''
-while [ "\$#" -gt 0 ]; do
-  if [ "\$1" = '--output-last-message' ]; then
-    shift
-    output="\$1"
-  fi
-  shift
-done
-cat >/dev/null
-printf '%s\\n' '{"reply":"Here is the verified answer.","decision":"draft","confidence":0.9,"used_record_ids":[],"required_slots":[],"actions":[],"risk_level":"low","risk_triggers":[],"auto_send_allowed":false,"model":"test","attachments":[],"image_descriptions":[],"human_review_required":false,"reason":null}' > "\$output"
+    await fakeCodex.writeAsString('''#!/usr/bin/python3
+import sys,json,pathlib
+args=sys.argv[1:]
+output=args[args.index('--output-last-message')+1]
+sys.stdin.read()
+paths=[args[i+1] for i,arg in enumerate(args[:-1]) if arg=='--image']
+reply={'reply':'Here is the verified answer.','decision':'draft','confidence':0.9,'used_record_ids':[],'required_slots':[],'actions':[],'risk_level':'low','risk_triggers':[],'auto_send_allowed':False,'model':'test','attachments':[],'image_descriptions':[{'path':path,'description':'Successful retry completed private analysis of this image.'} for path in paths],'human_review_required':False,'reason':None}
+pathlib.Path(output).write_text(json.dumps(reply))
 ''');
     final recovered = CodexReplyService(
       executable: fakeCodex.path,
@@ -263,6 +324,8 @@ printf '%s\\n' '{"reply":"The documented paper width is available.","decision":"
     });
     final workspace = await Directory('${root.path}/workspace').create();
     final knowledge = await Directory('${root.path}/knowledge').create();
+    await File('${knowledge.path}/test_support_kb.md').writeAsString(
+        'Test support evidence: turn off the test printer before reconnecting its USB cable.');
     final counter = File('${root.path}/attempt-count');
     final fakeCodex = File('${root.path}/fake-codex.sh');
     await fakeCodex.writeAsString('''#!/bin/sh
@@ -330,7 +393,7 @@ fi
       database: database,
     );
     expect(draftRequiresHumanReview(second), isTrue);
-    expect(second.reply, contains('客服同事'));
+    expect(second.reply, contains('customer service colleague'));
     expect(await counter.readAsString(), '2');
     final rows = await (await database.database).query(
       'human_transfer_requests',
@@ -340,7 +403,8 @@ fi
     expect(rows.single['request_count'], 0);
   });
 
-  test('an unresolved technical answer gets one fresh second investigation',
+  test(
+      'an explicit follow-up investigation runs as a separate controlled request',
       () async {
     final root = await Directory.systemTemp.createTemp('jd_second_pass_');
     final database =
@@ -351,6 +415,8 @@ fi
     });
     final workspace = await Directory('${root.path}/workspace').create();
     final knowledge = await Directory('${root.path}/knowledge').create();
+    await File('${knowledge.path}/test_support_kb.md').writeAsString(
+        'Test support evidence: turn off the test printer before reconnecting its USB cable.');
     final counter = File('${root.path}/attempt-count');
     final fakeCodex = File('${root.path}/fake-codex.sh');
     await fakeCodex.writeAsString('''#!/bin/sh
@@ -395,9 +461,15 @@ fi
       outputSchema: File('${root.path}/reply.schema.json'),
     );
 
+    final first = await service.generate(
+        conversation: (await database.conversations()).single,
+        database: database);
+    expect(first.reply, isNotEmpty);
+    expect(await counter.readAsString(), '1');
     final draft = await service.generate(
       conversation: (await database.conversations()).single,
       database: database,
+      secondInvestigation: true,
     );
 
     expect(await counter.readAsString(), '2');
@@ -406,7 +478,8 @@ fi
     expect(draftRequiresHumanReview(draft), isFalse);
   });
 
-  test('an unconfirmed product fact gets one full second lookup', () async {
+  test('an explicit product follow-up receives the full direct database again',
+      () async {
     final root = await Directory.systemTemp.createTemp('jd_product_recheck_');
     final database =
         CaptureDatabase(storageRoot: Directory('${root.path}/data'));
@@ -460,9 +533,15 @@ fi
       outputSchema: File('${root.path}/reply.schema.json'),
     );
 
+    final first = await service.generate(
+        conversation: (await database.conversations()).single,
+        database: database);
+    expect(first.reply, isNotEmpty);
+    expect(await counter.readAsString(), '1');
     final draft = await service.generate(
       conversation: (await database.conversations()).single,
       database: database,
+      secondInvestigation: true,
     );
 
     expect(await counter.readAsString(), '2');
@@ -481,6 +560,8 @@ fi
     });
     final workspace = await Directory('${root.path}/workspace').create();
     final knowledge = await Directory('${root.path}/knowledge').create();
+    await File('${knowledge.path}/test_support_kb.md').writeAsString(
+        'Test support evidence: turn off the test printer before reconnecting its USB cable.');
     final photo = File('${root.path}/customer.png');
     await photo.writeAsBytes([1, 2, 3]);
     await database.saveCapture(CapturedConversation(
@@ -538,6 +619,8 @@ exec sleep 30
     });
     final workspace = await Directory('${root.path}/workspace').create();
     final knowledge = await Directory('${root.path}/knowledge').create();
+    await File('${knowledge.path}/test_support_kb.md').writeAsString(
+        'Test support evidence: turn off the test printer before reconnecting its USB cable.');
     final log = File('${root.path}/codex-arguments.txt');
     final fakeCodex = File('${root.path}/fake-codex.sh');
     await fakeCodex.writeAsString('''#!/bin/sh

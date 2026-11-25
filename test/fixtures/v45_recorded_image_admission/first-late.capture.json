@@ -1,0 +1,81 @@
+{
+  "chatContentSHA256": "b2df543b55f2dc4e07f6bd20a50d74773d2bef49b72219aea75ad1a79cd77e03",
+  "automationSessionId": "run-1794214078014381-819d3ac557816f08e24af8371daec864",
+  "windowTitle": "格志打印机小耿-咚咚融合工作台",
+  "windowBounds": {
+    "width": 1440.0,
+    "height": 813.0,
+    "title": "格志打印机小耿-咚咚融合工作台",
+    "windowId": 17539,
+    "x": 0.0,
+    "y": 30.0
+  },
+  "imageHeight": 1626,
+  "imageWidth": 2880,
+  "capturedAtMs": 1794215390474,
+  "pngSHA256": "44980409e91aad001cfdb51f6b1302c6fb1377551f8a0652abd6f5ed489b72ac",
+  "customer": "jd_41aeec7741d05",
+  "imagePath": "/Users/m1air/Desktop/JD Automation/data/capture_evidence/c040a29d8e7c41424186275276001ca41ba1189a36768804f72cb5fb79cad1fd.png",
+  "evidenceId": "c040a29d8e7c41424186275276001ca41ba1189a36768804f72cb5fb79cad1fd",
+  "manifestPath": "/Users/m1air/Desktop/JD Automation/data/capture_evidence/c040a29d8e7c41424186275276001ca41ba1189a36768804f72cb5fb79cad1fd.json",
+  "windowId": 17539,
+  "chatRegion": {
+    "left": 0.24027777777777778,
+    "bottom": 0.7921279212792128,
+    "top": 0.20418204182041821,
+    "right": 0.7479166666666667
+  },
+  "automationSessionStartedAtMs": 1794214078014,
+  "admissionFrontier": {
+    "id": "ocr:3b31baba795f22976d721a014708bf5b2ae2d4f144197941ea76b5c7885a19a0",
+    "sent_at": "2026-11-09T09:07:47.000Z",
+    "body": "ok.",
+    "direction": "incoming",
+    "visibleTextAnchors": [
+      {
+        "id": "ocr:3b31baba795f22976d721a014708bf5b2ae2d4f144197941ea76b5c7885a19a0",
+        "body": "ok.",
+        "direction": "incoming",
+        "sent_at": "2026-11-09T09:07:47.000Z"
+      },
+      {
+        "id": "ocr:7f66a21d3baf694e966e80899d41db2169dd61c3e7f7289656e538c161dbf381",
+        "body": "help me with the video",
+        "direction": "incoming",
+        "sent_at": "2026-11-09T09:05:10.000Z"
+      },
+      {
+        "id": "ocr:697fb34f0eccdd8c7ea2858553afa4b7f80ebbca30678634514b2e13737e2e04",
+        "body": "and how to set up",
+        "direction": "incoming",
+        "sent_at": "2026-11-09T09:05:02.000Z"
+      },
+      {
+        "id": "ocr:dbb9a0f429745513861b972f4d2b616d4ebad2d5952472626d82ce26109837ad",
+        "body": "where to get this app?",
+        "direction": "incoming",
+        "sent_at": "2026-11-09T09:04:56.000Z"
+      },
+      {
+        "id": "assistant:7172dc01526576dd904f7feafe4319e74a2584c628159975a75a49edb230f462",
+        "body": "Your TP876 supports phone printing. Are you connecting by USB cable or Bluetooth? The setup steps depend on the connection; Bluetooth printing uses the Grozziie App.",
+        "direction": "outgoing",
+        "sent_at": "2026-11-09T09:04:27.543890Z"
+      },
+      {
+        "id": "ocr:f909094a6d8d1151823d3478331a318a7383d405d31ba6d44c47fd36dcbe05ad",
+        "body": "guide me to connect it and print from the phone",
+        "direction": "incoming",
+        "sent_at": "2026-11-09T09:03:47.000Z"
+      }
+    ]
+  },
+  "captureRequestedBackfill": false,
+  "navigationCutoffSource": "current_viewport",
+  "replyActivationAllowed": true,
+  "capturePurpose": "active_discovery",
+  "discoveryAnchorId": "d63f9006bd4f3fe6d1f66f4c1d417d6ff0afe2c95afc7995cd1005a8c89d8406",
+  "captureCompletedClaimToken": "run-1794214078014381-819d3ac557816f08e24af8371daec864:1794215397194305:99",
+  "captureReplayOcr": false,
+  "mediaCoverageCutoffMs": 1794215390474
+}

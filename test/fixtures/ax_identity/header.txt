@@ -1,0 +1,10 @@
+# Sanitized header geometry from the saved JD AX tree. Customer and shop text are synthetic.
+app/0 role=AXWindow frame=0,30 1440x813 title="fixture-咚咚融合工作台" value="" desc="" help="" id=""
+app/0/18/0/16/13 role=AXSplitGroup frame=346,126 495x715 title="" value="" desc="" help="" id=""
+app/0/18/0/16/13/12 role=AXTextArea frame=358,582 471x215 title="" value="" desc="" help="" id=""
+app/0/18/0/16/13/34 role=AXStaticText frame=408,132 120x18 title="" value="jd_fixture41" desc="jd_fixture41" help="" id=""
+app/0/18/0/16/13/35 role=AXStaticText frame=611,133 110x16 title="" value="SDK最近联系人入口" desc="SDK最近联系人入口" help="" id=""
+app/0/18/0/16/13/36 role=AXStaticText frame=726,133 105x16 title="" value="fixture店铺" desc="fixture店铺" help="" id=""
+app/0/18/0/16/13/37 role=AXButton frame=408,156 16x16 title="" value="" desc="⌃R快捷转接" help="" id=""
+app/0/18/0/16/13/38 role=AXButton frame=434,156 16x16 title="" value="" desc="拨打电话" help="" id=""
+app/0/18/0/16/13/41 role=AXButton frame=815,156 16x16 title="" value="" desc="举报与拉黑" help="" id=""

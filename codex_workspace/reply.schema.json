@@ -4,6 +4,7 @@
   "additionalProperties": false,
   "required": [
     "reply",
+    "reply_purpose",
     "decision",
     "confidence",
     "used_record_ids",
@@ -21,6 +22,7 @@
   ],
   "properties": {
     "reply": { "type": "string" },
+    "reply_purpose": { "type": "string", "enum": ["substantive", "media_status", "receipt", "review_status"] },
     "decision": {
       "type": "string",
       "enum": ["draft", "ask_clarification", "human_review_required"]

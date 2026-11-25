@@ -1,0 +1,304 @@
+{
+  "source": "read-only v39 review SQLite snapshot",
+  "sourceSha256": "eea1980409a512b72bad1cc54b8f563536b0c6c75d88e0effa054c66ef53e793",
+  "first": {
+    "owner_id": "1794130759930713-0a1ade32e89d577b00212156e2db5369",
+    "message_id": "incoming-media:run-1794129976586844-7243504eedeeb8a67ffaabac17ee1256:17",
+    "message_revision": 1,
+    "message_json": {
+      "id": "incoming-media:run-1794129976586844-7243504eedeeb8a67ffaabac17ee1256:17",
+      "direction": "incoming",
+      "body": "[Customer sent a video; original copied from JD cache; up to 20 samples cover the full timeline including first and final decoded frames]\n[Video audio: analysis pending; formal reply waits for the audio/speech terminal result]",
+      "sender": "jd_41aeec7741d05",
+      "sent_at": "2026-11-08T09:37:45.000Z",
+      "captured_at": "2026-11-08T09:37:48.048Z",
+      "source": "jd_automation",
+      "service_evidence_revision": 2,
+      "media_receipt_id": "ee322250b107e1ee493fcb46d9aee36056399d6343b5abd7ea63f62f1b579c8e",
+      "capture_evidence_id": "8daa8f4f7d6ced0fefd8de1cde565e42a3676299771364e4a8c7372cd2261320",
+      "text_origin": "media",
+      "media": [
+        {
+          "type": "image",
+          "path": "/Users/m1air/Desktop/JD Automation/data/media/jd_41aeec7741d05/videos/frames_d4e5f82dedca465d_full_v3/frame_00.jpg",
+          "mime_type": "image/jpeg",
+          "original_name": "video_frame_00s.jpg",
+          "capture_source": "jd_video_frame_1fps",
+          "is_partial": false,
+          "description": "Video preview reconstructed from its first decoded frame; no separate card cover was retained.",
+          "visual_fingerprint": null,
+          "media_roles": [
+            "first_frame",
+            "video_cover",
+            "video_frame"
+          ]
+        },
+        {
+          "type": "video",
+          "path": "/Users/m1air/Desktop/JD Automation/data/media/jd_41aeec7741d05/videos/a14dcd4f4ffc932be923161ee152902b5404a761db9ce4b3b1483072b5ce5832.mp4",
+          "mime_type": "video/mp4",
+          "original_name": "5b742083a93b4060acfac399263749d0.mp4",
+          "capture_source": "jd_video_cache",
+          "is_partial": false,
+          "description": "Original customer video; visual evidence is stored in the sampled frame images.\n[Video speech transcript (zh-CN): 你这个纸是从这边进还是从这边进来你都没有一个视频的这个叫我怎么弄]",
+          "visual_fingerprint": "e1a181f981ff01ff"
+        },
+        {
+          "type": "image",
+          "path": "/Users/m1air/Desktop/JD Automation/data/media/jd_41aeec7741d05/videos/frames_d4e5f82dedca465d_full_v3/frame_01.jpg",
+          "mime_type": "image/jpeg",
+          "original_name": "video_sample_01.jpg",
+          "capture_source": "jd_video_frame_1fps",
+          "is_partial": false,
+          "description": "Pending Codex visual analysis.",
+          "visual_fingerprint": null
+        },
+        {
+          "type": "image",
+          "path": "/Users/m1air/Desktop/JD Automation/data/media/jd_41aeec7741d05/videos/frames_d4e5f82dedca465d_full_v3/frame_02.jpg",
+          "mime_type": "image/jpeg",
+          "original_name": "video_sample_02.jpg",
+          "capture_source": "jd_video_frame_1fps",
+          "is_partial": false,
+          "description": "Pending Codex visual analysis.",
+          "visual_fingerprint": null
+        },
+        {
+          "type": "image",
+          "path": "/Users/m1air/Desktop/JD Automation/data/media/jd_41aeec7741d05/videos/frames_d4e5f82dedca465d_full_v3/frame_03.jpg",
+          "mime_type": "image/jpeg",
+          "original_name": "video_sample_03.jpg",
+          "capture_source": "jd_video_frame_1fps",
+          "is_partial": false,
+          "description": "Pending Codex visual analysis.",
+          "visual_fingerprint": null
+        },
+        {
+          "type": "image",
+          "path": "/Users/m1air/Desktop/JD Automation/data/media/jd_41aeec7741d05/videos/frames_d4e5f82dedca465d_full_v3/frame_04.jpg",
+          "mime_type": "image/jpeg",
+          "original_name": "video_sample_04.jpg",
+          "capture_source": "jd_video_frame_1fps",
+          "is_partial": false,
+          "description": "Pending Codex visual analysis.",
+          "visual_fingerprint": null
+        },
+        {
+          "type": "image",
+          "path": "/Users/m1air/Desktop/JD Automation/data/media/jd_41aeec7741d05/videos/frames_d4e5f82dedca465d_full_v3/frame_05.jpg",
+          "mime_type": "image/jpeg",
+          "original_name": "video_sample_05.jpg",
+          "capture_source": "jd_video_frame_1fps",
+          "is_partial": false,
+          "description": "Pending Codex visual analysis.",
+          "visual_fingerprint": null
+        },
+        {
+          "type": "image",
+          "path": "/Users/m1air/Desktop/JD Automation/data/media/jd_41aeec7741d05/videos/frames_d4e5f82dedca465d_full_v3/frame_06.jpg",
+          "mime_type": "image/jpeg",
+          "original_name": "video_sample_06.jpg",
+          "capture_source": "jd_video_frame_1fps",
+          "is_partial": false,
+          "description": "Pending Codex visual analysis.",
+          "visual_fingerprint": null
+        },
+        {
+          "type": "image",
+          "path": "/Users/m1air/Desktop/JD Automation/data/media/jd_41aeec7741d05/videos/frames_d4e5f82dedca465d_full_v3/frame_07.jpg",
+          "mime_type": "image/jpeg",
+          "original_name": "video_sample_07.jpg",
+          "capture_source": "jd_video_frame_1fps",
+          "is_partial": false,
+          "description": "Pending Codex visual analysis.",
+          "visual_fingerprint": null
+        },
+        {
+          "type": "image",
+          "path": "/Users/m1air/Desktop/JD Automation/data/media/jd_41aeec7741d05/videos/frames_d4e5f82dedca465d_full_v3/frame_08.jpg",
+          "mime_type": "image/jpeg",
+          "original_name": "video_frame_tail.jpg",
+          "capture_source": "jd_video_frame_1fps",
+          "is_partial": false,
+          "description": "Final decoded video frame (video end); pending Codex visual analysis.",
+          "visual_fingerprint": null
+        }
+      ],
+      "observed_session_id": "run-1794129976586844-7243504eedeeb8a67ffaabac17ee1256",
+      "live_observed_session_ids": [
+        "run-1794129976586844-7243504eedeeb8a67ffaabac17ee1256"
+      ],
+      "media_alternates": [
+        {
+          "type": "image",
+          "path": "/Users/m1air/Desktop/JD Automation/data/media/jd_41aeec7741d05/videos/frames_d4e5f82dedca465d_full_v3/frame_00.jpg",
+          "mime_type": "image/jpeg",
+          "original_name": null,
+          "capture_source": "jd_video_cover",
+          "is_partial": true,
+          "description": "Video preview reconstructed from its first decoded frame; no separate card cover was retained.",
+          "visual_fingerprint": null
+        }
+      ],
+      "media_receipt_aliases": [
+        "ee322250b107e1ee493fcb46d9aee36056399d6343b5abd7ea63f62f1b579c8e"
+      ],
+      "observed_ids": [],
+      "reply_work_state": "pending",
+      "reply_work_revision": 1,
+      "reply_work_revisions": {
+        "incoming-media:run-1794129976586844-7243504eedeeb8a67ffaabac17ee1256:17": 1
+      }
+    }
+  },
+  "second": {
+    "owner_id": "1794130801906655-c8ba4989ba87e098cb7906dfd20ec7d1",
+    "message_id": "incoming-media:run-1794129976586844-7243504eedeeb8a67ffaabac17ee1256:17",
+    "message_revision": 2,
+    "message_json": {
+      "id": "incoming-media:run-1794129976586844-7243504eedeeb8a67ffaabac17ee1256:17",
+      "direction": "incoming",
+      "body": "[Customer sent a video; original copied from JD cache; up to 20 samples cover the full timeline including first and final decoded frames]\n[Video audio: analysis pending; formal reply waits for the audio/speech terminal result]",
+      "sender": "jd_41aeec7741d05",
+      "sent_at": "2026-11-08T09:37:45.000Z",
+      "captured_at": "2026-11-08T09:37:48.048Z",
+      "source": "jd_automation",
+      "service_evidence_revision": 2,
+      "media_receipt_id": "ee322250b107e1ee493fcb46d9aee36056399d6343b5abd7ea63f62f1b579c8e",
+      "capture_evidence_id": "c260d837b2de046ca1cdd7aa1144d0aa88009a9629b7587bcfeba8c2964c3c3c",
+      "text_origin": "media",
+      "media": [
+        {
+          "type": "image",
+          "path": "/Users/m1air/Desktop/JD Automation/data/media/jd_41aeec7741d05/videos/frames_d4e5f82dedca465d_full_v3/frame_00.jpg",
+          "mime_type": "image/jpeg",
+          "original_name": "video_frame_00s.jpg",
+          "capture_source": "jd_video_frame_1fps",
+          "is_partial": false,
+          "description": "Open front cover; front paper tray and internal roller visible, with blue securing tape still attached.",
+          "visual_fingerprint": null,
+          "media_roles": [
+            "first_frame",
+            "video_cover",
+            "video_frame"
+          ]
+        },
+        {
+          "type": "video",
+          "path": "/Users/m1air/Desktop/JD Automation/data/media/jd_41aeec7741d05/videos/a14dcd4f4ffc932be923161ee152902b5404a761db9ce4b3b1483072b5ce5832.mp4",
+          "mime_type": "video/mp4",
+          "original_name": "5b742083a93b4060acfac399263749d0.mp4",
+          "capture_source": "jd_video_cache",
+          "is_partial": false,
+          "description": "Original customer video; visual evidence is stored in the sampled frame images.\n[Video speech transcript (zh-CN): 你这个纸是从这边进还是从这边进来你都没有一个视频的这个叫我怎么弄]",
+          "visual_fingerprint": "e1a181f981ff01ff"
+        },
+        {
+          "type": "image",
+          "path": "/Users/m1air/Desktop/JD Automation/data/media/jd_41aeec7741d05/videos/frames_d4e5f82dedca465d_full_v3/frame_01.jpg",
+          "mime_type": "image/jpeg",
+          "original_name": "video_sample_01.jpg",
+          "capture_source": "jd_video_frame_1fps",
+          "is_partial": false,
+          "description": "Front tray and roller remain visible beneath the open cover; no paper loaded.",
+          "visual_fingerprint": null
+        },
+        {
+          "type": "image",
+          "path": "/Users/m1air/Desktop/JD Automation/data/media/jd_41aeec7741d05/videos/frames_d4e5f82dedca465d_full_v3/frame_02.jpg",
+          "mime_type": "image/jpeg",
+          "original_name": "video_sample_02.jpg",
+          "capture_source": "jd_video_frame_1fps",
+          "is_partial": false,
+          "description": "Closer front view of the empty paper path, roller and right-side print-head area.",
+          "visual_fingerprint": null
+        },
+        {
+          "type": "image",
+          "path": "/Users/m1air/Desktop/JD Automation/data/media/jd_41aeec7741d05/videos/frames_d4e5f82dedca465d_full_v3/frame_03.jpg",
+          "mime_type": "image/jpeg",
+          "original_name": "video_sample_03.jpg",
+          "capture_source": "jd_video_frame_1fps",
+          "is_partial": false,
+          "description": "Blurred view toward the right side of the open front paper path.",
+          "visual_fingerprint": null
+        },
+        {
+          "type": "image",
+          "path": "/Users/m1air/Desktop/JD Automation/data/media/jd_41aeec7741d05/videos/frames_d4e5f82dedca465d_full_v3/frame_04.jpg",
+          "mime_type": "image/jpeg",
+          "original_name": "video_sample_04.jpg",
+          "capture_source": "jd_video_frame_1fps",
+          "is_partial": false,
+          "description": "Rear tractor-feed assembly visible above the control panel; no paper fitted.",
+          "visual_fingerprint": null
+        },
+        {
+          "type": "image",
+          "path": "/Users/m1air/Desktop/JD Automation/data/media/jd_41aeec7741d05/videos/frames_d4e5f82dedca465d_full_v3/frame_05.jpg",
+          "mime_type": "image/jpeg",
+          "original_name": "video_sample_05.jpg",
+          "capture_source": "jd_video_frame_1fps",
+          "is_partial": false,
+          "description": "Closer rear view showing two tractor-feed units along the guide rail.",
+          "visual_fingerprint": null
+        },
+        {
+          "type": "image",
+          "path": "/Users/m1air/Desktop/JD Automation/data/media/jd_41aeec7741d05/videos/frames_d4e5f82dedca465d_full_v3/frame_06.jpg",
+          "mime_type": "image/jpeg",
+          "original_name": "video_sample_06.jpg",
+          "capture_source": "jd_video_frame_1fps",
+          "is_partial": false,
+          "description": "Rear feed rail and tractor units visible with the control panel below.",
+          "visual_fingerprint": null
+        },
+        {
+          "type": "image",
+          "path": "/Users/m1air/Desktop/JD Automation/data/media/jd_41aeec7741d05/videos/frames_d4e5f82dedca465d_full_v3/frame_07.jpg",
+          "mime_type": "image/jpeg",
+          "original_name": "video_sample_07.jpg",
+          "capture_source": "jd_video_frame_1fps",
+          "is_partial": false,
+          "description": "View returns toward the open front tray and roller; blue securing tape remains visible.",
+          "visual_fingerprint": null
+        },
+        {
+          "type": "image",
+          "path": "/Users/m1air/Desktop/JD Automation/data/media/jd_41aeec7741d05/videos/frames_d4e5f82dedca465d_full_v3/frame_08.jpg",
+          "mime_type": "image/jpeg",
+          "original_name": "video_frame_tail.jpg",
+          "capture_source": "jd_video_frame_1fps",
+          "is_partial": false,
+          "description": "Final view shows the empty front tray and exposed internal paper path.",
+          "visual_fingerprint": null
+        }
+      ],
+      "observed_session_id": "run-1794129976586844-7243504eedeeb8a67ffaabac17ee1256",
+      "live_observed_session_ids": [
+        "run-1794129976586844-7243504eedeeb8a67ffaabac17ee1256"
+      ],
+      "media_alternates": [
+        {
+          "type": "image",
+          "path": "/Users/m1air/Desktop/JD Automation/data/media/jd_41aeec7741d05/videos/frames_d4e5f82dedca465d_full_v3/frame_00.jpg",
+          "mime_type": "image/jpeg",
+          "original_name": null,
+          "capture_source": "jd_video_cover",
+          "is_partial": true,
+          "description": "Video preview reconstructed from its first decoded frame; no separate card cover was retained.",
+          "visual_fingerprint": null
+        }
+      ],
+      "media_receipt_aliases": [
+        "ee322250b107e1ee493fcb46d9aee36056399d6343b5abd7ea63f62f1b579c8e"
+      ],
+      "observed_ids": [],
+      "reply_work_state": "pending",
+      "reply_work_revision": 2,
+      "reply_work_revisions": {
+        "incoming-media:run-1794129976586844-7243504eedeeb8a67ffaabac17ee1256:17": 2
+      }
+    }
+  }
+}

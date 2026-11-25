@@ -1,0 +1,48 @@
+{
+  "copiedOriginals": {
+    "unbound-video-frame.png": "/Users/m1air/Desktop/JD Automation/data/capture_evidence/f750e92d29f6d23af0ceeb05be478dda9ab64cee1306a942ae358892c9c01529.png",
+    "unbound-video-cover.jpg": "/Users/m1air/Library/Application Support/JingDong/咚咚工作台/格志打印机小耿/chat/chat_4/images/924d3e0bb24c4f0993aade4f688249c8.jpg",
+    "collapsed-transfer.png": "/Users/m1air/Desktop/Screenshot 2026-11-05 at 8.54.11 AM.png",
+    "unbound-video-original.mp4": "/Users/m1air/Library/Application Support/JingDong/咚咚工作台/格志打印机小耿/chat/chat_4/videos/924d3e0bb24c4f0993aade4f688249c8.mp4"
+  },
+  "paperCrops": [
+    {
+      "fixture": "paper-image-1.png",
+      "sourceEvidenceId": "c13e2a7d8994c263911f22e0be34c3edb49963bf88494660ae49e23fa292e07c",
+      "regionPixels": [
+        768,
+        927,
+        332,
+        252
+      ]
+    },
+    {
+      "fixture": "paper-image-2.png",
+      "sourceEvidenceId": "ccac013fc16b25c7c59fa655fa3386e5ddcef021e9d455da30f8a71fe279eeb4",
+      "regionPixels": [
+        768,
+        927,
+        332,
+        252
+      ]
+    }
+  ],
+  "topClippedVideoCrop": {
+    "fixture": "top-clipped-attendance-video.png",
+    "sourceEvidenceId": "f750e92d29f6d23af0ceeb05be478dda9ab64cee1306a942ae358892c9c01529",
+    "regionPixels": [
+      788,
+      388,
+      320,
+      320
+    ]
+  },
+  "chatRegion": {
+    "left": 0.24027777777777778,
+    "right": 0.7479166666666667,
+    "top": 0.20418204182041821,
+    "bottom": 0.7921279212792128
+  },
+  "noSenderClockInference": true,
+  "videoSHA256": "f84d688641ffed130e7314605b8876689dbca44117a917fbb3997dcf2d91e2c3"
+}

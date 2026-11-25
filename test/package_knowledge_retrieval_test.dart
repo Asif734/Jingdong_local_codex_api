@@ -325,7 +325,9 @@ void main() {
       false
     ),
   ]) {
-    test('generation pins model facts: $query; rechecks=$recheck', () async {
+    test(
+        'generation exposes direct model evidence: $query; explicitFollowup=$recheck',
+        () async {
       final root = await Directory.systemTemp.createTemp('package_generation_');
       final database =
           CaptureDatabase(storageRoot: Directory('${root.path}/data'));
@@ -417,9 +419,17 @@ printf '%s\\n' 'called' >> '${attempts.path}'
           knowledgeDirectory:
               Directory('${Directory.current.path}/格志京东客服知识库-2026-10-04'),
           outputSchema: File('${root.path}/reply.schema.json'));
+      if (recheck) {
+        final first = await service.generate(
+            conversation: (await database.conversations()).single,
+            database: database,
+            batchEndMessageId: 'package-question');
+        expect(first.reply, contains('does not confirm'));
+      }
       final draft = await service.generate(
           conversation: (await database.conversations()).single,
           database: database,
+          secondInvestigation: recheck,
           batchEndMessageId: 'package-question');
       final payload = jsonDecode((await requestFile.readAsString())
           .split('<request_json>')[1]
@@ -430,17 +440,19 @@ printf '%s\\n' 'called' >> '${attempts.path}'
         expect(payload['product_feature_requested'], isTrue);
         expect(payload['product_model_feature_catalog'], isNotNull);
       }
-      expect(jsonEncode(payload['retrieved_knowledge_records']),
+      expect(payload['retrieved_knowledge_records'], isEmpty);
+      final sources = (payload['database_files'] as List).cast<String>();
+      expect(sources, isNotEmpty);
+      final contents =
+          await Future.wait(sources.map((p) => File(p).readAsString()));
+      // The exact packaging evidence is available to the CLI's file reader,
+      // rather than being preselected by removed application retrieval.
+      expect(contents.join('\n'),
           contains('td630_td630g_standard_package_two_free_test_sheets'));
-      expect(
-          jsonEncode(payload['retrieved_knowledge_records']), contains('2张'));
+      expect(contents.join('\n'), contains('2张'));
       expect(draft.reply, contains('2 sheets of test paper'));
       expect(await attempts.readAsLines(), hasLength(recheck ? 2 : 1));
-      if (recheck && Platform.isMacOS) {
-        expect(
-            queries.any((query) => query.contains('包装清单 默认包装 随机配件 测试纸 考勤卡 数量')),
-            isTrue);
-      }
+      expect(queries, isEmpty);
       expect(await database.hasPendingUnanswered('packaging-buyer'), isTrue);
       expect(await database.hasUndeliveredDraft('packaging-buyer'), isFalse);
     });

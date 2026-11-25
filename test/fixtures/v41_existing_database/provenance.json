@@ -1,0 +1,48 @@
+{
+  "version": "0.1.39+40",
+  "session": "run-1794192247014059-e4ef0474082746397217a4694fff1aa5",
+  "recordingDay": "2026-11-09",
+  "notes": "Unchanged original native pixels and saved OCR. Regression controls only runtime session/capture metadata and native/AI mocks. No image or OCR text edits.",
+  "files": {
+    "baseline.png": {
+      "evidenceId": "a08dfd99d531f3ef925ab02d2ac470b27f5c4da1ecb9467816c65fb03aabfa2a",
+      "reviewSource": "/Users/m1air/Documents/Codex/2026-10-29/users-m1air-desktop-ai-2/work/jd-v40-log-review/capture-evidence/a08dfd99d531f3ef925ab02d2ac470b27f5c4da1ecb9467816c65fb03aabfa2a.png",
+      "sha256": "40a828d3e82c4f92eef1b906d819458bb5150abd07f932143f3c90bf0cc82e1b"
+    },
+    "baseline.ocr.json": {
+      "evidenceId": "a08dfd99d531f3ef925ab02d2ac470b27f5c4da1ecb9467816c65fb03aabfa2a",
+      "reviewSource": "/Users/m1air/Documents/Codex/2026-10-29/users-m1air-desktop-ai-2/work/jd-v40-log-review/capture-evidence/a08dfd99d531f3ef925ab02d2ac470b27f5c4da1ecb9467816c65fb03aabfa2a.ocr.json",
+      "sha256": "6c0e4a11dd982455772505bc778d2560d5387a51099567ec2360a311e8d88d56"
+    },
+    "hi.png": {
+      "evidenceId": "389c05f6b5c8d14f1217ca3b468f29eb059b9ec8442561b858e6745cf30e316a",
+      "reviewSource": "/Users/m1air/Documents/Codex/2026-10-29/users-m1air-desktop-ai-2/work/jd-v40-log-review/capture-evidence/389c05f6b5c8d14f1217ca3b468f29eb059b9ec8442561b858e6745cf30e316a.png",
+      "sha256": "8ad13835a89b7eb9e1955c427dd3610d7ed1b00ceee52f6fc319c6636b4df1e5"
+    },
+    "hi.ocr.json": {
+      "evidenceId": "389c05f6b5c8d14f1217ca3b468f29eb059b9ec8442561b858e6745cf30e316a",
+      "reviewSource": "/Users/m1air/Documents/Codex/2026-10-29/users-m1air-desktop-ai-2/work/jd-v40-log-review/capture-evidence/389c05f6b5c8d14f1217ca3b468f29eb059b9ec8442561b858e6745cf30e316a.ocr.json",
+      "sha256": "7242a57f2bf04aee04e0ec87bcc4b0fb73aedb8d62f954bb271afdf1c40cd41b"
+    },
+    "how-are-you.png": {
+      "evidenceId": "03c8ac9c6e6ba74aaa333eb4a1a31dd1d99daa97fe4a42919430f243b4b5f923",
+      "reviewSource": "/Users/m1air/Documents/Codex/2026-10-29/users-m1air-desktop-ai-2/work/jd-v40-log-review/capture-evidence/03c8ac9c6e6ba74aaa333eb4a1a31dd1d99daa97fe4a42919430f243b4b5f923.png",
+      "sha256": "ed0d7b015b08032473ac4519a084893f4f6c76020d46490b8eaa14a632324471"
+    },
+    "how-are-you.ocr.json": {
+      "evidenceId": "03c8ac9c6e6ba74aaa333eb4a1a31dd1d99daa97fe4a42919430f243b4b5f923",
+      "reviewSource": "/Users/m1air/Documents/Codex/2026-10-29/users-m1air-desktop-ai-2/work/jd-v40-log-review/capture-evidence/03c8ac9c6e6ba74aaa333eb4a1a31dd1d99daa97fe4a42919430f243b4b5f923.ocr.json",
+      "sha256": "016085d275c715ba67ddfbc2cc95ae266b18e88815a2ec2ba3a669371ab0c38f"
+    },
+    "need-help.png": {
+      "evidenceId": "491baa37748711486d03194e69a86dd666d25574d2162a179d4aa398f16a91d1",
+      "reviewSource": "/Users/m1air/Documents/Codex/2026-10-29/users-m1air-desktop-ai-2/work/jd-v40-log-review/capture-evidence/491baa37748711486d03194e69a86dd666d25574d2162a179d4aa398f16a91d1.png",
+      "sha256": "cd933b5cc921092c8bd893f66fabb2b63d3cbc0c36742842c22192093a5fe1b6"
+    },
+    "need-help.ocr.json": {
+      "evidenceId": "491baa37748711486d03194e69a86dd666d25574d2162a179d4aa398f16a91d1",
+      "reviewSource": "/Users/m1air/Documents/Codex/2026-10-29/users-m1air-desktop-ai-2/work/jd-v40-log-review/capture-evidence/491baa37748711486d03194e69a86dd666d25574d2162a179d4aa398f16a91d1.ocr.json",
+      "sha256": "f298ce1e91633bf5e8101f2e6c4ed1f02202f7dfe5a253c746fa48f72d6be1bd"
+    }
+  }
+}

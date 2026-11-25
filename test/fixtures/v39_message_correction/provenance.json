@@ -1,0 +1,43 @@
+{
+  "sourceAppVersion": "0.1.37+38",
+  "sourceSessionId": "run-1794123409240799-ec66265be1e26c2d33f42731cdf19b71",
+  "customer": "jd_41aeec7741d05",
+  "targetSenderClock": "15:40:39",
+  "targetText": "can you share me a video?",
+  "unchangedPixelsAndObservations": true,
+  "replayPolicy": "Only receipt capturedAt and current session are transported to the test run. Original sender clocks, transcript coordinates and pixels remain unchanged.",
+  "frames": {
+    "baseline": {
+      "originalEvidenceId": "4bc3792f52066f5676d5009dcdc6bddbc027a51d6be04c8b38feeb0351a714f3",
+      "recordedCapturedAtMs": 1794123606603,
+      "imageSha256": "30d68724d5944bd30d37361da364d6c8a62b23421df0b0a952b44f73074a37ec",
+      "ocrSha256": "381d4781ed8ef542a9ef139a7fbdedade26054730b35c2dcf5c624e1ca02670c",
+      "sourcePng": "/Users/m1air/Desktop/JD Automation/data/capture_evidence/4bc3792f52066f5676d5009dcdc6bddbc027a51d6be04c8b38feeb0351a714f3.png",
+      "sourceOcr": "/Users/m1air/Desktop/JD Automation/data/capture_evidence/4bc3792f52066f5676d5009dcdc6bddbc027a51d6be04c8b38feeb0351a714f3.json.ocr.json"
+    },
+    "clipped-text": {
+      "originalEvidenceId": "2ff28fb20cfc9562bdc71c15b0ac901adfb19bd3ac8c6950afd0bfa1ead49d57",
+      "recordedCapturedAtMs": 1794123640596,
+      "imageSha256": "8f09032bb0bc838507f23eb54c46d3cc4515b25767b12c1601ddcd8945e98234",
+      "ocrSha256": "b91940d86bbf67b1ff4b0e598d46f11d657df108572a855e000d21afe6a789f2",
+      "sourcePng": "/Users/m1air/Documents/Codex/2026-10-29/users-m1air-desktop-ai-2/work/jd-v38-log-review/discovery-evidence/clipped-text.png",
+      "sourceOcr": "/Users/m1air/Documents/Codex/2026-10-29/users-m1air-desktop-ai-2/work/jd-v38-log-review/discovery-evidence/clipped-text.ocr.json"
+    },
+    "early-full-text": {
+      "originalEvidenceId": "857ded855cc4137a14cbcbe519884193fc2ac8eeb52f7622081cefd95d71499e",
+      "recordedCapturedAtMs": 1794123641609,
+      "imageSha256": "0da90d9bb66fc370657074933e617b06c0d683f985a8ea8ff64f67685bec8fd8",
+      "ocrSha256": "62d4b8b68d5b555115e7eb4db890e4094ee75bcf993de41e6d9094433f25da04",
+      "sourcePng": "/Users/m1air/Desktop/JD Automation/data/capture_evidence/857ded855cc4137a14cbcbe519884193fc2ac8eeb52f7622081cefd95d71499e.png",
+      "sourceOcr": "/Users/m1air/Desktop/JD Automation/data/capture_evidence/857ded855cc4137a14cbcbe519884193fc2ac8eeb52f7622081cefd95d71499e.json.ocr.json"
+    },
+    "full-text": {
+      "originalEvidenceId": "1892b6de096039c3718bf4b4d78e11cee990adf4f24e7d94fd457006bb597897",
+      "recordedCapturedAtMs": 1794123715612,
+      "imageSha256": "28e311acda729abf72ed4b5251383449d275c5aadaffd05ace12208af9591b6d",
+      "ocrSha256": "6cc603bbd983552c014ae96913d3a35ab0b7c4b03b6b6557b61c46be3d3e511c",
+      "sourcePng": "/Users/m1air/Documents/Codex/2026-10-29/users-m1air-desktop-ai-2/work/jd-v38-log-review/discovery-evidence/full-text.png",
+      "sourceOcr": "/Users/m1air/Documents/Codex/2026-10-29/users-m1air-desktop-ai-2/work/jd-v38-log-review/discovery-evidence/full-text.ocr.json"
+    }
+  }
+}

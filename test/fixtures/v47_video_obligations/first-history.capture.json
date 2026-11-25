@@ -1,0 +1,83 @@
+{
+  "chatContentSHA256": "39ff43750abfecbe131b58e26506e082fa6644c4e4ae8935c80626f090f5cb61",
+  "imagePath": "/Users/m1air/Desktop/JD Automation/data/capture_evidence/615b522ea6faa579e2f80d40aa861a4dae37ea56d2e703fad14169cf45a3248f.png",
+  "windowTitle": "格志打印机小耿-咚咚融合工作台",
+  "imageWidth": 2880,
+  "automationSessionId": "run-1794284491548145-a01c84ccb22ee80e8b5155d2c3af230d",
+  "historyCutoffMs": 1794284802013,
+  "pngSHA256": "200f0397c12b0013190657e328fb4dfbdd9f4a37ed1f9a9f190a9abf338198c0",
+  "windowBounds": {
+    "width": 1440.0,
+    "height": 813.0,
+    "title": "格志打印机小耿-咚咚融合工作台",
+    "windowId": 17539,
+    "x": 0.0,
+    "y": 30.0
+  },
+  "chatRegion": {
+    "bottom": 0.7921279212792128,
+    "right": 0.7479166666666667,
+    "top": 0.20418204182041821,
+    "left": 0.24027777777777778
+  },
+  "imageHeight": 1626,
+  "manifestPath": "/Users/m1air/Desktop/JD Automation/data/capture_evidence/615b522ea6faa579e2f80d40aa861a4dae37ea56d2e703fad14169cf45a3248f.json",
+  "customer": "jd_41aeec7741d05",
+  "windowId": 17539,
+  "capturedAtMs": 1794284819376,
+  "evidenceId": "615b522ea6faa579e2f80d40aa861a4dae37ea56d2e703fad14169cf45a3248f",
+  "automationSessionStartedAtMs": 1794284491548,
+  "admissionFrontier": {
+    "id": "ocr:25bf43f83018446a898d3b6cd0c127af5e65fcda46a148415f2b70e159c237d9",
+    "sent_at": "2026-11-10T04:25:52.000Z",
+    "body": "is it support a4 size paper?",
+    "direction": "incoming",
+    "visibleTextAnchors": [
+      {
+        "id": "ocr:25bf43f83018446a898d3b6cd0c127af5e65fcda46a148415f2b70e159c237d9",
+        "body": "is it support a4 size paper?",
+        "direction": "incoming",
+        "sent_at": "2026-11-10T04:25:52.000Z"
+      },
+      {
+        "id": "ocr:03187e995f81e9cf56d22767f0f374b04abfbed9d1909564cbd185eb5cae8b5d",
+        "body": "if ribon need to change, then how to do it?",
+        "direction": "incoming",
+        "sent_at": "2026-11-10T04:24:37.000Z"
+      },
+      {
+        "id": "assistant:33de8d9583c3e7534f0036bc589718be3485316a226db9290006ba668b6695f3",
+        "body": "The TD630 standard package includes the printer, 2 complimentary test sheets, a USB cable, a preinstalled ribbon, and a power cable.",
+        "direction": "outgoing",
+        "sent_at": "2026-11-10T04:24:09.762038Z"
+      },
+      {
+        "id": "assistant:5cf6ff29c445f54d93b05957d222cce71943f1b4cd8a4850754abeaca160c767",
+        "body": "What do you need help with on your TD630?",
+        "direction": "outgoing",
+        "sent_at": "2026-11-10T04:23:41.651250Z"
+      },
+      {
+        "id": "ocr:4f6cdde105743debed8410ec34be4e61117735d3c87f05fae9cc76120059ff53",
+        "body": "what is in the package if i buy it?",
+        "direction": "incoming",
+        "sent_at": "2026-11-10T04:23:28.000Z"
+      },
+      {
+        "id": "ocr:18ef02356c03cf845ae4b3ab3eac74013ce2449972221754446b0c9cedbf3eff",
+        "body": "i need help regarding td630",
+        "direction": "incoming",
+        "sent_at": "2026-11-10T04:23:00.000Z"
+      }
+    ]
+  },
+  "captureRequestedBackfill": true,
+  "navigationCutoffSource": "requested_backfill",
+  "replyActivationAllowed": false,
+  "capturePurpose": "history_backfill",
+  "admittedTextInputIds": [
+    "ocr:25bf43f83018446a898d3b6cd0c127af5e65fcda46a148415f2b70e159c237d9"
+  ],
+  "captureCompletedClaimToken": "run-1794284491548145-a01c84ccb22ee80e8b5155d2c3af230d:1794284839324730:36",
+  "captureReplayOcr": false
+}

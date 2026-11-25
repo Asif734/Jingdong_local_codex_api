@@ -1,3 +1,4 @@
+import 'package:jd_automation/runtime/automation_settings.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:jd_automation/capture/unread_capture_recovery.dart';
 
@@ -29,7 +30,10 @@ void main() {
             sentAt: start.subtract(const Duration(seconds: 8)),
             capturedAt: start.add(const Duration(seconds: 3))),
         isFalse);
-    expect(recovery.holdingDue(start.add(const Duration(seconds: 20))), isTrue);
+    expect(
+        recovery.holdingDue(start.add(const Duration(seconds: 20)),
+            holdingDelay: const Duration(seconds: 20)),
+        isTrue);
   });
 
   test('already captured but unanswered current-turn body remains recoverable',
@@ -75,9 +79,12 @@ void main() {
       },
     ];
     expect(recovery.holdingReplySentAt(history), isNull);
-    expect(recovery.holdingDue(start.add(const Duration(seconds: 20))), isTrue);
+    expect(
+        recovery.holdingDue(start.add(const Duration(seconds: 20)),
+            holdingDelay: const Duration(seconds: 20)),
+        isTrue);
     expect(recovery.detectedAt.add(UnreadCaptureRecovery.holdingAfter),
-        DateTime.utc(2026, 10, 7, 6, 25, 30));
+        DateTime.utc(2026, 10, 7, 6, 26, 0));
     // Even a late-added OCR/history entry absent from the baseline is old.
     history.first['id'] = 'late-copy-of-old-holding';
     expect(recovery.holdingReplySentAt(history), isNull);
@@ -111,12 +118,13 @@ void main() {
     expect(recovery.holdingReplySentAt([reply]), isNull);
   });
 
-  test('an unread badge preserves the original 20 and 50 second deadlines', () {
+  test('an unread badge preserves the original anchor for default deadlines',
+      () {
     final observedAt = DateTime.utc(2026, 9, 22, 8, 58, 33);
     final detectedAt = UnreadCaptureRecovery.detectedFromBadge(observedAt, 85);
     expect(detectedAt, DateTime.utc(2026, 9, 22, 8, 57, 8));
     expect(detectedAt.add(UnreadCaptureRecovery.holdingAfter),
-        DateTime.utc(2026, 9, 22, 8, 57, 28));
+        DateTime.utc(2026, 9, 22, 8, 57, 58));
     expect(detectedAt.add(UnreadCaptureRecovery.resendAfter),
         DateTime.utc(2026, 9, 22, 8, 57, 58));
     expect(
@@ -236,7 +244,8 @@ void main() {
         isTrue);
   });
 
-  test('relaxes and holds at twenty seconds, then asks again thirty later', () {
+  test('retries capture early and holds before twenty seconds, then backs off',
+      () {
     final start = DateTime.utc(2026, 9, 22, 8);
     final recovery = UnreadCaptureRecovery(
       customer: 'jd_customer',
@@ -246,22 +255,33 @@ void main() {
       knownOutgoingIds: const {},
     );
 
-    expect(recovery.useRelaxedBodyOcr(start.add(const Duration(seconds: 19))),
+    expect(recovery.useRelaxedBodyOcr(start.add(const Duration(seconds: 5))),
         isFalse);
-    expect(recovery.useRelaxedBodyOcr(start.add(const Duration(seconds: 20))),
+    expect(recovery.useRelaxedBodyOcr(start.add(const Duration(seconds: 6))),
         isTrue);
     expect(
-        recovery.holdingDue(start.add(const Duration(seconds: 19))), isFalse);
-    expect(recovery.holdingDue(start.add(const Duration(seconds: 20))), isTrue);
-    recovery.lastCaptureAttemptAt = start.add(const Duration(seconds: 5));
-    expect(recovery.captureRetryDue(start.add(const Duration(seconds: 7))),
+        recovery.holdingDue(start.add(const Duration(seconds: 9)),
+            holdingDelay: const Duration(seconds: 20)),
         isFalse);
-    expect(recovery.captureRetryDue(start.add(const Duration(seconds: 13))),
+    expect(
+        recovery.holdingDue(start.add(const Duration(seconds: 10)),
+            holdingDelay: const Duration(seconds: 20)),
+        isFalse);
+    expect(
+        recovery.holdingDue(start.add(const Duration(seconds: 20)),
+            holdingDelay: const Duration(seconds: 20)),
+        isTrue);
+    recovery.lastCaptureAttemptAt = start.add(const Duration(seconds: 5));
+    expect(recovery.captureRetryDue(start.add(const Duration(seconds: 6))),
+        isFalse);
+    expect(recovery.captureRetryDue(start.add(const Duration(seconds: 7))),
         isTrue);
     recovery.holdingSent = true;
     recovery.holdingSentAt = start.add(const Duration(seconds: 20));
     expect(
-        recovery.holdingDue(start.add(const Duration(seconds: 20))), isFalse);
+        recovery.holdingDue(start.add(const Duration(seconds: 20)),
+            holdingDelay: const Duration(seconds: 20)),
+        isFalse);
     expect(recovery.resendDue(start.add(const Duration(seconds: 49))), isFalse);
     expect(recovery.resendDue(start.add(const Duration(seconds: 50))), isTrue);
     recovery.resendSent = true;

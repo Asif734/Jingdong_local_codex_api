@@ -1,0 +1,191 @@
+{
+  "source": "v0.1.34+35 stopped session snapshot, read-only extraction",
+  "customer": "jd_41aeec7741d05",
+  "rows": [
+    {
+      "item_id": "f06f645934fa60192cea210ab476578059bf54ba0cc6d0d7eaa74cc6c87f55af",
+      "customer": "jd_41aeec7741d05",
+      "sender_ms": 1793872582000,
+      "slot": 0,
+      "kind": "image",
+      "state": "superseded",
+      "first_seen_ms": 1793872592637,
+      "last_seen_ms": 1793872683592,
+      "evidence_id": "531e1d49f143852c5bb4fcc58f85a244786fc4e610d82b3fe3f62db975d1c5af",
+      "message_id": "media-pending:f06f645934fa60192cea210ab476578059bf54ba0cc6d0d7eaa74cc6c87f55af",
+      "visual_fingerprint": "9900010181ffffff",
+      "identity_ambiguous": 0,
+      "media_json": "[{\"type\":\"image\",\"path\":\"/Users/m1air/Desktop/JD Automation/data/media/jd_41aeec7741d05/a3551e456f41b6d7.jpeg\",\"mime_type\":\"image/jpeg\",\"original_name\":\"c41a9e7998564e4ab02d1ae445354133.jpeg\",\"capture_source\":\"jd_image_cache\",\"is_partial\":false,\"description\":\"Pending Codex visual analysis.\",\"visual_fingerprint\":\"0000007f00ffffff\"}]",
+      "aliases_json": "[\"visible-image:a3551e456f41b6d700be6f326617683825b07c88ba7675a0c5cd032addf70354:1793872582000000:card:32fc8e1f1ffb5e66\",\"media-pending:f06f645934fa60192cea210ab476578059bf54ba0cc6d0d7eaa74cc6c87f55af\"]",
+      "canonical_id": "12a3b32b60bc0562bfe3b033772e4bd7a551aeb0337220022a639185c4100637"
+    },
+    {
+      "item_id": "9df4a44c840075aeea4819ac11999f0b08a90ce84990fd31d03f90a046e5fb4a",
+      "customer": "jd_41aeec7741d05",
+      "sender_ms": 1793872582000,
+      "slot": 0,
+      "kind": "image",
+      "state": "ready",
+      "first_seen_ms": 1793872645701,
+      "last_seen_ms": 1793872645701,
+      "evidence_id": "6778bea24a2dbd8c0e078bbafe1bc155b68b87cb5dadcd63329459f899f40a15",
+      "message_id": "media-pending:9df4a44c840075aeea4819ac11999f0b08a90ce84990fd31d03f90a046e5fb4a",
+      "visual_fingerprint": "18181870f9ff9fbf",
+      "identity_ambiguous": 1,
+      "media_json": "[{\"type\":\"image\",\"path\":\"/Users/m1air/Desktop/JD Automation/data/media/jd_41aeec7741d05/a3551e456f41b6d7.jpeg\",\"mime_type\":\"image/jpeg\",\"original_name\":\"c41a9e7998564e4ab02d1ae445354133.jpeg\",\"capture_source\":\"jd_image_cache\",\"is_partial\":false,\"description\":\"Pending Codex visual analysis.\",\"visual_fingerprint\":\"0000007f00ffffff\"}]",
+      "aliases_json": "[\"visible-image:a3551e456f41b6d700be6f326617683825b07c88ba7675a0c5cd032addf70354:1793872582000000:card:64799c265e1ac6bd\",\"media-pending:9df4a44c840075aeea4819ac11999f0b08a90ce84990fd31d03f90a046e5fb4a\"]",
+      "canonical_id": null
+    },
+    {
+      "item_id": "12a3b32b60bc0562bfe3b033772e4bd7a551aeb0337220022a639185c4100637",
+      "customer": "jd_41aeec7741d05",
+      "sender_ms": 1793872582000,
+      "slot": 0,
+      "kind": "image",
+      "state": "preview",
+      "first_seen_ms": 1793872676812,
+      "last_seen_ms": 1793872676812,
+      "evidence_id": "97f5fd60b920b8260449d4985070d4552de22c2489710cdc0d3712818a26fa4d",
+      "message_id": "media-pending:12a3b32b60bc0562bfe3b033772e4bd7a551aeb0337220022a639185c4100637",
+      "visual_fingerprint": "ff000081819fffff",
+      "identity_ambiguous": 0,
+      "media_json": "[{\"type\":\"image\",\"path\":\"/Users/m1air/Desktop/JD Automation/data/media/jd_41aeec7741d05/adedd4e05783cce7.png\",\"mime_type\":\"image/png\",\"original_name\":\"qianniu_1793872687118.png\",\"capture_source\":\"verified_window_crop\",\"is_partial\":true,\"description\":\"Pending Codex visual analysis.\",\"visual_fingerprint\":\"ff000081819fffff\"}]",
+      "aliases_json": "[\"visible-image:adedd4e05783cce72dceab76716849e905ef4983441fa41e782e01a17f340584:1793872582000000:card:6bcc87a1923929a6\",\"media-pending:12a3b32b60bc0562bfe3b033772e4bd7a551aeb0337220022a639185c4100637\",\"visible-image:a3551e456f41b6d700be6f326617683825b07c88ba7675a0c5cd032addf70354:1793872582000000:card:32fc8e1f1ffb5e66\",\"media-pending:f06f645934fa60192cea210ab476578059bf54ba0cc6d0d7eaa74cc6c87f55af\"]",
+      "canonical_id": null
+    }
+  ],
+  "history": {
+    "schema_version": 1,
+    "user_id": "jd_41aeec7741d05",
+    "display_name": "jd_41aeec7741d05",
+    "stable_key": "customer:74a430c26752a746019f82396b0bc4f1fc3b70f7ec1cff9ee43c45ef1885023f",
+    "created_at": "2026-09-02T09:06:06.393409Z",
+    "updated_at": "2026-11-05T10:21:06.494663Z",
+    "messages": [
+      {
+        "id": "media-pending:9df4a44c840075aeea4819ac11999f0b08a90ce84990fd31d03f90a046e5fb4a",
+        "direction": "incoming",
+        "body": "[Customer sent an image; original copied from JD cache]",
+        "sender": "jd_41aeec7741d05",
+        "sent_at": "2026-11-05T09:56:22.000Z",
+        "captured_at": "2026-11-05T09:56:58.772Z",
+        "source": "jd_automation",
+        "service_evidence_revision": 1,
+        "media_receipt_id": "9df4a44c840075aeea4819ac11999f0b08a90ce84990fd31d03f90a046e5fb4a",
+        "capture_evidence_id": "6778bea24a2dbd8c0e078bbafe1bc155b68b87cb5dadcd63329459f899f40a15",
+        "text_origin": "media",
+        "media": [
+          {
+            "type": "image",
+            "path": "/Users/m1air/Desktop/JD Automation/data/media/jd_41aeec7741d05/a3551e456f41b6d7.jpeg",
+            "mime_type": "image/jpeg",
+            "original_name": "c41a9e7998564e4ab02d1ae445354133.jpeg",
+            "capture_source": "jd_image_cache",
+            "is_partial": false,
+            "description": "Outdoor fields and trees; no product or fault is visible.",
+            "visual_fingerprint": "0000007f00ffffff"
+          }
+        ],
+        "observed_session_id": "run-1793872461202891-f193b2a913bd65c36ddc22809c3ba918",
+        "live_observed_session_ids": [
+          "run-1793872461202891-f193b2a913bd65c36ddc22809c3ba918"
+        ],
+        "observed_ids": [
+          "visible-image:a3551e456f41b6d700be6f326617683825b07c88ba7675a0c5cd032addf70354:1793872582000000:card:64799c265e1ac6bd"
+        ],
+        "media_alternates": [],
+        "media_receipt_aliases": [
+          "9df4a44c840075aeea4819ac11999f0b08a90ce84990fd31d03f90a046e5fb4a"
+        ]
+      },
+      {
+        "id": "media-pending:12a3b32b60bc0562bfe3b033772e4bd7a551aeb0337220022a639185c4100637",
+        "direction": "incoming",
+        "body": "[Customer sent an image; original copied from JD cache]",
+        "sender": "jd_41aeec7741d05",
+        "sent_at": "2026-11-05T09:56:22.000Z",
+        "captured_at": "2026-11-05T09:57:02.961Z",
+        "source": "jd_automation",
+        "service_evidence_revision": 2,
+        "media_receipt_id": "12a3b32b60bc0562bfe3b033772e4bd7a551aeb0337220022a639185c4100637",
+        "capture_evidence_id": "531e1d49f143852c5bb4fcc58f85a244786fc4e610d82b3fe3f62db975d1c5af",
+        "text_origin": "media",
+        "media": [
+          {
+            "type": "image",
+            "path": "/Users/m1air/Desktop/JD Automation/data/media/jd_41aeec7741d05/a3551e456f41b6d7.jpeg",
+            "mime_type": "image/jpeg",
+            "original_name": "c41a9e7998564e4ab02d1ae445354133.jpeg",
+            "capture_source": "jd_image_cache",
+            "is_partial": false,
+            "description": "Outdoor fields and trees; no product or fault is visible.",
+            "visual_fingerprint": "0000007f00ffffff"
+          }
+        ],
+        "observed_session_id": "run-1793872461202891-f193b2a913bd65c36ddc22809c3ba918",
+        "live_observed_session_ids": [
+          "run-1793872461202891-f193b2a913bd65c36ddc22809c3ba918"
+        ],
+        "observed_ids": [
+          "visible-image:adedd4e05783cce72dceab76716849e905ef4983441fa41e782e01a17f340584:1793872582000000:card:6bcc87a1923929a6",
+          "visible-image:a3551e456f41b6d700be6f326617683825b07c88ba7675a0c5cd032addf70354:1793872582000000:card:32fc8e1f1ffb5e66",
+          "media-pending:f06f645934fa60192cea210ab476578059bf54ba0cc6d0d7eaa74cc6c87f55af"
+        ],
+        "media_alternates": [
+          {
+            "type": "image",
+            "path": "/Users/m1air/Desktop/JD Automation/data/media/jd_41aeec7741d05/adedd4e05783cce7.png",
+            "mime_type": "image/png",
+            "original_name": "qianniu_1793872687118.png",
+            "capture_source": "verified_window_crop",
+            "is_partial": true,
+            "description": "Pending Codex visual analysis.",
+            "visual_fingerprint": "ff000081819fffff"
+          }
+        ],
+        "media_receipt_aliases": [
+          "12a3b32b60bc0562bfe3b033772e4bd7a551aeb0337220022a639185c4100637",
+          "f06f645934fa60192cea210ab476578059bf54ba0cc6d0d7eaa74cc6c87f55af"
+        ],
+        "media_observation_alternates": [
+          {
+            "id": "media-pending:f06f645934fa60192cea210ab476578059bf54ba0cc6d0d7eaa74cc6c87f55af",
+            "direction": "incoming",
+            "body": "[Customer sent an image; original copied from JD cache]",
+            "sender": "jd_41aeec7741d05",
+            "sent_at": "2026-11-05T09:56:22.000Z",
+            "captured_at": "2026-11-05T09:56:32.637Z",
+            "source": "jd_automation",
+            "service_evidence_revision": 1,
+            "media_receipt_id": "f06f645934fa60192cea210ab476578059bf54ba0cc6d0d7eaa74cc6c87f55af",
+            "capture_evidence_id": "531e1d49f143852c5bb4fcc58f85a244786fc4e610d82b3fe3f62db975d1c5af",
+            "text_origin": "media",
+            "media": [
+              {
+                "type": "image",
+                "path": "/Users/m1air/Desktop/JD Automation/data/media/jd_41aeec7741d05/a3551e456f41b6d7.jpeg",
+                "mime_type": "image/jpeg",
+                "original_name": "c41a9e7998564e4ab02d1ae445354133.jpeg",
+                "capture_source": "jd_image_cache",
+                "is_partial": false,
+                "description": "Outdoor fields and trees; no product or fault is visible.",
+                "visual_fingerprint": "0000007f00ffffff"
+              }
+            ],
+            "observed_session_id": "run-1793872461202891-f193b2a913bd65c36ddc22809c3ba918",
+            "live_observed_session_ids": [
+              "run-1793872461202891-f193b2a913bd65c36ddc22809c3ba918"
+            ],
+            "observed_ids": [
+              "visible-image:a3551e456f41b6d700be6f326617683825b07c88ba7675a0c5cd032addf70354:1793872582000000:card:32fc8e1f1ffb5e66"
+            ],
+            "media_alternates": [],
+            "media_receipt_aliases": [
+              "f06f645934fa60192cea210ab476578059bf54ba0cc6d0d7eaa74cc6c87f55af"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

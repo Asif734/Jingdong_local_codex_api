@@ -1,0 +1,47 @@
+{
+  "source": "Immutable v45 test-run evidence; PNG/OCR and capture JSON copied byte-for-byte",
+  "customer": "jd_5f2331ef08167",
+  "frames": {
+    "0e40": {
+      "capture.jsonSHA256": "7610c8207284453da42544622c41ef3e0a108a9b48414f7e53f552fb0365b9f9",
+      "ocr.jsonSHA256": "24ed8bfc5e922e4a61126ac6a4453f766bf6b89be81324fdac4606f54441bae1",
+      "pngSHA256": "76812a5bf180417e6798ce2c6d5b19560b2c419317d7f9b0c1ae2daf854bd319",
+      "evidenceId": "0e40a879d5a51df8e87e664cb8dd7c07e24b7e418a918aa1207a185ead477627"
+    },
+    "d09": {
+      "capture.jsonSHA256": "30322df524e7ceb8f7f7951fd29348a6fc7e9f0b3d8ae5c32c33a8cc0e34f702",
+      "ocr.jsonSHA256": "2927980b0b22df4e386d02762c9811e9757fe23fda96d5b0181aa4ceaf104905",
+      "pngSHA256": "e913ae77be40958c5d8e3b19b7630c8b555994fd69ced3910d4dd7a7458495ff",
+      "evidenceId": "d09af6ccd4030e596a7fdb0d2d48f8e81d9f039b71574f379a48d9c1bba7ce2d"
+    },
+    "fdd": {
+      "capture.jsonSHA256": "9826f6cbeef2254089c33ebf698811e1fbbd57d3f2e88d132158fa8b8f5193ad",
+      "ocr.jsonSHA256": "d175dc04a146cbf94a43197ff871d191962c33072929c0347aad2ad1fd6e1037",
+      "pngSHA256": "509e5e5ccc5440742bd2cd8f24396a1acb8670870c6b79bf61a8c625bfc71318",
+      "evidenceId": "fddfd3506ea6d0222c50b7514609156cd4bcccc2423c6a901ced5b7a5a2660ee"
+    },
+    "ae346": {
+      "capture.jsonSHA256": "20a66d0e4541d086a50e8121eeb43f7a854473d31fc0c38b49f8b143dc8002f3",
+      "ocr.jsonSHA256": "e182ded9532cb4a02a2fa81cb42d9869d7f07b82f9444c5823d945b48c749a03",
+      "pngSHA256": "a59e7e2f0402a7b9f8aca2e5f25ba66197e8d0347fed47bb80061395248a3ea9",
+      "evidenceId": "ae34693aded092669a1995c9b2347d59fc557d3b331171bce1904a9c2d6e9536"
+    }
+  },
+  "nativeRefinement": {
+    "file": "0e40.native-refined.json",
+    "sha256": "d7bd5a71666b1c073f83ccaea6acf3a833d2cc9fddc361df77ec7c0ec7b83bbd",
+    "source": "Unmodified existing jdRefinedTextLines on actual0e40 PNG; x=.275 y=.682 width=.025 height=.027; native helper/threshold/budget unchanged",
+    "requestEvidenceId": "0e40a879d5a51df8e87e664cb8dd7c07e24b7e418a918aa1207a185ead477627"
+  },
+  "nativeRepeat": {
+    "file": "0e40.native-repeat.json",
+    "sha256": "d26687afefeb9cf2fa482925d81711bb19a62c84b12f0f4a0bff57b59781d233",
+    "crop": {
+      "x": 0.275,
+      "y": 0.682,
+      "width": 0.025,
+      "height": 0.027
+    },
+    "source": "Existing jdRefinedTextLines on unmodified0e40 PNG, same stabilized hint crop repeated3times; helper thresholds/API/budget unchanged"
+  }
+}

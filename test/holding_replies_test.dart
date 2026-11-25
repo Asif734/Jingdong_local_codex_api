@@ -11,12 +11,12 @@ void main() {
     expect(stripAppendedHoldingReply('你说“请给我们一点时间核对详情。”是什么意思？'),
         '你说“请给我们一点时间核对详情。”是什么意思？');
   });
-  test('holding replies vary but always use Chinese', () {
+  test('holding replies vary within the customer language', () {
     expect(chineseHoldingReplies.toSet(), hasLength(20));
     final random = Random(7);
     for (var index = 0; index < 30; index++) {
       expect(
-          chineseHoldingReplies,
+          englishHoldingReplies,
           contains(chooseHoldingReply('What are the printer features?',
               random: random)));
       expect(chineseHoldingReplies,

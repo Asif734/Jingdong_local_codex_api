@@ -1,3 +1,4 @@
+import 'package:jd_automation/runtime/automation_settings.dart';
 import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
@@ -8,7 +9,10 @@ import 'package:sqflite_common_ffi/sqflite_ffi.dart';
 void main() {
   test('same customer image in a later turn is stored again', () async {
     final root = await Directory.systemTemp.createTemp('repeated_image_test_');
-    final database = CaptureDatabase(storageRoot: root);
+    final database = CaptureDatabase(
+        automationSettings: const AutomationSettings(
+            holdingResponseSeconds: 20, transferRequestCount: 2),
+        storageRoot: root);
     addTearDown(() async {
       await database.close();
       await root.delete(recursive: true);
@@ -64,7 +68,10 @@ void main() {
   test('captured message gives the durable SLA path sole holding ownership',
       () async {
     final root = await Directory.systemTemp.createTemp('sla_owner_test_');
-    final database = CaptureDatabase(storageRoot: root);
+    final database = CaptureDatabase(
+        automationSettings: const AutomationSettings(
+            holdingResponseSeconds: 20, transferRequestCount: 2),
+        storageRoot: root);
     addTearDown(() async {
       await database.close();
       await root.delete(recursive: true);
@@ -91,7 +98,10 @@ void main() {
 
   test('late OCR keeps the original unread fallback deadline', () async {
     final root = await Directory.systemTemp.createTemp('unread_deadline_test_');
-    final database = CaptureDatabase(storageRoot: root);
+    final database = CaptureDatabase(
+        automationSettings: const AutomationSettings(
+            holdingResponseSeconds: 20, transferRequestCount: 2),
+        storageRoot: root);
     addTearDown(() async {
       await database.close();
       await root.delete(recursive: true);
@@ -125,7 +135,10 @@ void main() {
       'uncaptured holding counts as the single SLA fallback after OCR recovers',
       () async {
     final root = await Directory.systemTemp.createTemp('unread_sla_test_');
-    final database = CaptureDatabase(storageRoot: root);
+    final database = CaptureDatabase(
+        automationSettings: const AutomationSettings(
+            holdingResponseSeconds: 20, transferRequestCount: 2),
+        storageRoot: root);
     addTearDown(() async {
       await database.close();
       await root.delete(recursive: true);
@@ -171,7 +184,10 @@ void main() {
   test('human transfer counter expires, resets, and ignores retried messages',
       () async {
     final root = await Directory.systemTemp.createTemp('human_transfer_test_');
-    final database = CaptureDatabase(storageRoot: root);
+    final database = CaptureDatabase(
+        automationSettings: const AutomationSettings(
+            holdingResponseSeconds: 20, transferRequestCount: 2),
+        storageRoot: root);
     addTearDown(() async {
       await database.close();
       await root.delete(recursive: true);
@@ -210,7 +226,10 @@ void main() {
   test('new request pair overwrites and retries an agents-busy review',
       () async {
     final root = await Directory.systemTemp.createTemp('review_retry_test_');
-    final database = CaptureDatabase(storageRoot: root);
+    final database = CaptureDatabase(
+        automationSettings: const AutomationSettings(
+            holdingResponseSeconds: 20, transferRequestCount: 2),
+        storageRoot: root);
     addTearDown(() async {
       await database.close();
       await root.delete(recursive: true);
@@ -303,7 +322,10 @@ void main() {
 
   test('transfer welcome reservation rejects the same exact event', () async {
     final root = await Directory.systemTemp.createTemp('welcome_guard_test_');
-    final database = CaptureDatabase(storageRoot: root);
+    final database = CaptureDatabase(
+        automationSettings: const AutomationSettings(
+            holdingResponseSeconds: 20, transferRequestCount: 2),
+        storageRoot: root);
     addTearDown(() async {
       await database.close();
       await root.delete(recursive: true);
@@ -342,7 +364,10 @@ void main() {
 
   test('SLA fallback stays separate and final reply remains queued', () async {
     final root = await Directory.systemTemp.createTemp('sla_fallback_test_');
-    final database = CaptureDatabase(storageRoot: root);
+    final database = CaptureDatabase(
+        automationSettings: const AutomationSettings(
+            holdingResponseSeconds: 20, transferRequestCount: 2),
+        storageRoot: root);
     addTearDown(() async {
       await database.close();
       await root.delete(recursive: true);
@@ -357,7 +382,7 @@ void main() {
       customerName: userId,
       customerExternalId: userId,
       capturedAt: capturedAt,
-      messages: const [
+      messages: [
         CapturedMessage(
           stableId: messageId,
           direction: 'incoming',
@@ -398,8 +423,10 @@ void main() {
       stableKey: 'customer:$userId',
       customerName: userId,
       customerExternalId: userId,
-      capturedAt: capturedAt.add(const Duration(minutes: 2, seconds: 2)),
-      messages: const [
+      capturedAt:
+          DateTime.parse((fallbackMessages.last as Map)['sent_at'] as String)
+              .add(const Duration(seconds: 2)),
+      messages: [
         CapturedMessage(
           stableId: messageId,
           direction: 'incoming',
@@ -408,6 +435,8 @@ void main() {
         ),
         CapturedMessage(
           stableId: 'ocr-fallback',
+          sentAt: DateTime.parse(
+              (fallbackMessages.last as Map)['sent_at'] as String),
           direction: 'outgoing',
           body: fallback,
           axPath: 'test',
@@ -449,7 +478,10 @@ void main() {
   test('a real reply cancels a holding message that was already reserved',
       () async {
     final root = await Directory.systemTemp.createTemp('sla_race_test_');
-    final database = CaptureDatabase(storageRoot: root);
+    final database = CaptureDatabase(
+        automationSettings: const AutomationSettings(
+            holdingResponseSeconds: 20, transferRequestCount: 2),
+        storageRoot: root);
     addTearDown(() async {
       await database.close();
       await root.delete(recursive: true);
@@ -519,7 +551,10 @@ void main() {
   test('a stale fallback callback cannot reserve a window reset by a reply',
       () async {
     final root = await Directory.systemTemp.createTemp('sla_stale_timer_test_');
-    final database = CaptureDatabase(storageRoot: root);
+    final database = CaptureDatabase(
+        automationSettings: const AutomationSettings(
+            holdingResponseSeconds: 20, transferRequestCount: 2),
+        storageRoot: root);
     addTearDown(() async {
       await database.close();
       await root.delete(recursive: true);
@@ -586,7 +621,10 @@ void main() {
 
   test('delivery failures retain drafts for retry or reconciliation', () async {
     final root = await Directory.systemTemp.createTemp('delivery_retry_test_');
-    final database = CaptureDatabase(storageRoot: root);
+    final database = CaptureDatabase(
+        automationSettings: const AutomationSettings(
+            holdingResponseSeconds: 20, transferRequestCount: 2),
+        storageRoot: root);
     addTearDown(() async {
       await database.close();
       await root.delete(recursive: true);
@@ -651,7 +689,7 @@ void main() {
     final rows = await (await database.database)
         .query('generated_drafts', where: 'user_id = ?', whereArgs: [userId]);
     expect(rows, hasLength(1));
-    expect(rows.single['delivery_state'], 'retry');
+    expect(rows.single['delivery_state'], 'delivery_unknown');
     expect(
         await database.confirmObservedGeneratedDraft(
             userId: userId,
@@ -670,7 +708,10 @@ void main() {
 
   test('explicit transfer drafts never enter the delivery queue', () async {
     final root = await Directory.systemTemp.createTemp('transfer_draft_test_');
-    final database = CaptureDatabase(storageRoot: root);
+    final database = CaptureDatabase(
+        automationSettings: const AutomationSettings(
+            holdingResponseSeconds: 20, transferRequestCount: 2),
+        storageRoot: root);
     addTearDown(() async {
       await database.close();
       await root.delete(recursive: true);
@@ -727,6 +768,15 @@ void main() {
     expect(rows.single['delivery_state'], 'transfer_only');
 
     await database.discardTransferOnlyDraft(userId);
+    expect(await database.hasUndeliveredDraft(userId), isTrue);
+    expect(await database.answeredMessageId(userId), isNull);
+    final ticket = await database.createHumanReviewTicket(
+        userId: userId,
+        customerRequest: 'Transfer me',
+        reason: 'Customer requested transfer',
+        requestMessageId: 'transfer-message');
+    await database.markTicketContacted(ticket.id, assignedTo: 'verified-agent');
+    await database.discardTransferOnlyDraft(userId);
 
     expect(await database.hasUndeliveredDraft(userId), isFalse);
     expect(await database.answeredMessageId(userId), 'transfer-message');
@@ -735,7 +785,10 @@ void main() {
 
   test('fallback reservation uses the JD China-time message clock', () async {
     final root = await Directory.systemTemp.createTemp('sla_clock_test_');
-    final database = CaptureDatabase(storageRoot: root);
+    final database = CaptureDatabase(
+        automationSettings: const AutomationSettings(
+            holdingResponseSeconds: 20, transferRequestCount: 2),
+        storageRoot: root);
     addTearDown(() async {
       await database.close();
       await root.delete(recursive: true);
@@ -767,7 +820,10 @@ void main() {
 
   test('later customer messages do not restart the fallback clock', () async {
     final root = await Directory.systemTemp.createTemp('sla_batch_clock_test_');
-    final database = CaptureDatabase(storageRoot: root);
+    final database = CaptureDatabase(
+        automationSettings: const AutomationSettings(
+            holdingResponseSeconds: 20, transferRequestCount: 2),
+        storageRoot: root);
     addTearDown(() async {
       await database.close();
       await root.delete(recursive: true);
@@ -862,7 +918,10 @@ void main() {
     });
     await legacy.close();
 
-    final database = CaptureDatabase(storageRoot: root);
+    final database = CaptureDatabase(
+        automationSettings: const AutomationSettings(
+            holdingResponseSeconds: 20, transferRequestCount: 2),
+        storageRoot: root);
     addTearDown(() async {
       await database.close();
       await root.delete(recursive: true);
@@ -925,7 +984,10 @@ void main() {
     });
     await legacy.close();
 
-    final database = CaptureDatabase(storageRoot: root);
+    final database = CaptureDatabase(
+        automationSettings: const AutomationSettings(
+            holdingResponseSeconds: 20, transferRequestCount: 2),
+        storageRoot: root);
     addTearDown(() async {
       await database.close();
       await root.delete(recursive: true);
@@ -938,7 +1000,10 @@ void main() {
   test('demo data uses JSON history and SQLite only as pending queue',
       () async {
     final root = await Directory.systemTemp.createTemp('jd_automation_test_');
-    final database = CaptureDatabase(storageRoot: root);
+    final database = CaptureDatabase(
+        automationSettings: const AutomationSettings(
+            holdingResponseSeconds: 20, transferRequestCount: 2),
+        storageRoot: root);
     addTearDown(() async {
       await database.close();
       await root.delete(recursive: true);
@@ -1017,7 +1082,10 @@ void main() {
   test('ready replies can be delivered while another customer generates',
       () async {
     final root = await Directory.systemTemp.createTemp('fifo_delivery_test_');
-    final database = CaptureDatabase(storageRoot: root);
+    final database = CaptureDatabase(
+        automationSettings: const AutomationSettings(
+            holdingResponseSeconds: 20, transferRequestCount: 2),
+        storageRoot: root);
     addTearDown(() async {
       await database.close();
       await root.delete(recursive: true);
@@ -1074,7 +1142,10 @@ void main() {
 
   test('a pending generation does not block a ready reply', () async {
     final root = await Directory.systemTemp.createTemp('fifo_failure_test_');
-    final database = CaptureDatabase(storageRoot: root);
+    final database = CaptureDatabase(
+        automationSettings: const AutomationSettings(
+            holdingResponseSeconds: 20, transferRequestCount: 2),
+        storageRoot: root);
     addTearDown(() async {
       await database.close();
       await root.delete(recursive: true);
@@ -1120,7 +1191,10 @@ void main() {
   test('pending message identity changes when a later burst line arrives',
       () async {
     final root = await Directory.systemTemp.createTemp('burst_guard_test_');
-    final database = CaptureDatabase(storageRoot: root);
+    final database = CaptureDatabase(
+        automationSettings: const AutomationSettings(
+            holdingResponseSeconds: 20, transferRequestCount: 2),
+        storageRoot: root);
     addTearDown(() async {
       await database.close();
       await root.delete(recursive: true);
@@ -1151,7 +1225,10 @@ void main() {
   test('frozen image batch can be sent while later text stays pending',
       () async {
     final root = await Directory.systemTemp.createTemp('image_text_batch_');
-    final database = CaptureDatabase(storageRoot: root);
+    final database = CaptureDatabase(
+        automationSettings: const AutomationSettings(
+            holdingResponseSeconds: 20, transferRequestCount: 2),
+        storageRoot: root);
     addTearDown(() async {
       await database.close();
       await root.delete(recursive: true);
@@ -1247,7 +1324,10 @@ void main() {
   test('automatic transfer preserves the existing human-contacting boundary',
       () async {
     final root = await Directory.systemTemp.createTemp('ticket_state_test_');
-    final database = CaptureDatabase(storageRoot: root);
+    final database = CaptureDatabase(
+        automationSettings: const AutomationSettings(
+            holdingResponseSeconds: 20, transferRequestCount: 2),
+        storageRoot: root);
     addTearDown(() async {
       await database.close();
       await root.delete(recursive: true);
@@ -1376,7 +1456,10 @@ void main() {
   test('records one automatic transfer per ticket and rotates active accounts',
       () async {
     final root = await Directory.systemTemp.createTemp('transfer_log_test_');
-    final database = CaptureDatabase(storageRoot: root);
+    final database = CaptureDatabase(
+        automationSettings: const AutomationSettings(
+            holdingResponseSeconds: 20, transferRequestCount: 2),
+        storageRoot: root);
     addTearDown(() async {
       await database.close();
       await root.delete(recursive: true);
@@ -1458,7 +1541,10 @@ void main() {
       () async {
     final root =
         await Directory.systemTemp.createTemp('transfer_capture_test_');
-    final database = CaptureDatabase(storageRoot: root);
+    final database = CaptureDatabase(
+        automationSettings: const AutomationSettings(
+            holdingResponseSeconds: 20, transferRequestCount: 2),
+        storageRoot: root);
     addTearDown(() async {
       await database.close();
       await root.delete(recursive: true);
@@ -1522,7 +1608,10 @@ void main() {
   test('human-contacting pause remains until the operator resolves it',
       () async {
     final root = await Directory.systemTemp.createTemp('legacy_pause_test_');
-    final database = CaptureDatabase(storageRoot: root);
+    final database = CaptureDatabase(
+        automationSettings: const AutomationSettings(
+            holdingResponseSeconds: 20, transferRequestCount: 2),
+        storageRoot: root);
     addTearDown(() async {
       await database.close();
       await root.delete(recursive: true);
@@ -1561,7 +1650,10 @@ void main() {
   test('unconfirmed transfer also preserves future automatic replies',
       () async {
     final root = await Directory.systemTemp.createTemp('uncertain_transfer_');
-    final database = CaptureDatabase(storageRoot: root);
+    final database = CaptureDatabase(
+        automationSettings: const AutomationSettings(
+            holdingResponseSeconds: 20, transferRequestCount: 2),
+        storageRoot: root);
     addTearDown(() async {
       await database.close();
       await root.delete(recursive: true);
@@ -1600,7 +1692,10 @@ void main() {
   test('deduplicates a recently re-ordered OCR reading of one message',
       () async {
     final root = await Directory.systemTemp.createTemp('ocr_reorder_test_');
-    final database = CaptureDatabase(storageRoot: root);
+    final database = CaptureDatabase(
+        automationSettings: const AutomationSettings(
+            holdingResponseSeconds: 20, transferRequestCount: 2),
+        storageRoot: root);
     addTearDown(() async {
       await database.close();
       await root.delete(recursive: true);
@@ -1665,7 +1760,10 @@ void main() {
   test('deduplicates an OCR spelling correction at the same bubble time',
       () async {
     final root = await Directory.systemTemp.createTemp('ocr_typo_fix_test_');
-    final database = CaptureDatabase(storageRoot: root);
+    final database = CaptureDatabase(
+        automationSettings: const AutomationSettings(
+            holdingResponseSeconds: 20, transferRequestCount: 2),
+        storageRoot: root);
     addTearDown(() async {
       await database.close();
       await root.delete(recursive: true);
@@ -1726,7 +1824,10 @@ void main() {
 
   test('upgrades a clipped incoming bubble without replying twice', () async {
     final root = await Directory.systemTemp.createTemp('ocr_upgrade_test_');
-    final database = CaptureDatabase(storageRoot: root);
+    final database = CaptureDatabase(
+        automationSettings: const AutomationSettings(
+            holdingResponseSeconds: 20, transferRequestCount: 2),
+        storageRoot: root);
     addTearDown(() async {
       await database.close();
       await root.delete(recursive: true);
@@ -1788,9 +1889,14 @@ void main() {
         'what is the model no of your face attendance machine?');
   });
 
-  test('suppresses a middle fragment of an already sent reply', () async {
+  test(
+      'retains an ambiguous old reply fragment without treating it as a new manual answer',
+      () async {
     final root = await Directory.systemTemp.createTemp('ocr_reply_fragment_');
-    final database = CaptureDatabase(storageRoot: root);
+    final database = CaptureDatabase(
+        automationSettings: const AutomationSettings(
+            holdingResponseSeconds: 20, transferRequestCount: 2),
+        storageRoot: root);
     addTearDown(() async {
       await database.close();
       await root.delete(recursive: true);
@@ -1845,15 +1951,20 @@ void main() {
       ],
     ));
 
-    expect(changed, 0);
+    expect(changed, 1);
     final document = await (await database.history).read('buyer');
-    expect(document!['messages'], hasLength(2));
+    expect(document!['messages'], hasLength(3));
+    expect(((document['messages'] as List).last as Map)['delivery_status'],
+        'ownership_unverified');
   });
 
   test('requeues an unanswered saved message but not an answered one',
       () async {
     final root = await Directory.systemTemp.createTemp('draft_recovery_test_');
-    final database = CaptureDatabase(storageRoot: root);
+    final database = CaptureDatabase(
+        automationSettings: const AutomationSettings(
+            holdingResponseSeconds: 20, transferRequestCount: 2),
+        storageRoot: root);
     addTearDown(() async {
       await database.close();
       await root.delete(recursive: true);
@@ -1898,7 +2009,10 @@ void main() {
 
   test('repairs a missing pending turn with an orphaned OCR cursor', () async {
     final root = await Directory.systemTemp.createTemp('orphan_cursor_test_');
-    final database = CaptureDatabase(storageRoot: root);
+    final database = CaptureDatabase(
+        automationSettings: const AutomationSettings(
+            holdingResponseSeconds: 20, transferRequestCount: 2),
+        storageRoot: root);
     addTearDown(() async {
       await database.close();
       await root.delete(recursive: true);
@@ -1956,7 +2070,10 @@ void main() {
   test('a real reply starts a fresh fallback window after an old holding',
       () async {
     final root = await Directory.systemTemp.createTemp('new_sla_window_test_');
-    final database = CaptureDatabase(storageRoot: root);
+    final database = CaptureDatabase(
+        automationSettings: const AutomationSettings(
+            holdingResponseSeconds: 20, transferRequestCount: 2),
+        storageRoot: root);
     addTearDown(() async {
       await database.close();
       await root.delete(recursive: true);
@@ -2014,10 +2131,14 @@ void main() {
     expect(await database.hasPendingUnanswered('buyer'), isTrue);
   });
 
-  test('seller reply clears pending customer and cannot trigger another draft',
+  test(
+      'explicitly confirmed seller reply clears selected input and cannot trigger another draft',
       () async {
     final root = await Directory.systemTemp.createTemp('seller_reply_test_');
-    final database = CaptureDatabase(storageRoot: root);
+    final database = CaptureDatabase(
+        automationSettings: const AutomationSettings(
+            holdingResponseSeconds: 20, transferRequestCount: 2),
+        storageRoot: root);
     addTearDown(() async {
       await database.close();
       await root.delete(recursive: true);
@@ -2036,6 +2157,8 @@ void main() {
         ),
       ],
     );
+    await database.beginAutomationSession(
+        startedAt: DateTime.fromMillisecondsSinceEpoch(0));
     await database.saveCapture(incoming);
     expect(await database.conversations(), hasLength(1));
 
@@ -2055,11 +2178,20 @@ void main() {
           stableId: 'outgoing-1',
           direction: 'outgoing',
           body: 'I will send the purchase link.',
+          deliveryConfirmed: true,
           axPath: 'test',
         ),
       ],
     ));
 
+    expect(await database.hasPendingUnanswered('answered-user'), isTrue,
+        reason: 'An outgoing OCR candidate cannot complete this input');
+    expect(
+        await database.confirmManualReplyCoverage('answered-user',
+            messageIds: ['incoming-1'],
+            sentAt: DateTime.fromMillisecondsSinceEpoch(2),
+            reply: 'I will send the purchase link.'),
+        isTrue);
     expect(await database.conversations(), isEmpty);
     expect(await database.ensurePendingForUnanswered('answered-user'), isFalse);
 
@@ -2080,7 +2212,10 @@ void main() {
 
   test('same JD timestamp suppresses partial OCR re-reads', () async {
     final root = await Directory.systemTemp.createTemp('bubble_time_test_');
-    final database = CaptureDatabase(storageRoot: root);
+    final database = CaptureDatabase(
+        automationSettings: const AutomationSettings(
+            holdingResponseSeconds: 20, transferRequestCount: 2),
+        storageRoot: root);
     addTearDown(() async {
       await database.close();
       await root.delete(recursive: true);
@@ -2119,7 +2254,10 @@ void main() {
   test('same customer text at a new timestamp is a new pending message',
       () async {
     final root = await Directory.systemTemp.createTemp('repeat_text_test_');
-    final database = CaptureDatabase(storageRoot: root);
+    final database = CaptureDatabase(
+        automationSettings: const AutomationSettings(
+            holdingResponseSeconds: 20, transferRequestCount: 2),
+        storageRoot: root);
     addTearDown(() async {
       await database.close();
       await root.delete(recursive: true);
@@ -2155,7 +2293,10 @@ void main() {
       'known generated reply below a late-captured question does not answer it',
       () async {
     final root = await Directory.systemTemp.createTemp('crossed_reply_test_');
-    final database = CaptureDatabase(storageRoot: root);
+    final database = CaptureDatabase(
+        automationSettings: const AutomationSettings(
+            holdingResponseSeconds: 20, transferRequestCount: 2),
+        storageRoot: root);
     addTearDown(() async {
       await database.close();
       await root.delete(recursive: true);
@@ -2225,7 +2366,10 @@ void main() {
   test('older seller OCR above a newer customer message keeps AI pending',
       () async {
     final root = await Directory.systemTemp.createTemp('ordered_scan_test_');
-    final database = CaptureDatabase(storageRoot: root);
+    final database = CaptureDatabase(
+        automationSettings: const AutomationSettings(
+            holdingResponseSeconds: 20, transferRequestCount: 2),
+        storageRoot: root);
     addTearDown(() async {
       await database.close();
       await root.delete(recursive: true);
@@ -2261,7 +2405,10 @@ void main() {
   test('older seller OCR appended after a newer customer stays pending',
       () async {
     final root = await Directory.systemTemp.createTemp('late_old_reply_test_');
-    final database = CaptureDatabase(storageRoot: root);
+    final database = CaptureDatabase(
+        automationSettings: const AutomationSettings(
+            holdingResponseSeconds: 20, transferRequestCount: 2),
+        storageRoot: root);
     addTearDown(() async {
       await database.close();
       await root.delete(recursive: true);
@@ -2296,11 +2443,15 @@ void main() {
     expect(await database.answeredMessageId('buyer'), isNull);
   });
 
-  test('exact production sequence keeps one incoming and one outgoing',
+  test(
+      'production sequence retains a partial outgoing observation without duplicating an answer',
       () async {
     final root =
         await Directory.systemTemp.createTemp('exact_jd_sequence_test_');
-    final database = CaptureDatabase(storageRoot: root);
+    final database = CaptureDatabase(
+        automationSettings: const AutomationSettings(
+            holdingResponseSeconds: 20, transferRequestCount: 2),
+        storageRoot: root);
     addTearDown(() async {
       await database.close();
       await root.delete(recursive: true);
@@ -2375,9 +2526,11 @@ void main() {
 
     final document = await history.read('jd_41aeec7741d05');
     final messages = document!['messages'] as List<Object?>;
-    expect(messages, hasLength(2));
+    expect(messages, hasLength(3));
     expect((messages.first as Map<String, dynamic>)['body'],
         'not finding the machine');
-    expect((messages.last as Map<String, dynamic>)['body'], reply);
+    expect((messages[1] as Map<String, dynamic>)['body'], reply);
+    expect((messages.last as Map<String, dynamic>)['delivery_status'],
+        'ownership_unverified');
   });
 }

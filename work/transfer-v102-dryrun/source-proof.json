@@ -1,0 +1,11 @@
+{
+  "version": "v102",
+  "sourceSha256": "e09cec6d469c8aef7b5d6bca7d2098b1e57dd1c1b59e0fcde3185d05afca3c06",
+  "changes": [
+    "remove Flutter channel bridge only",
+    "add snapshot and condition diagnostics",
+    "replace final transfer button dispatch with false",
+    "unconditional return before click-intent publication"
+  ],
+  "neverSendMessage": true
+}

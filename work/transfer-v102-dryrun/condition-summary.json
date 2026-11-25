@@ -1,0 +1,73 @@
+{
+  "program": "v102 original recognition/candidate/predicate functions",
+  "imageSource": "CUA app screenshot; contains visible mouse pointer/halo, unlike native CGWindowList screenshot capture",
+  "nativeProbePermission": {
+    "AX": false,
+    "screen": false
+  },
+  "physicalTransferClicked": false,
+  "originalNamePoint": [
+    320,
+    527
+  ],
+  "blankSameRowPoint": [
+    490,
+    527
+  ],
+  "nameBefore": [
+    {
+      "confidence": 0.5,
+      "frame": [
+        201.99999990086957,
+        513.9999999886957,
+        236,
+        26.000000000000075
+      ],
+      "source": "ocr",
+      "text": "格志打印机文文（雯雯）"
+    }
+  ],
+  "nameAfterOriginalPoint": [
+    {
+      "confidence": 0.30000001192092896,
+      "frame": [
+        201.99999990086957,
+        513.9999999869565,
+        236,
+        29.99999999999994
+      ],
+      "source": "ocr",
+      "text": "格志打印机之文（雯雯）"
+    }
+  ],
+  "nameAfterBlankPoint": [
+    {
+      "confidence": 0.5,
+      "frame": [
+        201.99999990086957,
+        513.9999999886957,
+        236,
+        26.000000000000075
+      ],
+      "source": "ocr",
+      "text": "格志打印机文文（雯雯）"
+    }
+  ],
+  "nameConfidenceThreshold": 0.35,
+  "originalPointTargetCandidatePresent": false,
+  "blankPointTargetCandidatePresent": true,
+  "buttonAfterBlankPoint": [
+    {
+      "compact": "转接",
+      "exactText": true,
+      "rowPass": true,
+      "text": "转接",
+      "x": 708.9999999,
+      "xFraction": 0.7324380164256199,
+      "xLowerPass": true,
+      "xUpperPass": true,
+      "y": 526.9999999380952
+    }
+  ],
+  "historicalFourFailuresProvenSameCause": false
+}

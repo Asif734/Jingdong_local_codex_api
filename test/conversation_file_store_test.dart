@@ -4,6 +4,7 @@ import 'dart:io';
 import 'package:crypto/crypto.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:jd_automation/domain/capture_models.dart';
+import 'package:jd_automation/domain/customer_message_time.dart';
 import 'package:jd_automation/storage/conversation_file_store.dart';
 
 void main() {
@@ -46,7 +47,11 @@ void main() {
         .cast<Map<String, Object?>>()
         .map((message) => message['body'])
         .toList();
-    expect(result.insertedIncomingIds, ['first', 'second']);
+    expect(result.insertedIncomingIds, [
+      CustomerMessageTime.incomingId('customer-1', start),
+      CustomerMessageTime.incomingId(
+          'customer-1', start.add(const Duration(seconds: 2))),
+    ]);
     expect(bodies, ['m880打不开了', '怎么回事']);
   });
 
@@ -67,7 +72,10 @@ void main() {
     final messages =
         (document!['messages'] as List).cast<Map<String, Object?>>();
     expect(messages, hasLength(1));
-    expect(messages.single['id'], 'partial');
+    expect(messages.single['id'],
+        CustomerMessageTime.incomingId('customer-2', start));
+    expect(
+        messages.single['observed_ids'], containsAll(['partial', 'complete']));
     expect(messages.single['body'], 'how to connect tp732 with macos');
   });
 

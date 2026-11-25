@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:jd_automation/domain/capture_models.dart';
+import 'package:jd_automation/domain/customer_message_time.dart';
 import 'package:jd_automation/storage/capture_database.dart';
 
 const _reply = 'Please download the official app from https://example.com/app';
@@ -81,7 +82,10 @@ void main() {
     await database.saveCapture(capture([observed]));
     expect(await database.hasUndeliveredDraft('customer'), isFalse);
     expect(await database.answeredMessageId('customer'), 'first');
-    expect(await database.pendingMessageId('customer'), 'later');
+    expect(
+        await database.pendingMessageId('customer'),
+        CustomerMessageTime.incomingId(
+            'customer', firstAt.add(const Duration(minutes: 1))));
     expect(await database.hasPendingUnanswered('customer'), isTrue);
     final history = await (await database.history).read('customer');
     final replies = (history!['messages'] as List)
@@ -116,7 +120,10 @@ void main() {
         (history!['messages'] as List)
             .where((m) => m['direction'] == 'outgoing'),
         hasLength(1));
-    expect(await database.pendingMessageId('customer'), 'later');
+    expect(
+        await database.pendingMessageId('customer'),
+        CustomerMessageTime.incomingId(
+            'customer', firstAt.add(const Duration(minutes: 1))));
   });
 
   test('historical matching reply cannot confirm new uncertain send', () async {
@@ -134,6 +141,9 @@ void main() {
   test('stale reconciliation cannot consume a replacement ready draft',
       () async {
     final pending = (await database.conversations()).single;
+    await (await database.database).delete('generated_drafts',
+        where: 'user_id=?', whereArgs: ['customer']);
+    await Future<void>.delayed(const Duration(milliseconds: 2));
     await database.saveDraft(pending.id, _draft, expectedMessageId: 'later');
     expect(
         await database.markReplySent(
@@ -169,11 +179,12 @@ void main() {
     expect(await database.hasUndeliveredDraft('customer'), isTrue);
   });
 
-  test('manual 1 remains a real seller reply and releases stale AI work',
+  test(
+      'OCR manual 1 remains an unverified candidate and cannot release AI work',
       () async {
     await database.saveCapture(capture([outgoing(body: '1', id: 'manual-1')]));
-    expect(await database.hasUndeliveredDraft('customer'), isFalse);
-    expect(await database.hasPendingUnanswered('customer'), isFalse);
-    expect(await database.answeredMessageId('customer'), 'later');
+    expect(await database.hasUndeliveredDraft('customer'), isTrue);
+    expect(await database.hasPendingUnanswered('customer'), isTrue);
+    expect(await database.answeredMessageId('customer'), isNull);
   });
 }

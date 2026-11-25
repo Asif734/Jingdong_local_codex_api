@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:path/path.dart' as p;
 import '../runtime/app_runtime.dart';
+import '../runtime/managed_media_processes.dart';
 
 class ExtractedVideoAudio {
   const ExtractedVideoAudio({
@@ -67,12 +68,14 @@ class VideoAudioExtractor {
       ];
 
   Future<ExtractedVideoAudio> extract(String videoPath) async {
+    final run = ManagedMediaProcesses.shared.captureRun();
+    run.throwIfCancelled();
     final video = File(videoPath);
     if (!await video.exists()) {
       throw VideoAudioExtractionException('Video is missing: $videoPath');
     }
     final ffprobe = ffprobeExecutable ?? await _findExecutable('ffprobe');
-    final probe = await Process.run(ffprobe, probeArguments(videoPath));
+    final probe = await run.execute(ffprobe, probeArguments(videoPath));
     if (probe.exitCode != 0) {
       throw VideoAudioExtractionException(
           'FFprobe could not inspect the video audio: ${probe.stderr}');
@@ -88,22 +91,31 @@ class VideoAudioExtractor {
     final audioPath = p.join(video.parent.path,
         '${p.basenameWithoutExtension(videoPath)}_audio.wav');
     final extraction =
-        await Process.run(ffmpeg, extractionArguments(videoPath, audioPath));
+        await run.execute(ffmpeg, extractionArguments(videoPath, audioPath));
     if (extraction.exitCode != 0 || !await File(audioPath).exists()) {
       throw VideoAudioExtractionException(
           'FFmpeg could not extract the video audio: ${extraction.stderr}');
     }
-    final volume = await Process.run(ffmpeg, volumeArguments(audioPath));
+    final volume = await run.execute(ffmpeg, volumeArguments(audioPath));
     final diagnostic = '${volume.stdout}\n${volume.stderr}';
     final match = RegExp(r'mean_volume:\s*(-?(?:\d+(?:\.\d+)?|inf))\s*dB')
         .firstMatch(diagnostic);
     final rawVolume = match?.group(1);
-    final meanVolume = rawVolume == null || rawVolume == '-inf'
+    if (volume.exitCode != 0 || rawVolume == null) {
+      throw VideoAudioExtractionException(
+          'FFmpeg could not establish whether the audio contains audible content.');
+    }
+    final meanVolume = rawVolume == '-inf'
         ? double.negativeInfinity
         : double.tryParse(rawVolume);
+    if (meanVolume == null) {
+      throw const VideoAudioExtractionException(
+          'The audio volume result was invalid.');
+    }
+    run.throwIfCancelled();
     return ExtractedVideoAudio(
       hasAudioStream: true,
-      hasAudibleContent: meanVolume != null && meanVolume >= audibleThresholdDb,
+      hasAudibleContent: meanVolume >= audibleThresholdDb,
       audioPath: audioPath,
       meanVolumeDb: meanVolume,
     );

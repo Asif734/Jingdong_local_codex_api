@@ -7,8 +7,6 @@ import 'package:jd_automation/storage/capture_database.dart';
 
 const _answer =
     '''{"reply":"Restart the printer and reconnect the USB cable.","decision":"draft","confidence":0.9,"used_record_ids":[],"required_slots":[],"actions":[],"risk_level":"low","risk_triggers":[],"auto_send_allowed":false,"attachments":[],"image_descriptions":[],"human_review_required":false,"reason":null}''';
-const _unresolved =
-    '''{"reply":"I cannot resolve this technical printer issue.","decision":"human_review_required","confidence":0.4,"used_record_ids":[],"required_slots":[],"actions":[],"risk_level":"high","risk_triggers":["unresolved printer issue"],"auto_send_allowed":false,"attachments":[],"image_descriptions":[],"human_review_required":true,"reason":"No solution found"}''';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
@@ -21,6 +19,8 @@ void main() {
     database = CaptureDatabase(storageRoot: Directory('${root.path}/data'));
     await Directory('${root.path}/workspace').create();
     await Directory('${root.path}/knowledge').create();
+    await File('${root.path}/knowledge/test_support_kb.md').writeAsString(
+        'Test support evidence for the controlled CLI watchdog test.');
     cli = File('${root.path}/codex.sh');
     await database.saveCapture(CapturedConversation(
       stableKey: 'customer:watchdog',
@@ -104,24 +104,26 @@ exit 1
     expect(await database.hasUndeliveredDraft('watchdog'), isFalse);
   });
 
-  test('the second investigation shares the original deadline', () async {
+  test('an explicitly requested investigation is bounded by its own watchdog',
+      () async {
     final attempts = File('${root.path}/attempts');
     await writeCli('''
 printf 'attempt\\n' >> "${attempts.path}"
-sleep 3
-printf '%s\\n' '$_unresolved' > "\$output"
+exec sleep 30
+
 ''');
     await expectLater(
-      service(const Duration(seconds: 5)).generate(
+      service(const Duration(seconds: 2)).generate(
         conversation: (await database.conversations()).single,
         database: database,
+        secondInvestigation: true,
       ),
       throwsA(isA<CodexGenerationTimedOut>()),
     );
-    expect(await attempts.readAsLines(), ['attempt', 'attempt']);
+    expect(await attempts.readAsLines(), ['attempt']);
     // Let the shell's short-lived sleep child close inherited pipes. The
     // cancelled generation must never persist or deliver a late draft.
-    await Future<void>.delayed(const Duration(milliseconds: 2500));
+    await Future<void>.delayed(const Duration(milliseconds: 100));
     expect(await database.hasPendingUnanswered('watchdog'), isTrue);
     expect(await database.hasUndeliveredDraft('watchdog'), isFalse);
   });

@@ -1,0 +1,22 @@
+{
+  "description": "Sanitized customer-owned JD video-card crops. No customer text, names or other interface content is included.",
+  "sourceRun": "0.1.31+32",
+  "crops": {
+    "gray-video-1.png": [
+      793,
+      647,
+      300,
+      376
+    ],
+    "gray-video-2.png": [
+      781,
+      634,
+      325,
+      404
+    ]
+  },
+  "sha256": {
+    "gray-video-1.png": "a4f2fe64e4047b3620c10b0ca825b5429e492710b72987f7174d281bca675ec4",
+    "gray-video-2.png": "dab41659486b2b7ff98f77b43db4da5c4f41ad6e1c2ee6b5107a5b6727931344"
+  }
+}

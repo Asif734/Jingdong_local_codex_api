@@ -1,5 +1,8 @@
 import 'dart:math';
 
+import 'customer_language.dart';
+import 'fixed_replies.dart';
+
 const chineseHoldingReplies = <String>[
   '请稍等片刻，我们正在核对您的问题。',
   '感谢您的耐心等待，我们正在为您查询。',
@@ -23,22 +26,77 @@ const chineseHoldingReplies = <String>[
   '我们正在核实，很快回复您。',
 ];
 
-String chooseHoldingReply(String latestCustomerText, {Random? random}) {
-  return chineseHoldingReplies[
+final englishHoldingReplies = chineseHoldingReplies
+    .map((reply) => FixedReplies.text(reply, CustomerLanguage.english))
+    .toList(growable: false);
+
+String chooseHoldingReply(String latestCustomerText,
+    {Random? random, CustomerLanguage? language}) {
+  final selected = chineseHoldingReplies[
       (random ?? Random()).nextInt(chineseHoldingReplies.length)];
+  return FixedReplies.text(
+      selected,
+      language ??
+          CustomerLanguageResolver.fromText(latestCustomerText) ??
+          CustomerLanguage.chinese);
 }
 
-/// Vision may miss the seller label and append our fixed holding bubble to
-/// the buyer's text. Preserve explicit quotations of a holding message.
-String stripAppendedHoldingReply(String body) {
-  if (RegExp('[「」“”"\u0027]').hasMatch(body)) return body;
-  var end = body.length;
-  for (final holding in [
+bool isHoldingReply(Object? body) =>
+    FixedReplies.isVariant(FixedReplies.uncapturedHolding, body) ||
+    chineseHoldingReplies.any((reply) => FixedReplies.isVariant(reply, body));
+
+bool isRecoveryReply(Object? body) =>
+    isHoldingReply(body) || FixedReplies.isVariant(FixedReplies.resend, body);
+
+final _holdingPatterns = [
+  for (final reply in {
     ...chineseHoldingReplies,
-    '请稍等，我正在核对您刚发来的消息。',
-  ]) {
-    final index = body.indexOf(holding);
-    if (index >= 0 && index < end) end = index;
+    ...englishHoldingReplies,
+    FixedReplies.uncapturedHolding,
+    FixedReplies.text(FixedReplies.uncapturedHolding, CustomerLanguage.english),
+  })
+    RegExp(reply.split(RegExp(r'\s+')).map(RegExp.escape).join(r'\s*'),
+        caseSensitive: false),
+];
+
+String stripAppendedHoldingReply(String body) {
+  var end = body.length;
+  for (final pattern in _holdingPatterns) {
+    for (final match in pattern.allMatches(body)) {
+      if (match.start < end &&
+          !_isQuoted(body, match.start, match.end - match.start)) {
+        end = match.start;
+      }
+    }
   }
   return body.substring(0, end).trim();
+}
+
+bool _isQuoted(String body, int start, int length) {
+  for (final pair in [('“', '”'), ('「', '」'), ('"', '"'), ("'", "'")]) {
+    final before = <int>[];
+    final after = <int>[];
+    for (var index = 0; index < body.length; index++) {
+      if (body[index] != pair.$1 && body[index] != pair.$2) continue;
+      // Apostrophes inside English words are not quotation marks.
+      if (pair.$1 == "'" &&
+          index > 0 &&
+          index + 1 < body.length &&
+          RegExp(r'[A-Za-z]').hasMatch(body[index - 1]) &&
+          RegExp(r'[A-Za-z]').hasMatch(body[index + 1])) {
+        continue;
+      }
+      if (index < start) before.add(index);
+      if (index >= start + length) after.add(index);
+    }
+    if (pair.$1 == pair.$2) {
+      if (before.length.isOdd && after.isNotEmpty) return true;
+    } else if (before.isNotEmpty &&
+        body[before.last] == pair.$1 &&
+        after.isNotEmpty &&
+        body[after.first] == pair.$2) {
+      return true;
+    }
+  }
+  return false;
 }

@@ -1,0 +1,7 @@
+{
+  "sourceVideoSha256": "c7d0c146ab72739c693aba2d8ebd44389b6c37a8153b601b72dd8f1cc9307c44",
+  "sourceSession": "run-1794104660497928-77d2bcbe34de548645fcdc867ca57bf1",
+  "transformation": "first1.3s, scale320px wide, video-only H264 CRF22; no visual frames added/reordered",
+  "clipSHA256": "8d70a433f53d5428dcc8b9bb07c3517a3dd353b31e25e1d6651862700b79e098",
+  "captionEvidenceId": "cc667e379041511a9925ca97122d5d913fb664ec726e1a1ab3ec94d059542814"
+}

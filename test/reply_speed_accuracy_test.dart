@@ -98,6 +98,7 @@ printf '%s\\n' '{"reply":"可以，TD630支持六联，四联可以打印。","d
               stableId: 'a$index',
               direction: 'outgoing',
               body: '请用Windows通用驱动，USB连接，步骤$index',
+              deliveryConfirmed: true,
               axPath: 'test'),
         ],
         const CapturedMessage(
@@ -142,10 +143,11 @@ printf '%s\\n' '{"reply":"可以，TD630支持六联，四联可以打印。","d
     expect(payload, isNot(contains('previous_context')));
     expect(request, isNot(contains('audit-only')));
     expect(request.length, lessThan(40000));
-    expect(
-        (payload['retrieved_knowledge_records'] as List)
-            .map((record) => record['id']),
-        contains('dot_matrix_copy_capacity'));
+    expect(payload['retrieved_knowledge_records'], isEmpty);
+    final sources = (payload['database_files'] as List).cast<String>();
+    final evidence =
+        await Future.wait(sources.map((p) => File(p).readAsString()));
+    expect(evidence.join('\n'), contains('dot_matrix_copy_capacity'));
     expect(payload['product_model_feature_catalog']['content'],
         isNot(contains('TP874')));
   });

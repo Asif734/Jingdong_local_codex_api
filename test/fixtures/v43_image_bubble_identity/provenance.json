@@ -1,0 +1,215 @@
+{
+  "sourceVersion": "0.1.40+41",
+  "session": "run-1794195579826591-10fb8acd6334e098abe2d038abf625e4",
+  "realIncomingBubbles": 2,
+  "senderUtc": [
+    "2026-11-09T03:49:01Z",
+    "2026-11-09T03:49:10Z"
+  ],
+  "sharedOriginalSha256": "6a055d72bf1607cc81ebdf52115f5d9d9a33795329c2ecdddf87cec224f0c074",
+  "note": "Both independent incoming bubbles send the same image file. One is above and the other below the same previous-session summary. Raw screenshots and native OCR copied unchanged.",
+  "frames": {
+    "before-summary": {
+      "recordedEvidenceId": "b651c5d19906bd0b4c8d595f9d712f25447a6a9adfae0714386dc5a17b6bb248",
+      "pngSHA256": "89a640c0c148bca951363e4a9ba97900c2be98abfae6e2e553eae014540e535b",
+      "ocrSHA256": "2ce05a8f44af4fd326ad9f5c41e52316529822f0e043361f09e7d79d477856f0",
+      "region": [
+        0.27118,
+        0.32086,
+        0.05961,
+        0.18962
+      ],
+      "metadata": {
+        "imageWidth": 2880,
+        "chatContentSHA256": "3da6e283602174dcf168b05013dbe8178ad9efc771378135a551f89b6b8864f8",
+        "automationSessionId": "run-1794195579826591-10fb8acd6334e098abe2d038abf625e4",
+        "imageHeight": 1626,
+        "capturedAtMs": 1794196148371,
+        "chatRegion": {
+          "bottom": 0.7921279212792128,
+          "left": 0.24027777777777778,
+          "right": 0.7479166666666667,
+          "top": 0.20418204182041821
+        },
+        "windowBounds": {
+          "windowId": 17539,
+          "title": "格志打印机小耿-咚咚融合工作台",
+          "x": 0.0,
+          "y": 30.0,
+          "width": 1440.0,
+          "height": 813.0
+        },
+        "evidenceId": "b651c5d19906bd0b4c8d595f9d712f25447a6a9adfae0714386dc5a17b6bb248",
+        "pngSHA256": "89a640c0c148bca951363e4a9ba97900c2be98abfae6e2e553eae014540e535b",
+        "windowId": 17539,
+        "windowTitle": "格志打印机小耿-咚咚融合工作台",
+        "customer": "jd_mbnrscuhukvy",
+        "automationSessionStartedAtMs": 1794195579826,
+        "unreadArrivalKey": "arrival:new-row:run-1794195579826591-10fb8acd6334e098abe2d038abf625e4:13",
+        "admissionFrontier": null,
+        "captureRequestedBackfill": false,
+        "navigationCutoffSource": "current_viewport",
+        "replyActivationAllowed": true,
+        "capturePurpose": "live_signal",
+        "discoveryAnchorId": "b651c5d19906bd0b4c8d595f9d712f25447a6a9adfae0714386dc5a17b6bb248",
+        "mediaCoverageCutoffMs": 1794196148371
+      }
+    },
+    "after-summary": {
+      "recordedEvidenceId": "8991c667a2326e323358319e197ee67553f33e7761acf378c2c4113a6debe4bc",
+      "pngSHA256": "498a2d78b8d2f2e7ca24d79f5ebd43c5a64590e5cab45bbe8f30a58cbae72206",
+      "ocrSHA256": "7cd0a30441bdacb6e96585b015bda6636a97b21e183d166ca8cea415ac5754e7",
+      "region": [
+        0.26664,
+        0.53063,
+        0.06828,
+        0.19564
+      ],
+      "metadata": {
+        "imageHeight": 1626,
+        "customer": "jd_mbnrscuhukvy",
+        "windowBounds": {
+          "title": "格志打印机小耿-咚咚融合工作台",
+          "y": 30.0,
+          "height": 813.0,
+          "windowId": 17539,
+          "x": 0.0,
+          "width": 1440.0
+        },
+        "evidenceId": "8991c667a2326e323358319e197ee67553f33e7761acf378c2c4113a6debe4bc",
+        "pngSHA256": "498a2d78b8d2f2e7ca24d79f5ebd43c5a64590e5cab45bbe8f30a58cbae72206",
+        "windowId": 17539,
+        "chatRegion": {
+          "top": 0.20418204182041821,
+          "bottom": 0.7921279212792128,
+          "right": 0.7479166666666667,
+          "left": 0.24027777777777778
+        },
+        "capturedAtMs": 1794196152436,
+        "automationSessionId": "run-1794195579826591-10fb8acd6334e098abe2d038abf625e4",
+        "chatContentSHA256": "0843f9fa4aa0d6b5aee02b18fbd391babcad230acaa98e72592031b3e894a2f3",
+        "imageWidth": 2880,
+        "windowTitle": "格志打印机小耿-咚咚融合工作台",
+        "automationSessionStartedAtMs": 1794195579826,
+        "unreadArrivalKey": "arrival:new-row:run-1794195579826591-10fb8acd6334e098abe2d038abf625e4:13",
+        "admissionFrontier": null,
+        "captureRequestedBackfill": false,
+        "navigationCutoffSource": "current_viewport",
+        "replyActivationAllowed": true,
+        "capturePurpose": "live_signal",
+        "discoveryAnchorId": "b651c5d19906bd0b4c8d595f9d712f25447a6a9adfae0714386dc5a17b6bb248",
+        "mediaCoverageCutoffMs": 1794196148371
+      }
+    },
+    "after-summary-reread": {
+      "recordedEvidenceId": "2bb28f04a34a5d2b0e29bde20edc84cf4c4578971a8f52bca67ae4cdfde791a7",
+      "pngSHA256": "8682f2d1cba73ceab8ddd8a27890ce6b65f56fd3aff78d879ef81a95259f8d6b",
+      "ocrSHA256": "3f84378a028e6b33e5ffd072eded42cdce25c2e89e6162d321d437ecb70ddd41",
+      "region": [
+        0.26677,
+        0.43604,
+        0.06884,
+        0.20261
+      ],
+      "metadata": {
+        "imageHeight": 1626,
+        "customer": "jd_mbnrscuhukvy",
+        "windowBounds": {
+          "windowId": 17539,
+          "width": 1440.0,
+          "height": 813.0,
+          "x": 0.0,
+          "title": "格志打印机小耿-咚咚融合工作台",
+          "y": 30.0
+        },
+        "evidenceId": "2bb28f04a34a5d2b0e29bde20edc84cf4c4578971a8f52bca67ae4cdfde791a7",
+        "pngSHA256": "8682f2d1cba73ceab8ddd8a27890ce6b65f56fd3aff78d879ef81a95259f8d6b",
+        "historyCutoffMs": 1794196146001,
+        "windowId": 17539,
+        "chatRegion": {
+          "top": 0.20418204182041821,
+          "right": 0.7479166666666667,
+          "left": 0.24027777777777778,
+          "bottom": 0.7921279212792128
+        },
+        "capturedAtMs": 1794196161960,
+        "automationSessionId": "run-1794195579826591-10fb8acd6334e098abe2d038abf625e4",
+        "chatContentSHA256": "0e23d3a8f879828801083586ab2aa0115ead3aa979ad4a38c00f511ce5f548c1",
+        "imageWidth": 2880,
+        "windowTitle": "格志打印机小耿-咚咚融合工作台",
+        "automationSessionStartedAtMs": 1794195579826,
+        "admissionFrontier": {
+          "id": "incoming-media:run-1794195579826591-10fb8acd6334e098abe2d038abf625e4:15",
+          "sent_at": "2026-11-09T03:49:01.000Z",
+          "body": "[Customer sent media; acquisition pending.]",
+          "direction": "incoming",
+          "visibleTextAnchors": []
+        },
+        "captureRequestedBackfill": true,
+        "navigationCutoffSource": "requested_backfill",
+        "replyActivationAllowed": true,
+        "mediaAcquisitionPending": true,
+        "acquisitionOnly": true,
+        "acquisitionInputKeys": [
+          "ac256939515a6a73e029b399505e25540848f222f261d82606e5252c81c5507c",
+          "incoming-media:run-1794195579826591-10fb8acd6334e098abe2d038abf625e4:15",
+          "media-pending:ac256939515a6a73e029b399505e25540848f222f261d82606e5252c81c5507c"
+        ],
+        "capturePurpose": "history_backfill",
+        "mediaWakeProgressKey": "pin:e23f968cc1d8769edabaeb536a786290b60aecb53bc5acb4ada19ad475361742:08f9737fbf4a896fdeb2ffea0f12e79ae3f14c35af3c7f3814ec07d843a6d98c"
+      }
+    },
+    "before-summary-reread": {
+      "recordedEvidenceId": "aaa5bf4c2b964b025dd87c9f0f9c95edb292f584a1d26799d6cb81f83522807e",
+      "pngSHA256": "8cad8431e268dc6ae8301c9104c23df2485fa4b260c127db9cf366ed929cbc34",
+      "ocrSHA256": "7b1ef292345cc107f1d3728ba8ad3b58ae607f50243f385b82658deb133c1bf1",
+      "region": [
+        0.2716,
+        0.46749,
+        0.05946,
+        0.18303
+      ],
+      "metadata": {
+        "windowId": 17539,
+        "customer": "jd_mbnrscuhukvy",
+        "chatRegion": {
+          "right": 0.7479166666666667,
+          "left": 0.24027777777777778,
+          "bottom": 0.7921279212792128,
+          "top": 0.20418204182041821
+        },
+        "chatContentSHA256": "ac913e6d758d1efd768563867b715fde757ca241c2279779f0e49041b4486d6e",
+        "historyCutoffMs": 1794196146001,
+        "evidenceId": "aaa5bf4c2b964b025dd87c9f0f9c95edb292f584a1d26799d6cb81f83522807e",
+        "pngSHA256": "8cad8431e268dc6ae8301c9104c23df2485fa4b260c127db9cf366ed929cbc34",
+        "capturedAtMs": 1794196171159,
+        "automationSessionId": "run-1794195579826591-10fb8acd6334e098abe2d038abf625e4",
+        "imageWidth": 2880,
+        "windowTitle": "格志打印机小耿-咚咚融合工作台",
+        "imageHeight": 1626,
+        "windowBounds": {
+          "x": 0.0,
+          "y": 30.0,
+          "title": "格志打印机小耿-咚咚融合工作台",
+          "width": 1440.0,
+          "windowId": 17539,
+          "height": 813.0
+        },
+        "automationSessionStartedAtMs": 1794195579826,
+        "unreadArrivalKey": "arrival:cycle:response-cycle:1794196166524:jd_mbnrscuhukvy",
+        "admissionFrontier": {
+          "id": "incoming-media:run-1794195579826591-10fb8acd6334e098abe2d038abf625e4:15",
+          "sent_at": "2026-11-09T03:49:01.000Z",
+          "body": "[Customer sent media; acquisition pending.]",
+          "direction": "incoming",
+          "visibleTextAnchors": []
+        },
+        "captureRequestedBackfill": true,
+        "navigationCutoffSource": "requested_backfill",
+        "replyActivationAllowed": true,
+        "mediaAcquisitionPending": true,
+        "capturePurpose": "history_backfill"
+      }
+    }
+  }
+}

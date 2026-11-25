@@ -1,0 +1,436 @@
+{
+  "source": "v0.1.40+41 actual run-1794195579826591-10fb8acd6334e098abe2d038abf625e4",
+  "recordedOrder": [
+    "gray-clipped",
+    "gray-play",
+    "loaded"
+  ],
+  "observedProcessingOrder": [
+    "gray-play",
+    "loaded",
+    "gray-clipped"
+  ],
+  "actualIncomingBubbles": 1,
+  "note": "One video changes loading/rectangle state and scroll position. Fixtures copy raw screenshot/OCR unchanged. after-formal-headerless is the same bubble after formal answer. Video decoding/cache/audio are mocked and not changed by these identity tests.",
+  "frames": {
+    "gray-clipped": {
+      "recordedEvidenceId": "f4e69ce61a480c872b0a05542bd14f170bc6e3c9a844459d44250d3baad93164",
+      "pngSHA256": "25200a180833e12a001f9e672b09dcdeaf067fbc63ed137c1c8b63c831b60b87",
+      "ocrSHA256": "f9883107a067012fcb9a9c5694baa3a649e69cae551632d023b4429d18d1453a",
+      "region": [
+        0.27567,
+        0.6559,
+        0.10354,
+        0.08011
+      ],
+      "metadata": {
+        "imageHeight": 1626,
+        "customer": "jd_41aeec7741d05",
+        "windowBounds": {
+          "width": 1440.0,
+          "x": 0.0,
+          "windowId": 17539,
+          "y": 30.0,
+          "title": "格志打印机小耿-咚咚融合工作台",
+          "height": 813.0
+        },
+        "evidenceId": "f4e69ce61a480c872b0a05542bd14f170bc6e3c9a844459d44250d3baad93164",
+        "pngSHA256": "25200a180833e12a001f9e672b09dcdeaf067fbc63ed137c1c8b63c831b60b87",
+        "windowId": 17539,
+        "chatRegion": {
+          "top": 0.20418204182041821,
+          "bottom": 0.7921279212792128,
+          "left": 0.24027777777777778,
+          "right": 0.7479166666666667
+        },
+        "chatContentSHA256": "b8462e60f8661381790a8e732ff5e30786073cf1c57bdccb08c844d8962a721f",
+        "automationSessionId": "run-1794195579826591-10fb8acd6334e098abe2d038abf625e4",
+        "capturedAtMs": 1794195841222,
+        "imageWidth": 2880,
+        "windowTitle": "格志打印机小耿-咚咚融合工作台",
+        "automationSessionStartedAtMs": 1794195579826,
+        "admissionFrontier": {
+          "id": "ocr:f8afcc818630bb75a2690a79c03cb3183e2ae797d2581008934aa3757da05ade",
+          "sent_at": "2026-11-09T03:42:51.000Z",
+          "body": "i need help with m880",
+          "direction": "incoming",
+          "visibleTextAnchors": [
+            {
+              "id": "ocr:f8afcc818630bb75a2690a79c03cb3183e2ae797d2581008934aa3757da05ade",
+              "body": "i need help with m880",
+              "direction": "incoming",
+              "sent_at": "2026-11-09T03:42:51.000Z"
+            },
+            {
+              "id": "assistant:a3137bd052dc051ab7f84cdc6c2afd320fa6ec29d84a4134800c42c1efc37391",
+              "body": "I'm doing well, thank you! How can I help you today?",
+              "direction": "outgoing",
+              "sent_at": "2026-11-09T03:42:27.223787Z"
+            },
+            {
+              "id": "ocr:08dcc025b6734c753efb84479107e16fcc9da68214637c197d1bac1a9e802d31",
+              "body": "how are you doing?",
+              "direction": "incoming",
+              "sent_at": "2026-11-09T03:41:54.000Z"
+            },
+            {
+              "id": "assistant:3eac683518bd5eaa9386f4f393363deaba4f0321ac72368e9a6b3bea8bed4fcf",
+              "body": "Hello, welcome to Grozziie customer service. How can I help you?",
+              "direction": "outgoing",
+              "sent_at": "2026-11-09T03:41:52.698332Z"
+            },
+            {
+              "id": "ocr:1a4ddfbf4e668a241c605ea898b11e855f929d0fb79ec0b99f2c5b0da60d2d24",
+              "body": "hello",
+              "direction": "incoming",
+              "sent_at": "2026-11-09T03:41:34.000Z"
+            }
+          ]
+        },
+        "captureRequestedBackfill": false,
+        "navigationCutoffSource": "current_viewport",
+        "replyActivationAllowed": true,
+        "capturePurpose": "active_discovery",
+        "discoveryAnchorId": "33f34b6bb03e0ac3125a60dad16150b783a720f769bde3b07681fa30ab77b84e",
+        "admittedTextInputIds": [
+          "ocr:f8afcc818630bb75a2690a79c03cb3183e2ae797d2581008934aa3757da05ade"
+        ],
+        "mediaCoverageCutoffMs": 1794195841222,
+        "mediaWakeProgressKey": "cache:1b4d84299f48b3546c5fef1aef60a268c4d33ab2861d83c04c227bb16a0c0a16"
+      }
+    },
+    "gray-play": {
+      "recordedEvidenceId": "184d21b7144e1874f0033fc30c10642f062c5faffd2dca08dbdb7a7fe66e1b37",
+      "pngSHA256": "53e2aee1e23314344e2e38c9a15b725f92213c47427e1ce5b9b841ce80d322bc",
+      "ocrSHA256": "65708f297e26bca3d5f29b7f38f5667edcd8f0672924a4399a1c27029fc9c565",
+      "region": [
+        0.2712,
+        0.48023,
+        0.11276,
+        0.23663
+      ],
+      "metadata": {
+        "imageHeight": 1626,
+        "customer": "jd_41aeec7741d05",
+        "windowBounds": {
+          "height": 813.0,
+          "title": "格志打印机小耿-咚咚融合工作台",
+          "windowId": 17539,
+          "y": 30.0,
+          "width": 1440.0,
+          "x": 0.0
+        },
+        "evidenceId": "184d21b7144e1874f0033fc30c10642f062c5faffd2dca08dbdb7a7fe66e1b37",
+        "pngSHA256": "53e2aee1e23314344e2e38c9a15b725f92213c47427e1ce5b9b841ce80d322bc",
+        "windowId": 17539,
+        "chatRegion": {
+          "left": 0.24027777777777778,
+          "right": 0.7479166666666667,
+          "top": 0.20418204182041821,
+          "bottom": 0.7921279212792128
+        },
+        "capturedAtMs": 1794195843383,
+        "automationSessionId": "run-1794195579826591-10fb8acd6334e098abe2d038abf625e4",
+        "chatContentSHA256": "47b13365ddf9bf305864cf16daf95caaf1ede854ca06e1dad2e4a84d90ae09fb",
+        "imageWidth": 2880,
+        "windowTitle": "格志打印机小耿-咚咚融合工作台",
+        "automationSessionStartedAtMs": 1794195579826,
+        "unreadArrivalKey": "arrival:red-transition:run-1794195579826591-10fb8acd6334e098abe2d038abf625e4:9",
+        "admissionFrontier": {
+          "id": "ocr:f8afcc818630bb75a2690a79c03cb3183e2ae797d2581008934aa3757da05ade",
+          "sent_at": "2026-11-09T03:42:51.000Z",
+          "body": "i need help with m880",
+          "direction": "incoming",
+          "visibleTextAnchors": [
+            {
+              "id": "ocr:f8afcc818630bb75a2690a79c03cb3183e2ae797d2581008934aa3757da05ade",
+              "body": "i need help with m880",
+              "direction": "incoming",
+              "sent_at": "2026-11-09T03:42:51.000Z"
+            },
+            {
+              "id": "assistant:a3137bd052dc051ab7f84cdc6c2afd320fa6ec29d84a4134800c42c1efc37391",
+              "body": "I'm doing well, thank you! How can I help you today?",
+              "direction": "outgoing",
+              "sent_at": "2026-11-09T03:42:27.223787Z"
+            },
+            {
+              "id": "ocr:08dcc025b6734c753efb84479107e16fcc9da68214637c197d1bac1a9e802d31",
+              "body": "how are you doing?",
+              "direction": "incoming",
+              "sent_at": "2026-11-09T03:41:54.000Z"
+            },
+            {
+              "id": "assistant:3eac683518bd5eaa9386f4f393363deaba4f0321ac72368e9a6b3bea8bed4fcf",
+              "body": "Hello, welcome to Grozziie customer service. How can I help you?",
+              "direction": "outgoing",
+              "sent_at": "2026-11-09T03:41:52.698332Z"
+            },
+            {
+              "id": "ocr:1a4ddfbf4e668a241c605ea898b11e855f929d0fb79ec0b99f2c5b0da60d2d24",
+              "body": "hello",
+              "direction": "incoming",
+              "sent_at": "2026-11-09T03:41:34.000Z"
+            }
+          ]
+        },
+        "captureRequestedBackfill": false,
+        "navigationCutoffSource": "current_viewport",
+        "replyActivationAllowed": true,
+        "capturePurpose": "live_signal",
+        "discoveryAnchorId": "33f34b6bb03e0ac3125a60dad16150b783a720f769bde3b07681fa30ab77b84e",
+        "mediaCoverageCutoffMs": 1794195843383
+      }
+    },
+    "loaded": {
+      "recordedEvidenceId": "f109e9742194efef34b5449007da2a7b6bd87d76832316812bbb9b3636d674be",
+      "pngSHA256": "9a8610910dfaf375371562dfd1c3d3376aecbeb5f95c678187a7384ec23e0151",
+      "ocrSHA256": "22dbb4dd93fc6ca0e2bd94bfc66a58f9649b592443da5493fff5d68f4edd7c0f",
+      "region": [
+        0.27326,
+        0.47048,
+        0.11181,
+        0.2583
+      ],
+      "metadata": {
+        "chatContentSHA256": "26bc0c9e4a79d4d10b44981fb2e0c8327c740b455380b58de91cd91c81704f10",
+        "windowId": 17539,
+        "imageWidth": 2880,
+        "pngSHA256": "9a8610910dfaf375371562dfd1c3d3376aecbeb5f95c678187a7384ec23e0151",
+        "chatRegion": {
+          "right": 0.7479166666666667,
+          "top": 0.20418204182041821,
+          "bottom": 0.7921279212792128,
+          "left": 0.24027777777777778
+        },
+        "evidenceId": "f109e9742194efef34b5449007da2a7b6bd87d76832316812bbb9b3636d674be",
+        "customer": "jd_41aeec7741d05",
+        "imageHeight": 1626,
+        "windowBounds": {
+          "width": 1440.0,
+          "x": 0.0,
+          "title": "格志打印机小耿-咚咚融合工作台",
+          "windowId": 17539,
+          "height": 813.0,
+          "y": 30.0
+        },
+        "automationSessionId": "run-1794195579826591-10fb8acd6334e098abe2d038abf625e4",
+        "capturedAtMs": 1794195846231,
+        "windowTitle": "格志打印机小耿-咚咚融合工作台",
+        "automationSessionStartedAtMs": 1794195579826,
+        "unreadArrivalKey": "arrival:cycle:response-cycle:1794195843189:jd_41aeec7741d05",
+        "admissionFrontier": {
+          "id": "ocr:f8afcc818630bb75a2690a79c03cb3183e2ae797d2581008934aa3757da05ade",
+          "sent_at": "2026-11-09T03:42:51.000Z",
+          "body": "i need help with m880",
+          "direction": "incoming",
+          "visibleTextAnchors": [
+            {
+              "id": "ocr:f8afcc818630bb75a2690a79c03cb3183e2ae797d2581008934aa3757da05ade",
+              "body": "i need help with m880",
+              "direction": "incoming",
+              "sent_at": "2026-11-09T03:42:51.000Z"
+            },
+            {
+              "id": "assistant:a3137bd052dc051ab7f84cdc6c2afd320fa6ec29d84a4134800c42c1efc37391",
+              "body": "I'm doing well, thank you! How can I help you today?",
+              "direction": "outgoing",
+              "sent_at": "2026-11-09T03:42:27.223787Z"
+            },
+            {
+              "id": "ocr:08dcc025b6734c753efb84479107e16fcc9da68214637c197d1bac1a9e802d31",
+              "body": "how are you doing?",
+              "direction": "incoming",
+              "sent_at": "2026-11-09T03:41:54.000Z"
+            },
+            {
+              "id": "assistant:3eac683518bd5eaa9386f4f393363deaba4f0321ac72368e9a6b3bea8bed4fcf",
+              "body": "Hello, welcome to Grozziie customer service. How can I help you?",
+              "direction": "outgoing",
+              "sent_at": "2026-11-09T03:41:52.698332Z"
+            },
+            {
+              "id": "ocr:1a4ddfbf4e668a241c605ea898b11e855f929d0fb79ec0b99f2c5b0da60d2d24",
+              "body": "hello",
+              "direction": "incoming",
+              "sent_at": "2026-11-09T03:41:34.000Z"
+            }
+          ]
+        },
+        "captureRequestedBackfill": false,
+        "navigationCutoffSource": "current_viewport",
+        "replyActivationAllowed": true,
+        "capturePurpose": "live_signal",
+        "discoveryAnchorId": "33f34b6bb03e0ac3125a60dad16150b783a720f769bde3b07681fa30ab77b84e",
+        "mediaCoverageCutoffMs": 1794195846231
+      }
+    },
+    "after-formal-headerless": {
+      "recordedEvidenceId": "bd49149b46db1dcdd90792b4dd0af586b743b9311f08af53ac10d5f7670dcf8a",
+      "pngSHA256": "5272cbbb7b7377477cbe3f55f6ae8719dd15c447d2d6d47b6c4a4ca309ce6f51",
+      "ocrSHA256": "6076960fffc1b89f64905a6997b80c04b673d7a4343dddb641d77f7489639681",
+      "region": [
+        0.27326,
+        0.23924,
+        0.11181,
+        0.22079
+      ],
+      "metadata": {
+        "windowId": 17539,
+        "customer": "jd_41aeec7741d05",
+        "chatRegion": {
+          "top": 0.20418204182041821,
+          "left": 0.24027777777777778,
+          "right": 0.7479166666666667,
+          "bottom": 0.7921279212792128
+        },
+        "chatContentSHA256": "3563b78e4b2ae5dc4a8cc4047358ac4fb0ea6438c058345eb2d74a183693b83e",
+        "automationSessionId": "run-1794195579826591-10fb8acd6334e098abe2d038abf625e4",
+        "capturedAtMs": 1794196003101,
+        "pngSHA256": "5272cbbb7b7377477cbe3f55f6ae8719dd15c447d2d6d47b6c4a4ca309ce6f51",
+        "evidenceId": "bd49149b46db1dcdd90792b4dd0af586b743b9311f08af53ac10d5f7670dcf8a",
+        "imageWidth": 2880,
+        "windowTitle": "格志打印机小耿-咚咚融合工作台",
+        "imageHeight": 1626,
+        "windowBounds": {
+          "width": 1440.0,
+          "x": 0.0,
+          "windowId": 17539,
+          "y": 30.0,
+          "title": "格志打印机小耿-咚咚融合工作台",
+          "height": 813.0
+        },
+        "automationSessionStartedAtMs": 1794195579826,
+        "admissionFrontier": {
+          "id": "incoming-media:run-1794195579826591-10fb8acd6334e098abe2d038abf625e4:12",
+          "sent_at": "2026-11-09T03:44:00.000Z",
+          "body": "[Customer sent media; acquisition pending.]",
+          "direction": "incoming",
+          "visibleTextAnchors": [
+            {
+              "id": "assistant:397569655c61fd04c4f0c52c1068205610d0b636f15e1ced66a0420732a847d2",
+              "body": "What do you need help with on your M880?",
+              "direction": "outgoing",
+              "sent_at": "2026-11-09T03:43:26.130642Z"
+            },
+            {
+              "id": "ocr:f8afcc818630bb75a2690a79c03cb3183e2ae797d2581008934aa3757da05ade",
+              "body": "i need help with m880",
+              "direction": "incoming",
+              "sent_at": "2026-11-09T03:42:51.000Z"
+            },
+            {
+              "id": "assistant:a3137bd052dc051ab7f84cdc6c2afd320fa6ec29d84a4134800c42c1efc37391",
+              "body": "I'm doing well, thank you! How can I help you today?",
+              "direction": "outgoing",
+              "sent_at": "2026-11-09T03:42:27.223787Z"
+            },
+            {
+              "id": "ocr:08dcc025b6734c753efb84479107e16fcc9da68214637c197d1bac1a9e802d31",
+              "body": "how are you doing?",
+              "direction": "incoming",
+              "sent_at": "2026-11-09T03:41:54.000Z"
+            },
+            {
+              "id": "assistant:3eac683518bd5eaa9386f4f393363deaba4f0321ac72368e9a6b3bea8bed4fcf",
+              "body": "Hello, welcome to Grozziie customer service. How can I help you?",
+              "direction": "outgoing",
+              "sent_at": "2026-11-09T03:41:52.698332Z"
+            },
+            {
+              "id": "ocr:1a4ddfbf4e668a241c605ea898b11e855f929d0fb79ec0b99f2c5b0da60d2d24",
+              "body": "hello",
+              "direction": "incoming",
+              "sent_at": "2026-11-09T03:41:34.000Z"
+            }
+          ]
+        },
+        "captureRequestedBackfill": false,
+        "navigationCutoffSource": "current_viewport",
+        "replyActivationAllowed": true,
+        "mediaAcquisitionPending": true,
+        "capturePurpose": "durable_unanswered",
+        "discoveryAnchorId": "33f34b6bb03e0ac3125a60dad16150b783a720f769bde3b07681fa30ab77b84e",
+        "mediaCoverageCutoffMs": 1794196003101
+      }
+    },
+    "baseline": {
+      "recordedEvidenceId": "f7d560357a2258143c08caa78cfa6f9b58f11f6cbf38dde371afa7f3755897f2",
+      "pngSHA256": "dbf54d53b64bef9bd65929cb8a9329cbceafb479281cc08d5638afde51f681d1",
+      "ocrSHA256": "e552e84e5c88ac3bbee6dc6ab8f2ca985f7750e857492effc1bb10439dbd9429",
+      "metadata": {
+        "imageWidth": 2880,
+        "chatContentSHA256": "41619b14fb6707316b9928c50c9ce796d371e3b35ae0d01b5eedbabe7fb5a1bd",
+        "automationSessionId": "run-1794195579826591-10fb8acd6334e098abe2d038abf625e4",
+        "imageHeight": 1626,
+        "capturedAtMs": 1794195827146,
+        "chatRegion": {
+          "right": 0.7479166666666667,
+          "bottom": 0.7921279212792128,
+          "left": 0.24027777777777778,
+          "top": 0.20418204182041821
+        },
+        "windowBounds": {
+          "width": 1440.0,
+          "title": "格志打印机小耿-咚咚融合工作台",
+          "x": 0.0,
+          "y": 30.0,
+          "height": 813.0,
+          "windowId": 17539
+        },
+        "evidenceId": "f7d560357a2258143c08caa78cfa6f9b58f11f6cbf38dde371afa7f3755897f2",
+        "pngSHA256": "dbf54d53b64bef9bd65929cb8a9329cbceafb479281cc08d5638afde51f681d1",
+        "windowId": 17539,
+        "windowTitle": "格志打印机小耿-咚咚融合工作台",
+        "customer": "jd_41aeec7741d05",
+        "automationSessionStartedAtMs": 1794195579826,
+        "admissionFrontier": {
+          "id": "ocr:f8afcc818630bb75a2690a79c03cb3183e2ae797d2581008934aa3757da05ade",
+          "sent_at": "2026-11-09T03:42:51.000Z",
+          "body": "i need help with m880",
+          "direction": "incoming",
+          "visibleTextAnchors": [
+            {
+              "id": "ocr:f8afcc818630bb75a2690a79c03cb3183e2ae797d2581008934aa3757da05ade",
+              "body": "i need help with m880",
+              "direction": "incoming",
+              "sent_at": "2026-11-09T03:42:51.000Z"
+            },
+            {
+              "id": "assistant:a3137bd052dc051ab7f84cdc6c2afd320fa6ec29d84a4134800c42c1efc37391",
+              "body": "I'm doing well, thank you! How can I help you today?",
+              "direction": "outgoing",
+              "sent_at": "2026-11-09T03:42:27.223787Z"
+            },
+            {
+              "id": "ocr:08dcc025b6734c753efb84479107e16fcc9da68214637c197d1bac1a9e802d31",
+              "body": "how are you doing?",
+              "direction": "incoming",
+              "sent_at": "2026-11-09T03:41:54.000Z"
+            },
+            {
+              "id": "assistant:3eac683518bd5eaa9386f4f393363deaba4f0321ac72368e9a6b3bea8bed4fcf",
+              "body": "Hello, welcome to Grozziie customer service. How can I help you?",
+              "direction": "outgoing",
+              "sent_at": "2026-11-09T03:41:52.698332Z"
+            },
+            {
+              "id": "ocr:1a4ddfbf4e668a241c605ea898b11e855f929d0fb79ec0b99f2c5b0da60d2d24",
+              "body": "hello",
+              "direction": "incoming",
+              "sent_at": "2026-11-09T03:41:34.000Z"
+            }
+          ]
+        },
+        "captureRequestedBackfill": false,
+        "navigationCutoffSource": "current_viewport",
+        "replyActivationAllowed": true,
+        "capturePurpose": "active_discovery",
+        "discoveryAnchorId": "33f34b6bb03e0ac3125a60dad16150b783a720f769bde3b07681fa30ab77b84e",
+        "admittedTextInputIds": [
+          "ocr:f8afcc818630bb75a2690a79c03cb3183e2ae797d2581008934aa3757da05ade"
+        ]
+      }
+    }
+  }
+}

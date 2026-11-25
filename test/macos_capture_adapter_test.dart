@@ -5,6 +5,87 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:jd_automation/platform/macos_capture_adapter.dart';
 
 void main() {
+  test('timed-out OCR callers share native work until it actually completes',
+      () async {
+    const probeChannel = MethodChannel('jd.timeout.ocr-test');
+    final response = Completer<Map<String, Object?>>();
+    var calls = 0;
+    TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
+        .setMockMethodCallHandler(probeChannel, (call) async {
+      calls++;
+      return response.future;
+    });
+    final adapter = MacOSCaptureAdapter(channel: probeChannel);
+    addTearDown(adapter.close);
+    addTearDown(() => TestDefaultBinaryMessengerBinding
+        .instance.defaultBinaryMessenger
+        .setMockMethodCallHandler(probeChannel, null));
+    final first = adapter.inspectOcr(windowId: 7);
+    await expectLater(
+        first.timeout(Duration.zero), throwsA(isA<TimeoutException>()));
+    final second = adapter.inspectOcr(windowId: 7);
+    expect(calls, 1);
+    response.complete({
+      'windowId': 7,
+      'activeCustomerId': 'customer',
+      'capturedAtMs': 1,
+      'observations': <Object?>[]
+    });
+    expect((await second).activeCustomerId, 'customer');
+    await adapter.inspectOcr(windowId: 7);
+    expect(calls, 2, reason: 'completed work must not cache a stale identity');
+  });
+
+  test(
+      'conversation opening includes a native expiry shorter than Dart timeout',
+      () async {
+    const probeChannel = MethodChannel('jd.timeout.open-test');
+    TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
+        .setMockMethodCallHandler(probeChannel, (call) async {
+      expect(call.method, 'openConversation');
+      expect((call.arguments as Map)['timeoutMs'], 4000);
+      return {'error': 'conversation_open_timeout', 'message': 'expired'};
+    });
+    final adapter = MacOSCaptureAdapter(channel: probeChannel);
+    addTearDown(adapter.close);
+    addTearDown(() => TestDefaultBinaryMessengerBinding
+        .instance.defaultBinaryMessenger
+        .setMockMethodCallHandler(probeChannel, null));
+    await expectLater(
+        adapter.openConversation('customer'),
+        throwsA(isA<PlatformException>()
+            .having((e) => e.code, 'code', 'conversation_open_timeout')));
+  });
+
+  test(
+      'known full IDs cannot become aliases even when native returns a confusable ID',
+      () async {
+    const aliasChannel = MethodChannel('jd.stable-alias-test');
+    TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
+        .setMockMethodCallHandler(aliasChannel, (call) async {
+      if (call.method == 'openConversation') {
+        return {'opened': true, 'customer': 'jd_41aeec7741d05'};
+      }
+      return [
+        {'customer': 'jd_4laeec7741d05', 'identitySource': 'ax'},
+        {'customer': 'jd_41aeec7741d05', 'identitySource': 'ax'}
+      ];
+    });
+    final adapter = MacOSCaptureAdapter(channel: aliasChannel);
+    addTearDown(adapter.close);
+    addTearDown(() => TestDefaultBinaryMessengerBinding
+        .instance.defaultBinaryMessenger
+        .setMockMethodCallHandler(aliasChannel, null));
+    await expectLater(
+        adapter.openConversation('jd_4laeec7741d05'),
+        throwsA(isA<PlatformException>()
+            .having((e) => e.code, 'code', 'customer_identity_mismatch')));
+    expect(adapter.verifiedCustomerIdentity('jd_4laeec7741d05'),
+        'jd_4laeec7741d05');
+    expect((await adapter.listConversationRows()).map((row) => row.customer),
+        ['jd_4laeec7741d05', 'jd_41aeec7741d05']);
+  });
+
   test('background failed-send snapshots preserve identity and screenshot time',
       () {
     final time = DateTime.utc(2026, 10, 7, 6, 25, 10);
@@ -85,7 +166,7 @@ void main() {
 
   test('customer identity matching supports independent Unicode names', () {
     expect(customerIdentitiesMatch(' 上海思谆志科技 ', '上海思谆志科技'), isTrue);
-    expect(customerIdentitiesMatch('CLFFD520', 'clffd520'), isTrue);
+    expect(customerIdentitiesMatch('CLFFD520', 'clffd520'), isFalse);
     expect(customerIdentitiesMatch('عميل', 'عميل'), isTrue);
     expect(customerIdentitiesMatch('গ্রাহক', 'গ্রাহক'), isTrue);
     expect(customerIdentitiesMatch('上海思谆志科技', 'jd_41aeec7741d05'), isFalse);
@@ -123,41 +204,30 @@ void main() {
     });
     final adapter = MacOSCaptureAdapter(channel: channel);
     addTearDown(adapter.close);
-    await adapter.openConversation('row-name');
+    await adapter.openConversation('verified-customer');
     expect(
         (await adapter.retryFailedOutgoingMessage(
-            expectedCustomer: 'row-name', candidate: candidate))['retried'],
+            expectedCustomer: 'verified-customer',
+            candidate: candidate))['retried'],
         isFalse);
   });
 
-  test('keeps OCR row name while using separately verified active identity',
+  test('a returned AX ID differing by l or 1 cannot authorize an open',
       () async {
     var calls = 0;
     TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
         .setMockMethodCallHandler(channel, (call) async {
       calls++;
-      final arguments = call.arguments! as Map<Object?, Object?>;
-      if (calls == 1) {
-        expect(call.method, 'openConversation');
-        expect(arguments['expectedCustomer'], 'jd_4laeec7741d05');
-        return <String, Object?>{
-          'opened': true,
-          'customer': 'jd_41aeec7741d05',
-        };
-      }
-      expect(call.method, 'sendDraftOnce');
-      expect(arguments['expectedCustomer'], 'jd_41aeec7741d05');
-      return <String, Object?>{'sent': true};
+      expect(call.method, 'openConversation');
+      return {'opened': true, 'customer': 'jd_41aeec7741d05'};
     });
     final adapter = MacOSCaptureAdapter(channel: channel);
     addTearDown(adapter.close);
-
-    await adapter.openConversation('jd_4laeec7741d05');
-    await adapter.sendDraftOnce(
-      expectedCustomer: 'jd_4laeec7741d05',
-      reply: 'test',
-    );
-    expect(calls, 2);
+    await expectLater(adapter.openConversation('jd_4laeec7741d05'),
+        throwsA(isA<PlatformException>()));
+    expect(adapter.verifiedCustomerIdentity('jd_4laeec7741d05'),
+        'jd_4laeec7741d05');
+    expect(calls, 1);
   });
 
   test('preserves a genuine l in the independently verified customer name',
@@ -197,7 +267,7 @@ void main() {
       final arguments = (call.arguments as Map<Object?, Object?>?) ?? const {};
       switch (call.method) {
         case 'openConversation':
-          expect(arguments['expectedCustomer'], 'jd_4laeec7741d05');
+          expect(arguments['expectedCustomer'], 'jd_41aeec7741d05');
           return <String, Object?>{
             'opened': true,
             'customer': 'jd_41aeec7741d05',
@@ -221,13 +291,13 @@ void main() {
     final adapter = MacOSCaptureAdapter(channel: channel);
     addTearDown(adapter.close);
 
-    await adapter.openConversation('jd_4laeec7741d05');
+    await adapter.openConversation('jd_41aeec7741d05');
     final preview =
-        await adapter.listActiveTransferAccounts('jd_4laeec7741d05');
+        await adapter.listActiveTransferAccounts('jd_41aeec7741d05');
     expect(preview.sourceAccount, '格志打印机小甘');
     expect(preview.activeAccounts, ['格志打印机小秦', '格志打印机小雨(小雨)']);
     final result = await adapter.transferConversation(
-      expectedCustomer: 'jd_4laeec7741d05',
+      expectedCustomer: 'jd_41aeec7741d05',
       targetAccount: preview.activeAccounts.first,
     );
 

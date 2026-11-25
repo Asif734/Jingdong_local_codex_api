@@ -1,0 +1,27 @@
+{
+  "before-arrival.png": {
+    "source": "/Users/m1air/Desktop/JD Automation/data/capture_evidence/38ea7b6413c63cd5f225af5b49f0ef7f1bf7c55ca4cbf673fe1b5e52139e7eff.png",
+    "sha256": "af2525b74278a9c9e95bdf026d481741b85d34e0b6e7083776519f97309dc659"
+  },
+  "before-arrival.ocr.json": {
+    "source": "/Users/m1air/Desktop/JD Automation/data/capture_evidence/38ea7b6413c63cd5f225af5b49f0ef7f1bf7c55ca4cbf673fe1b5e52139e7eff.json.ocr.json",
+    "sha256": "add51ce61152f782f11f8883beac9607d99b5be827597ca355ccd82eeecb7ee1"
+  },
+  "first-arrival.png": {
+    "source": "/Users/m1air/Desktop/JD Automation/data/capture_evidence/1db1dedbccb5dba7c54e072c2bab5f6e127f5789f1fa9b1f5612da69ee6ee821.png",
+    "sha256": "2c340d57cf0c677a5b7797fbc2a3141d3db8c10086b3ae449347d597b120edbc"
+  },
+  "first-arrival.ocr.json": {
+    "source": "/Users/m1air/Desktop/JD Automation/data/capture_evidence/1db1dedbccb5dba7c54e072c2bab5f6e127f5789f1fa9b1f5612da69ee6ee821.json.ocr.json",
+    "sha256": "ad889d0221221a62fa1368cf03f5f9bed1c71bbc3ebd4e0b65e066945fea86c1"
+  },
+  "second-arrival.png": {
+    "source": "/Users/m1air/Desktop/JD Automation/data/capture_evidence/f7708b106715f636625c0c6ac8923dad6e7dd8f65cfb6af600bfb14e2e537bbd.png",
+    "sha256": "636d3817e68257a9cdb09d5978da2961709b1fb0171a841f0553144bf7af0836"
+  },
+  "second-arrival.ocr.json": {
+    "source": "/Users/m1air/Desktop/JD Automation/data/capture_evidence/f7708b106715f636625c0c6ac8923dad6e7dd8f65cfb6af600bfb14e2e537bbd.json.ocr.json",
+    "sha256": "aab058785502ab43c8da1f966777ef7d3932d8dd4265cc992461086d63149609"
+  },
+  "notes": "Recorded v0.1.38+39 native pixels and OCR from 2026-11-08; incoming typed texts are distinct real bubbles, not media analysis text. Tests replace only runtime capture/session metadata."
+}

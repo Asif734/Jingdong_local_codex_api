@@ -1,0 +1,75 @@
+{
+  "pngSHA256": "662d48523af7f3f14e0c58877358ed74c8e991ae06cc0e3a7ecad2eb34c5bd0a",
+  "automationSessionId": "run-1794276816902023-62ebd58adfb32936c42d24829f39089d",
+  "capturedAtMs": 1794277521144,
+  "imageWidth": 2880,
+  "windowTitle": "格志打印机小耿-咚咚融合工作台",
+  "imagePath": "/Users/m1air/Desktop/JD Automation/data/capture_evidence/07c4544f3e3115b044c65b2c7c86f167fa98d57233ce54c71f21a40d7edccf97.png",
+  "chatRegion": {
+    "bottom": 0.7921279212792128,
+    "right": 0.7479166666666667,
+    "top": 0.20418204182041821,
+    "left": 0.24027777777777778
+  },
+  "windowBounds": {
+    "title": "格志打印机小耿-咚咚融合工作台",
+    "y": 30.0,
+    "windowId": 17539,
+    "x": 0.0,
+    "width": 1440.0,
+    "height": 813.0
+  },
+  "windowId": 17539,
+  "chatContentSHA256": "b87e29e143845879c9085c8c14b1c7e0c0bb64af2556b53611b38a1daa8597ca",
+  "customer": "jd_5f2331ef08167",
+  "imageHeight": 1626,
+  "evidenceId": "07c4544f3e3115b044c65b2c7c86f167fa98d57233ce54c71f21a40d7edccf97",
+  "manifestPath": "/Users/m1air/Desktop/JD Automation/data/capture_evidence/07c4544f3e3115b044c65b2c7c86f167fa98d57233ce54c71f21a40d7edccf97.json",
+  "automationSessionStartedAtMs": 1794276816901,
+  "unreadArrivalKey": "arrival:cycle:response-cycle:1794277519840:jd_5f2331ef08167",
+  "admissionFrontier": {
+    "id": "ocr:5bb27273df80cf3da4a400d01170679c611872688c68e5d929c5fd6d497be404",
+    "sent_at": "2026-11-10T02:24:56.000Z",
+    "body": "USB接口是直接插在电脑上",
+    "direction": "incoming",
+    "visibleTextAnchors": [
+      {
+        "id": "ocr:5bb27273df80cf3da4a400d01170679c611872688c68e5d929c5fd6d497be404",
+        "body": "USB接口是直接插在电脑上",
+        "direction": "incoming",
+        "sent_at": "2026-11-10T02:24:56.000Z"
+      },
+      {
+        "id": "ocr:02c9a534cc4626f64fa6e835b060a6ef0925971a62b88ba66cb1b3f0abf95d7a",
+        "body": "已经重新安装过打印机了",
+        "direction": "incoming",
+        "sent_at": "2026-11-10T02:23:55.000Z"
+      },
+      {
+        "id": "assistant:353f58c1360a9d2c460f34911f737eea4ab1e288240ad526e81bf22bd103f620",
+        "body": "请先确认机器已开机、数据线两端插紧，再换一个电脑上的USB接口直连试试，先不要经过扩展坞。 若仍连不上，电脑是完全找不到设备，还是能看到设备但提示“脱机”？",
+        "direction": "outgoing",
+        "sent_at": "2026-11-10T02:22:42.629747Z"
+      },
+      {
+        "id": "ocr:de9f2f3308ee87398ce94b32f08b4290d7dc7462f2d9f28c96f7c83d8f996ad5",
+        "body": "从电脑上数据线拔下来重新插上之后，怎么都连拉不上了",
+        "direction": "incoming",
+        "sent_at": "2026-11-10T02:21:33.000Z"
+      }
+    ]
+  },
+  "captureRequestedBackfill": false,
+  "navigationCutoffSource": "current_viewport",
+  "replyActivationAllowed": true,
+  "capturePurpose": "live_signal",
+  "discoveryAnchorId": "ae34693aded092669a1995c9b2347d59fc557d3b331171bce1904a9c2d6e9536",
+  "admittedTextInputIds": [
+    "ocr:5bb27273df80cf3da4a400d01170679c611872688c68e5d929c5fd6d497be404"
+  ],
+  "captureCompletedClaimToken": "run-1794276816902023-62ebd58adfb32936c42d24829f39089d:1794277746479325:207",
+  "captureReplayOcr": false,
+  "mediaCoverageCutoffMs": 1794277521144,
+  "admissionResumeKey": "admitted:run-1794276816902023-62ebd58adfb32936c42d24829f39089d:incoming-media:run-1794276816902023-62ebd58adfb32936c42d24829f39089d:23",
+  "mediaWakeProgressKey": "cache:fef7155f9b22fdd396ed6f8d72b8a6e3ec55e6401adb511e07305c0a5bd2a074"
+}

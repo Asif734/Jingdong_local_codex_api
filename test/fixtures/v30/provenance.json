@@ -1,0 +1,22 @@
+{
+  "second_video_original_card.png": {
+    "sourceEvidence": "ba46e0d17698660e35f1d65e8d957ce743ccee376e9d5cb08a60bf3c9d621ffa",
+    "normalizedRegion": [
+      0.2666633725166321,
+      0.4783679246902466,
+      0.12147009372711182,
+      0.26016533374786377
+    ],
+    "purpose": "Frozen actual video card before original processing",
+    "sha256": "84268b12670aa67dddf598692de5a1c144e8d5d4d6c4d24ca210089fa504265c"
+  },
+  "second_video_crop.png": {
+    "sourceMediaDigest": "a24ee57e91130d79c7cd5fad1c35b510fc373ecbd1929033f913613b1587e9a8",
+    "purpose": "Later decorated observation incorrectly retained as another pending card",
+    "sha256": "a24ee57e91130d79c7cd5fad1c35b510fc373ecbd1929033f913613b1587e9a8"
+  },
+  "second_video_frame.jpg": {
+    "purpose": "First sampled video frame; intentionally different scene position from cached cover, so same-card proof uses raw card preview rather than semantic similarity",
+    "sha256": "3cd4d30094b4eefd42a09ac9d06c32894e2d6bade18cbe84f011ab9075c6a345"
+  }
+}

@@ -1,0 +1,1142 @@
+{
+  "appVersion": "0.1.34+35",
+  "evidenceId": "d1ca1ffb02f892f59ba5f581f71dfd17e7ffb2b37b9438c4c5e0c136e27747ab",
+  "customer": "jd_41aeec7741d05",
+  "activeCustomerId": "jd_41aeec7741d05",
+  "windowId": 17539,
+  "capturedAtMs": 1793872629810,
+  "imageWidth": 2880,
+  "imageHeight": 1626,
+  "sourcePngSHA256": "4a6a998986f97c2ecba113b3b226a870549f67ccdaefbf22cc0a6dde035c75d7",
+  "ocrEngine": "apple_vision",
+  "chatRegion": {
+    "top": 0.20418204182041821,
+    "bottom": 0.7921279212792128,
+    "left": 0.24027777777777778,
+    "right": 0.7479166666666667
+  },
+  "observations": [
+    {
+      "text": "●格志打印机小耿",
+      "confidence": 0.5,
+      "x": 0.04505813996313918,
+      "y": 0.012853470387186983,
+      "width": 0.07848837110731337,
+      "height": 0.023431892911153218,
+      "rotationDegrees": 0.0,
+      "isWatermark": false
+    },
+    {
+      "text": "◎",
+      "confidence": 0.30000001192092896,
+      "x": 0.9796511625703235,
+      "y": 0.017994859113530826,
+      "width": 0.013081395626068137,
+      "height": 0.020565551438748053,
+      "rotationDegrees": 0.0,
+      "isWatermark": false
+    },
+    {
+      "text": "格志打印机小耿",
+      "confidence": 1.0,
+      "x": 0.07696961106299681,
+      "y": 0.055909262814176186,
+      "width": 0.07135147518581815,
+      "height": 0.024428260868912366,
+      "rotationDegrees": -1.0403084568429555,
+      "isWatermark": false
+    },
+    {
+      "text": "Q 搜索",
+      "confidence": 0.30000001192092896,
+      "x": 0.008720929882652816,
+      "y": 0.0668380464090712,
+      "width": 0.026162791252136233,
+      "height": 0.015572777826700968,
+      "rotationDegrees": 0.0,
+      "isWatermark": false
+    },
+    {
+      "text": "今日接待量",
+      "confidence": 1.0,
+      "x": 0.5029069762069541,
+      "y": 0.06396063915479866,
+      "width": 0.04360465208689368,
+      "height": 0.02091020910209096,
+      "rotationDegrees": 0.0,
+      "isWatermark": false
+    },
+    {
+      "text": "平均响应时长",
+      "confidence": 0.30000001192092896,
+      "x": 0.550827232618123,
+      "y": 0.06390420228571403,
+      "width": 0.0524153020646837,
+      "height": 0.02129185243726217,
+      "rotationDegrees": -0.7959485120002046,
+      "isWatermark": false
+    },
+    {
+      "text": "30S应答率 今日促成下单金额",
+      "confidence": 0.5,
+      "x": 0.6075581394929161,
+      "y": 0.061500614955171784,
+      "width": 0.11773255666096993,
+      "height": 0.02337023370233704,
+      "rotationDegrees": 0.0,
+      "isWatermark": false
+    },
+    {
+      "text": "聊天记录/顾客/群组/组织架构",
+      "confidence": 1.0,
+      "x": 0.26162790567193234,
+      "y": 0.07441574435835929,
+      "width": 0.11627907223171663,
+      "height": 0.02091020910209107,
+      "rotationDegrees": 0.0,
+      "isWatermark": false
+    },
+    {
+      "text": "く",
+      "confidence": 1.0,
+      "x": 0.7311046513316098,
+      "y": 0.07455012852132481,
+      "width": 0.010174418158001353,
+      "height": 0.01542416416557657,
+      "rotationDegrees": 0.0,
+      "isWatermark": false
+    },
+    {
+      "text": "♥接待♥｜血 未授权",
+      "confidence": 0.30000001192092896,
+      "x": 0.08139535107916882,
+      "y": 0.08733087347144497,
+      "width": 0.0915697627597385,
+      "height": 0.018067583973264023,
+      "rotationDegrees": 0.0,
+      "isWatermark": false
+    },
+    {
+      "text": "13",
+      "confidence": 1.0,
+      "x": 0.5014534881299997,
+      "y": 0.08979089836767185,
+      "width": 0.01598837243186113,
+      "height": 0.02091020910209096,
+      "rotationDegrees": 0.0,
+      "isWatermark": false
+    },
+    {
+      "text": "21.05",
+      "confidence": 1.0,
+      "x": 0.5508274984189852,
+      "y": 0.08976543074774113,
+      "width": 0.03061244487762449,
+      "height": 0.02098327603873873,
+      "rotationDegrees": -0.7852358168646785,
+      "isWatermark": false
+    },
+    {
+      "text": "84.62% 0.00",
+      "confidence": 1.0,
+      "x": 0.6104651174385327,
+      "y": 0.08979089794411466,
+      "width": 0.07122092776828337,
+      "height": 0.0184501845018451,
+      "rotationDegrees": 0.0,
+      "isWatermark": false
+    },
+    {
+      "text": "新标签",
+      "confidence": 1.0,
+      "x": 0.7529069763326738,
+      "y": 0.08483290546314526,
+      "width": 0.03197674486372204,
+      "height": 0.020565551438748053,
+      "rotationDegrees": 0.0,
+      "isWatermark": false
+    },
+    {
+      "text": "十",
+      "confidence": 0.30000001192092896,
+      "x": 0.8168604652669296,
+      "y": 0.08483290530890364,
+      "width": 0.010174418158001353,
+      "height": 0.020565551438748053,
+      "rotationDegrees": 0.0,
+      "isWatermark": false
+    },
+    {
+      "text": "jd_41aeec7741d05",
+      "confidence": 1.0,
+      "x": 0.28343023291671315,
+      "y": 0.13110539855309034,
+      "width": 0.0843023247188992,
+      "height": 0.01799485838867787,
+      "rotationDegrees": 0.0,
+      "isWatermark": false
+    },
+    {
+      "text": "SDK最近联系人入口|grozziie格志专卖店",
+      "confidence": 0.5,
+      "x": 0.5886627909999403,
+      "y": 0.12853470381667798,
+      "width": 0.15261627833048497,
+      "height": 0.020565553784810287,
+      "rotationDegrees": 0.0,
+      "isWatermark": false
+    },
+    {
+      "text": "接待",
+      "confidence": 1.0,
+      "x": 0.011627906695052495,
+      "y": 0.14138817534395853,
+      "width": 0.0203488376405504,
+      "height": 0.020565551438748053,
+      "rotationDegrees": 0.0,
+      "isWatermark": false
+    },
+    {
+      "text": "日",
+      "confidence": 0.30000001192092896,
+      "x": 0.319767441664577,
+      "y": 0.15681233979048037,
+      "width": 0.011627907223171696,
+      "height": 0.020565551438747942,
+      "rotationDegrees": 0.0,
+      "isWatermark": false
+    },
+    {
+      "text": "客服工具",
+      "confidence": 0.5,
+      "x": 0.7659883722639813,
+      "y": 0.15424164466187595,
+      "width": 0.03924418555365661,
+      "height": 0.020565553784810398,
+      "rotationDegrees": 0.0,
+      "isWatermark": false
+    },
+    {
+      "text": "1レ排序",
+      "confidence": 1.0,
+      "x": 0.056676364330799485,
+      "y": 0.177317738548061,
+      "width": 0.030542620023091625,
+      "height": 0.015544471412273997,
+      "rotationDegrees": -0.22590264798068999,
+      "isWatermark": false
+    },
+    {
+      "text": "血清除",
+      "confidence": 0.30000001192092896,
+      "x": 0.10029069794058197,
+      "y": 0.17712177137765328,
+      "width": 0.030523255136277946,
+      "height": 0.015680284957604207,
+      "rotationDegrees": 0.0,
+      "isWatermark": false
+    },
+    {
+      "text": "✕紧凑布局",
+      "confidence": 0.30000001192092896,
+      "x": 0.1889213629029418,
+      "y": 0.17707873111948447,
+      "width": 0.04512239032321508,
+      "height": 0.016022486293741145,
+      "rotationDegrees": -0.7613483263211019,
+      "isWatermark": false
+    },
+    {
+      "text": "格志 格志AK915针式打印机全新营改增发票发货单送货单出库单打印机增.",
+      "confidence": 0.5,
+      "x": 0.28197673918243993,
+      "y": 0.19537275074933058,
+      "width": 0.2776162889268663,
+      "height": 0.01803438308640748,
+      "rotationDegrees": 0.0,
+      "isWatermark": false
+    },
+    {
+      "text": "官方",
+      "confidence": 1.0,
+      "x": 0.013081395826290438,
+      "y": 0.21079691554026614,
+      "width": 0.017441859510209826,
+      "height": 0.020565551438748053,
+      "rotationDegrees": 0.0,
+      "isWatermark": false
+    },
+    {
+      "text": "复制链接",
+      "confidence": 0.5,
+      "x": 0.7048657694105924,
+      "y": 0.20255168981049776,
+      "width": 0.033582414521111326,
+      "height": 0.01649045064440513,
+      "rotationDegrees": 1.8314413068771425,
+      "isWatermark": false
+    },
+    {
+      "text": "咚咚",
+      "confidence": 1.0,
+      "x": 0.8415697677696307,
+      "y": 0.20295202991914651,
+      "width": 0.024709301524692195,
+      "height": 0.02091020910209107,
+      "rotationDegrees": 0.0,
+      "isWatermark": false
+    },
+    {
+      "text": "～在线咨询［11］",
+      "confidence": 0.30000001192092896,
+      "x": 0.047965115480157056,
+      "y": 0.21336760868534188,
+      "width": 0.06976744333902996,
+      "height": 0.020565553784810287,
+      "rotationDegrees": 0.0,
+      "isWatermark": false
+    },
+    {
+      "text": "·548.00",
+      "confidence": 1.0,
+      "x": 0.2804724635925778,
+      "y": 0.21555499562136393,
+      "width": 0.036438793606228315,
+      "height": 0.016190779898292762,
+      "rotationDegrees": -1.210405136141874,
+      "isWatermark": true
+    },
+    {
+      "text": "京小智",
+      "confidence": 1.0,
+      "x": 0.7805232555384564,
+      "y": 0.23124231271016316,
+      "width": 0.02325581444634328,
+      "height": 0.012973625281640033,
+      "rotationDegrees": 0.0,
+      "isWatermark": false
+    },
+    {
+      "text": "助手",
+      "confidence": 1.0,
+      "x": 0.8415697677696307,
+      "y": 0.2236503855028682,
+      "width": 0.024709301524692195,
+      "height": 0.02313624683488047,
+      "rotationDegrees": 0.0,
+      "isWatermark": false
+    },
+    {
+      "text": "G起云伊",
+      "confidence": 0.30000001192092896,
+      "x": 0.9069767438977481,
+      "y": 0.2390745504069307,
+      "width": 0.0203488376405504,
+      "height": 0.010282775719373971,
+      "rotationDegrees": 0.0,
+      "isWatermark": false
+    },
+    {
+      "text": "jd_41aeec7741d05",
+      "confidence": 1.0,
+      "x": 0.08430232594124401,
+      "y": 0.2596401029235522,
+      "width": 0.0843023247188992,
+      "height": 0.01799485838867776,
+      "rotationDegrees": 0.0,
+      "isWatermark": false
+    },
+    {
+      "text": "17:56",
+      "confidence": 1.0,
+      "x": 0.20639534869979345,
+      "y": 0.25953259509696514,
+      "width": 0.023255814446343337,
+      "height": 0.015531671882995424,
+      "rotationDegrees": 0.0,
+      "isWatermark": false
+    },
+    {
+      "text": "京小智专业",
+      "confidence": 1.0,
+      "x": 0.7746844453295277,
+      "y": 0.26455857476762934,
+      "width": 0.04365436500973163,
+      "height": 0.015869996937731834,
+      "rotationDegrees": -0.5861409520813109,
+      "isWatermark": false
+    },
+    {
+      "text": "京麦咚咚助",
+      "confidence": 1.0,
+      "x": 0.8356831758721351,
+      "y": 0.2641942881152315,
+      "width": 0.04520341555277496,
+      "height": 0.01916926432066446,
+      "rotationDegrees": -1.495657644324597,
+      "isWatermark": false
+    },
+    {
+      "text": "云起云舟_之",
+      "confidence": 0.5,
+      "x": 0.8996835141723382,
+      "y": 0.26458397668591793,
+      "width": 0.04365622732374408,
+      "height": 0.018389887182181708,
+      "rotationDegrees": 0.5193602359872794,
+      "isWatermark": false
+    },
+    {
+      "text": "联系人",
+      "confidence": 1.0,
+      "x": 0.007267442161469373,
+      "y": 0.28277634967598386,
+      "width": 0.027616278330485022,
+      "height": 0.01799485838867787,
+      "rotationDegrees": 0.0,
+      "isWatermark": false
+    },
+    {
+      "text": "Please wait a moment while we...",
+      "confidence": 1.0,
+      "x": 0.08419579089077273,
+      "y": 0.2851883768210325,
+      "width": 0.13248051537407768,
+      "height": 0.018312192637688685,
+      "rotationDegrees": -1.2508562337446318,
+      "isWatermark": false
+    },
+    {
+      "text": "•",
+      "confidence": 1.0,
+      "x": 0.021802325732912662,
+      "y": 0.3187660669567829,
+      "width": 0.008720929755104915,
+      "height": 0.01285346994247527,
+      "rotationDegrees": 0.0,
+      "isWatermark": false
+    },
+    {
+      "text": "格志打印机小熊",
+      "confidence": 1.0,
+      "x": 0.08284883836876526,
+      "y": 0.3314883144089449,
+      "width": 0.07122092776828341,
+      "height": 0.02091020910209107,
+      "rotationDegrees": 0.0,
+      "isWatermark": false
+    },
+    {
+      "text": "16:26",
+      "confidence": 1.0,
+      "x": 0.20639534851326247,
+      "y": 0.33419023149047655,
+      "width": 0.02325581444634331,
+      "height": 0.01542416416557657,
+      "rotationDegrees": 0.0,
+      "isWatermark": false
+    },
+    {
+      "text": "具",
+      "confidence": 0.30000001192092896,
+      "x": 0.020348837359952802,
+      "y": 0.352185089957332,
+      "width": 0.01017441815800137,
+      "height": 0.01799485838867798,
+      "rotationDegrees": 0.0,
+      "isWatermark": false
+    },
+    {
+      "text": "这种纸可以用于TD630，打印前…",
+      "confidence": 0.5,
+      "x": 0.08416396867181902,
+      "y": 0.3566444189572403,
+      "width": 0.12817907333374023,
+      "height": 0.022451715129181316,
+      "rotationDegrees": -1.5829636277546124,
+      "isWatermark": false
+    },
+    {
+      "text": "客服质万",
+      "confidence": 0.30000001192092896,
+      "x": 0.7805232554948516,
+      "y": 0.38046272521871916,
+      "width": 0.02325581444634328,
+      "height": 0.010282775719373971,
+      "rotationDegrees": 0.0,
+      "isWatermark": false
+    },
+    {
+      "text": "打印",
+      "confidence": 1.0,
+      "x": 0.8415697677584499,
+      "y": 0.37269372642527243,
+      "width": 0.024709301524692084,
+      "height": 0.02583025830258301,
+      "rotationDegrees": 0.0,
+      "isWatermark": false
+    },
+    {
+      "text": "山",
+      "confidence": 0.5,
+      "x": 0.014534883521752764,
+      "y": 0.39331619583161137,
+      "width": 0.013081395626068117,
+      "height": 0.020565551438748164,
+      "rotationDegrees": 0.0,
+      "isWatermark": false
+    },
+    {
+      "text": "jd_6c67c99371fa4",
+      "confidence": 1.0,
+      "x": 0.0828488362125249,
+      "y": 0.4059040588109768,
+      "width": 0.08720930417378744,
+      "height": 0.01845018450184499,
+      "rotationDegrees": 0.0,
+      "isWatermark": false
+    },
+    {
+      "text": "12:38",
+      "confidence": 1.0,
+      "x": 0.20639534859078185,
+      "y": 0.40616966579280755,
+      "width": 0.02325581444634331,
+      "height": 0.01799485838867798,
+      "rotationDegrees": 0.0,
+      "isWatermark": false
+    },
+    {
+      "text": "格志打印本",
+      "confidence": 0.30000001192092896,
+      "x": 0.398837210117238,
+      "y": 0.41104904312451107,
+      "width": 0.03938953346676294,
+      "height": 0.038313222840556715,
+      "rotationDegrees": 30.521299020654443,
+      "isWatermark": true
+    },
+    {
+      "text": "客服魔方-号",
+      "confidence": 0.30000001192092896,
+      "x": 0.7747093017687373,
+      "y": 0.41131105391015554,
+      "width": 0.04360465208689368,
+      "height": 0.02313624683488047,
+      "rotationDegrees": 0.0,
+      "isWatermark": false
+    },
+    {
+      "text": "传美打印_E",
+      "confidence": 0.5,
+      "x": 0.835755814068057,
+      "y": 0.4113110539218914,
+      "width": 0.04505813916524248,
+      "height": 0.02313624683488058,
+      "rotationDegrees": 0.0,
+      "isWatermark": false
+    },
+    {
+      "text": "京东官方电",
+      "confidence": 1.0,
+      "x": 0.8982409287799895,
+      "y": 0.4112085598016815,
+      "width": 0.045087909698486306,
+      "height": 0.020770539803405264,
+      "rotationDegrees": 0.26074611127969055,
+      "isWatermark": false
+    },
+    {
+      "text": "数据",
+      "confidence": 1.0,
+      "x": 0.013081395069884271,
+      "y": 0.42159383037078535,
+      "width": 0.01889534923765394,
+      "height": 0.018135566992953267,
+      "rotationDegrees": 0.0,
+      "isWatermark": false
+    },
+    {
+      "text": "可以",
+      "confidence": 1.0,
+      "x": 0.08284883691439712,
+      "y": 0.4317343174498476,
+      "width": 0.0203488376405504,
+      "height": 0.0181371476524137,
+      "rotationDegrees": 0.0,
+      "isWatermark": false
+    },
+    {
+      "text": "jd_hymnwseexkis",
+      "confidence": 1.0,
+      "x": 0.08430232464490343,
+      "y": 0.4807197944396877,
+      "width": 0.08139535056220161,
+      "height": 0.01805019320010559,
+      "rotationDegrees": 0.0,
+      "isWatermark": false
+    },
+    {
+      "text": "11-04",
+      "confidence": 1.0,
+      "x": 0.20494186079288645,
+      "y": 0.4807197944724816,
+      "width": 0.024709301524692112,
+      "height": 0.01559016859985951,
+      "rotationDegrees": 0.0,
+      "isWatermark": false
+    },
+    {
+      "text": "待办",
+      "confidence": 0.5,
+      "x": 0.011627907278045144,
+      "y": 0.4907749080963646,
+      "width": 0.020348836316002747,
+      "height": 0.02091020910209107,
+      "rotationDegrees": 0.0,
+      "isWatermark": false
+    },
+    {
+      "text": "16:00:43 格志打印机小耿",
+      "confidence": 0.5,
+      "x": 0.6133720931970089,
+      "y": 0.48831488261504297,
+      "width": 0.10174418555365661,
+      "height": 0.02091020910209107,
+      "rotationDegrees": 0.0,
+      "isWatermark": false
+    },
+    {
+      "text": "AK890 支持 USB 连接 Windows...",
+      "confidence": 0.30000001192092896,
+      "x": 0.08420430595363884,
+      "y": 0.5040742501128628,
+      "width": 0.13395444022284614,
+      "height": 0.020564552016217208,
+      "rotationDegrees": -1.4269647798270944,
+      "isWatermark": false
+    },
+    {
+      "text": "京小智",
+      "confidence": 0.30000001192092896,
+      "x": 0.8430232561371815,
+      "y": 0.5166051659632453,
+      "width": 0.024709301524692195,
+      "height": 0.012957815754457647,
+      "rotationDegrees": 0.0,
+      "isWatermark": false
+    },
+    {
+      "text": "Switch off and unplug the machine, remove the card, and gently clear any",
+      "confidence": 1.0,
+      "x": 0.37790698110021825,
+      "y": 0.5295202948542409,
+      "width": 0.33139533996582027,
+      "height": 0.02091020910209107,
+      "rotationDegrees": 0.0,
+      "isWatermark": false
+    },
+    {
+      "text": "双速打单",
+      "confidence": 0.30000001192092896,
+      "x": 0.9040697671646296,
+      "y": 0.5244215939133556,
+      "width": 0.026162791252136275,
+      "height": 0.01555380580756649,
+      "rotationDegrees": 0.0,
+      "isWatermark": false
+    },
+    {
+      "text": "上海世亦",
+      "confidence": 1.0,
+      "x": 0.08430232507478119,
+      "y": 0.5526992282108987,
+      "width": 0.0406976752811008,
+      "height": 0.020565553784810287,
+      "rotationDegrees": 0.0,
+      "isWatermark": false
+    },
+    {
+      "text": "11-03",
+      "confidence": 1.0,
+      "x": 0.20494186078834437,
+      "y": 0.5552699230103995,
+      "width": 0.024709301524692112,
+      "height": 0.015455784392972682,
+      "rotationDegrees": 0.0,
+      "isWatermark": false
+    },
+    {
+      "text": "loose paper scraps from the card slot without dismantling it. Refit the",
+      "confidence": 1.0,
+      "x": 0.37645348413695023,
+      "y": 0.552699228897724,
+      "width": 0.33284884558783634,
+      "height": 0.018026478616073982,
+      "rotationDegrees": 0.0,
+      "isWatermark": false
+    },
+    {
+      "text": "常用工具",
+      "confidence": 1.0,
+      "x": 0.7659765029923392,
+      "y": 0.560340232996083,
+      "width": 0.039267924096849205,
+      "height": 0.020707708736480646,
+      "rotationDegrees": 0.20760610793032164,
+      "isWatermark": false
+    },
+    {
+      "text": "考勤机有保修，说明书标注保修1.",
+      "confidence": 0.5,
+      "x": 0.08430232808813448,
+      "y": 0.5781057809862344,
+      "width": 0.13081394831339518,
+      "height": 0.023436635476050238,
+      "rotationDegrees": 0.0,
+      "isWatermark": false
+    },
+    {
+      "text": "cover, power it on, and try a flat original time card. If you use manual",
+      "confidence": 1.0,
+      "x": 0.376411674326149,
+      "y": 0.5732811494441491,
+      "width": 0.33295451270209414,
+      "height": 0.024128285134703775,
+      "rotationDegrees": 0.6413369819650774,
+      "isWatermark": false
+    },
+    {
+      "text": "mode, select a print column first and wait for the cursor to appear before",
+      "confidence": 1.0,
+      "x": 0.3779069811045392,
+      "y": 0.6014760147861754,
+      "width": 0.3313953399658203,
+      "height": 0.01806126016239107,
+      "rotationDegrees": 0.0,
+      "isWatermark": false
+    },
+    {
+      "text": "jd_59b27983ca37f",
+      "confidence": 1.0,
+      "x": 0.08430232655482645,
+      "y": 0.627249357423056,
+      "width": 0.08866278860304089,
+      "height": 0.01799485838867787,
+      "rotationDegrees": 0.0,
+      "isWatermark": false
+    },
+    {
+      "text": "11-04",
+      "confidence": 1.0,
+      "x": 0.20494186079288654,
+      "y": 0.6298200516233489,
+      "width": 0.024709301524692112,
+      "height": 0.012853469942475382,
+      "rotationDegrees": 0.0,
+      "isWatermark": false
+    },
+    {
+      "text": "inserting the card. Do not force it in.",
+      "confidence": 1.0,
+      "x": 0.3779069749498228,
+      "y": 0.6246786633404239,
+      "width": 0.16279070112440314,
+      "height": 0.01800276344552687,
+      "rotationDegrees": 0.0,
+      "isWatermark": false
+    },
+    {
+      "text": "已读",
+      "confidence": 0.30000001192092896,
+      "x": 0.3502906981826753,
+      "y": 0.6346863467641471,
+      "width": 0.01453488270441694,
+      "height": 0.01599015990159902,
+      "rotationDegrees": 0.0,
+      "isWatermark": false
+    },
+    {
+      "text": "［握手］",
+      "confidence": 0.30000001192092896,
+      "x": 0.08284883685939701,
+      "y": 0.6529562987664872,
+      "width": 0.026162791252136233,
+      "height": 0.020565551438748053,
+      "rotationDegrees": 0.0,
+      "isWatermark": false
+    },
+    {
+      "text": "jd_41aeec7741d05 16:01:52",
+      "confidence": 1.0,
+      "x": 0.27325581326474524,
+      "y": 0.6786632391752835,
+      "width": 0.12063953611585831,
+      "height": 0.018138728898389744,
+      "rotationDegrees": 0.0,
+      "isWatermark": false
+    },
+    {
+      "text": "客服管家",
+      "confidence": 1.0,
+      "x": 0.78048991318037,
+      "y": 0.6836188302589319,
+      "width": 0.03640389442443848,
+      "height": 0.020937146589178224,
+      "rotationDegrees": -0.586448181713018,
+      "isWatermark": false
+    },
+    {
+      "text": "商家后台",
+      "confidence": 1.0,
+      "x": 0.8430232553502631,
+      "y": 0.6838046278191107,
+      "width": 0.03488372166951492,
+      "height": 0.020565551438748053,
+      "rotationDegrees": 0.0,
+      "isWatermark": false
+    },
+    {
+      "text": "帮助中心",
+      "confidence": 1.0,
+      "x": 0.9055108105687354,
+      "y": 0.6837356336620826,
+      "width": 0.03636209964752202,
+      "height": 0.020703539783810898,
+      "rotationDegrees": -0.21765210419867484,
+      "isWatermark": false
+    },
+    {
+      "text": "122229877-409032",
+      "confidence": 1.0,
+      "x": 0.08430232785224544,
+      "y": 0.6992287918701027,
+      "width": 0.09156976275973851,
+      "height": 0.01799485838867787,
+      "rotationDegrees": 0.0,
+      "isWatermark": false
+    },
+    {
+      "text": "11-04",
+      "confidence": 1.0,
+      "x": 0.20494186085647656,
+      "y": 0.7017220172082053,
+      "width": 0.024709301524692112,
+      "height": 0.015501632901575357,
+      "rotationDegrees": 0.0,
+      "isWatermark": false
+    },
+    {
+      "text": "“机小瞅",
+      "confidence": 0.30000001192092896,
+      "x": 0.6482832389071206,
+      "y": 0.7037356031232075,
+      "width": 0.03252522945404046,
+      "height": 0.03328157028442236,
+      "rotationDegrees": 26.80861076596424,
+      "isWatermark": true
+    },
+    {
+      "text": "［卡片消息］",
+      "confidence": 0.5,
+      "x": 0.08430232579640039,
+      "y": 0.7249357324594743,
+      "width": 0.04069767263200548,
+      "height": 0.01799485838867787,
+      "rotationDegrees": 0.0,
+      "isWatermark": false
+    },
+    {
+      "text": "dis vnui net mu viden？",
+      "confidence": 0.30000001192092896,
+      "x": 0.28052325401521805,
+      "y": 0.717097170817132,
+      "width": 0.10029070112440319,
+      "height": 0.015550643902129901,
+      "rotationDegrees": 0.0,
+      "isWatermark": false
+    },
+    {
+      "text": "id_mdbgeepyrfjif",
+      "confidence": 0.5,
+      "x": 0.084302326680649,
+      "y": 0.7736777364962083,
+      "width": 0.07703488137986926,
+      "height": 0.018096042295223658,
+      "rotationDegrees": 0.0,
+      "isWatermark": false
+    },
+    {
+      "text": "11-04",
+      "confidence": 1.0,
+      "x": 0.20494186078834437,
+      "y": 0.7763496146029911,
+      "width": 0.024709301524692112,
+      "height": 0.01285346994247527,
+      "rotationDegrees": 0.0,
+      "isWatermark": false
+    },
+    {
+      "text": "司",
+      "confidence": 0.30000001192092896,
+      "x": 0.917151162588492,
+      "y": 0.7763496143949928,
+      "width": 0.013081395626068137,
+      "height": 0.01799485838867787,
+      "rotationDegrees": 0.0,
+      "isWatermark": true
+    },
+    {
+      "text": "这样试试",
+      "confidence": 1.0,
+      "x": 0.08272425046138068,
+      "y": 0.7987750330474254,
+      "width": 0.036586382653978136,
+      "height": 0.0219872088743166,
+      "rotationDegrees": -2.2489353489837884,
+      "isWatermark": false
+    },
+    {
+      "text": "口、Aa国画◎",
+      "confidence": 0.30000001192092896,
+      "x": 0.3226744205144995,
+      "y": 0.7915129148670434,
+      "width": 0.12645348442925347,
+      "height": 0.025967804414906315,
+      "rotationDegrees": 0.0,
+      "isWatermark": false
+    },
+    {
+      "text": "S",
+      "confidence": 0.30000001192092896,
+      "x": 0.015988371907517163,
+      "y": 0.8354755788895133,
+      "width": 0.011627907223171658,
+      "height": 0.020565551438748053,
+      "rotationDegrees": 0.0,
+      "isWatermark": false
+    },
+    {
+      "text": "按住Shift+Space可快速选中输入框",
+      "confidence": 0.5,
+      "x": 0.24854651249286555,
+      "y": 0.8351783522150309,
+      "width": 0.15697674221462668,
+      "height": 0.023433472984098036,
+      "rotationDegrees": 0.0,
+      "isWatermark": false
+    },
+    {
+      "text": "支持中心",
+      "confidence": 1.0,
+      "x": 0.7804422440112079,
+      "y": 0.829877275229385,
+      "width": 0.036499232716030505,
+      "height": 0.021479382579470352,
+      "rotationDegrees": 1.4440051443283217,
+      "isWatermark": false
+    },
+    {
+      "text": "京灵助手",
+      "confidence": 1.0,
+      "x": 0.8430232560977912,
+      "y": 0.8302583026915848,
+      "width": 0.036337208747863725,
+      "height": 0.02091020910209107,
+      "rotationDegrees": 0.0,
+      "isWatermark": false
+    },
+    {
+      "text": "学习中心",
+      "confidence": 1.0,
+      "x": 0.9054904085611933,
+      "y": 0.8301511768438422,
+      "width": 0.036402903662787534,
+      "height": 0.020931579383390186,
+      "rotationDegrees": -0.5776538320904065,
+      "isWatermark": false
+    },
+    {
+      "text": "jd_77541c2b92fac",
+      "confidence": 1.0,
+      "x": 0.08261803887782748,
+      "y": 0.8435132894851534,
+      "width": 0.08759081098768445,
+      "height": 0.02596908653794172,
+      "rotationDegrees": 2.110200765798164,
+      "isWatermark": false
+    },
+    {
+      "text": "11-01",
+      "confidence": 1.0,
+      "x": 0.20494186093823533,
+      "y": 0.8483290487748126,
+      "width": 0.024709301524692112,
+      "height": 0.01799485838867787,
+      "rotationDegrees": 0.0,
+      "isWatermark": false
+    },
+    {
+      "text": "从机器上取下色带，不安装色带…",
+      "confidence": 0.5,
+      "x": 0.08430232947578528,
+      "y": 0.8714637151471469,
+      "width": 0.12790696885850694,
+      "height": 0.02337023370233704,
+      "rotationDegrees": 0.0,
+      "isWatermark": false
+    },
+    {
+      "text": "＞留言",
+      "confidence": 0.30000001192092896,
+      "x": 0.05087209268167943,
+      "y": 0.9175891761708387,
+      "width": 0.029069768057929143,
+      "height": 0.01845018450184499,
+      "rotationDegrees": 0.0,
+      "isWatermark": false
+    },
+    {
+      "text": "9",
+      "confidence": 0.30000001192092896,
+      "x": 0.7906976741611097,
+      "y": 0.9228791779053047,
+      "width": 0.017441860834757517,
+      "height": 0.020565551438748053,
+      "rotationDegrees": 0.0,
+      "isWatermark": false
+    },
+    {
+      "text": "M",
+      "confidence": 1.0,
+      "x": 0.853197674191913,
+      "y": 0.9177377890343592,
+      "width": 0.014534884028964634,
+      "height": 0.02313624683488047,
+      "rotationDegrees": 0.0,
+      "isWatermark": false
+    },
+    {
+      "text": "京麦",
+      "confidence": 1.0,
+      "x": 0.8502906973646623,
+      "y": 0.9383033424468643,
+      "width": 0.021802326043446896,
+      "height": 0.020565551438747942,
+      "rotationDegrees": 0.0,
+      "isWatermark": false
+    },
+    {
+      "text": "V10.4.5.600",
+      "confidence": 1.0,
+      "x": 0.0028918850357975046,
+      "y": 0.9690306541629556,
+      "width": 0.039274369345770936,
+      "height": 0.015666198026650147,
+      "rotationDegrees": -0.353497084919356,
+      "isWatermark": false
+    },
+    {
+      "text": "11.11多买多返活动方案QA及活动查询SOP来",
+      "confidence": 0.5,
+      "x": 0.06686046331993371,
+      "y": 0.9637146368724884,
+      "width": 0.1627907011244032,
+      "height": 0.01599015990159902,
+      "rotationDegrees": 0.0,
+      "isWatermark": false
+    },
+    {
+      "text": "发送",
+      "confidence": 1.0,
+      "x": 0.6860465113242068,
+      "y": 0.9612546127866706,
+      "width": 0.021802326043446896,
+      "height": 0.02091020910209107,
+      "rotationDegrees": 0.0,
+      "isWatermark": false
+    }
+  ],
+  "visualRegions": [
+    {
+      "confidence": 1.0,
+      "x": 0.7542380094528198,
+      "y": 0.12834066152572632,
+      "width": 0.23278164863586426,
+      "height": 0.8540556635707617
+    },
+    {
+      "confidence": 1.0,
+      "x": 0.30664440989494324,
+      "y": 0.30270612239837646,
+      "width": 0.07303109765052795,
+      "height": 0.07547789812088013
+    },
+    {
+      "confidence": 1.0,
+      "x": 0.8304865956306458,
+      "y": 0.33491480350494385,
+      "width": 0.04482990503311157,
+      "height": 0.06984108686447144
+    },
+    {
+      "confidence": 1.0,
+      "x": 0.7690709233283997,
+      "y": 0.8961377292871475,
+      "width": 0.051540493965148926,
+      "height": 0.0869208537042141
+    },
+    {
+      "confidence": 1.0,
+      "x": 0.8875383734703064,
+      "y": 0.17628580331802368,
+      "width": 0.05245780944824219,
+      "height": 0.0880657434463501
+    },
+    {
+      "confidence": 1.0,
+      "x": 0.05029403418302536,
+      "y": 0.6231078803539276,
+      "width": 0.04715977609157562,
+      "height": 0.05432775616645813
+    },
+    {
+      "confidence": 1.0,
+      "x": 0.048931512981653214,
+      "y": 0.6929820775985718,
+      "width": 0.03118196502327919,
+      "height": 0.0700736790895462
+    },
+    {
+      "confidence": 1.0,
+      "x": 0.00833144225180149,
+      "y": 0.38592255115509033,
+      "width": 0.025626489892601967,
+      "height": 0.06119269132614136
+    },
+    {
+      "confidence": 1.0,
+      "x": 0.7763418555259705,
+      "y": 0.4895455241203308,
+      "width": 0.02670389413833618,
+      "height": 0.05076897144317627
+    },
+    {
+      "confidence": 1.0,
+      "x": 0.9020904302597046,
+      "y": 0.34090864658355713,
+      "width": 0.026706993579864502,
+      "height": 0.05087697505950928
+    }
+  ],
+  "unboundMediaRegions": [
+    {
+      "x": 0.27326388888888886,
+      "y": 0.23923739237392375,
+      "width": 0.11180555555555556,
+      "height": 0.22632226322263221,
+      "confidence": 1.0,
+      "proof": "explicit_play_overlay"
+    }
+  ]
+}

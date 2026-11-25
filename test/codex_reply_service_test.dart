@@ -12,6 +12,73 @@ void main() {
   late Directory root;
   late CodexReplyService service;
 
+  test(
+      'direct knowledge access includes customer sources and excludes histories',
+      () async {
+    final directory =
+        await Directory.systemTemp.createTemp('direct_knowledge_');
+    addTearDown(() => directory.delete(recursive: true));
+    await File('${directory.path}/printer_kb.md').writeAsString('Manual');
+    await File('${directory.path}/jd_customer_service_rules.md')
+        .writeAsString('Rules');
+    await File('${directory.path}/integration.md').writeAsString('Internal');
+    await Directory('${directory.path}/histories').create();
+    await File('${directory.path}/histories/customer.json').writeAsString('{}');
+    await Directory('${directory.path}/rag_cards').create();
+    await File('${directory.path}/rag_cards/cards.jsonl')
+        .writeAsString('{"id":"record-1"}');
+    final sources = await directKnowledgeSources(directory);
+    expect(
+        sources,
+        unorderedEquals([
+          '${directory.path}/printer_kb.md',
+          '${directory.path}/jd_customer_service_rules.md',
+          '${directory.path}/rag_cards/cards.jsonl',
+        ]));
+    expect(await directKnowledgeRecordIds(directory), {'record-1'});
+  });
+
+  test(
+      'explicit attendance category blocks a historical printer model and its assistant echo',
+      () {
+    final messages = <Map<String, dynamic>>[
+      {'direction': 'incoming', 'body': '打印机连接电脑 TH880'},
+      {'direction': 'outgoing', 'body': 'TH880 uses USB.'},
+      {'direction': 'incoming', 'body': '考勤机'},
+      {'direction': 'outgoing', 'body': 'TH880默认保修3年'},
+      {'direction': 'incoming', 'body': '这个保修吗'}
+    ];
+    final result = resolveProductModels(
+        recentConversation: messages,
+        currentCustomerText: '这个保修吗',
+        productContextReset: false);
+    expect(result.models, isEmpty);
+    expect(result.source, 'customer_category_requires_model');
+    messages.add({'direction': 'incoming', 'body': '型号是M880UT'});
+    expect(
+        resolveProductModels(
+                recentConversation: messages,
+                currentCustomerText: '怎么设置',
+                productContextReset: false)
+            .models,
+        {'m880ut'});
+  });
+  test(
+      'a repeated generic printer reference preserves a current explicit model',
+      () {
+    final result = resolveProductModels(
+        recentConversation: [
+          {'direction': 'incoming', 'body': 'My printer is TH880'},
+          {
+            'direction': 'incoming',
+            'body': 'Does this printer work on Windows?'
+          }
+        ],
+        currentCustomerText: 'Does this printer work on Windows?',
+        productContextReset: false);
+    expect(result.models, {'th880'});
+  });
+
   setUp(() async {
     root = await Directory.systemTemp.createTemp('codex_service_test_');
     service = CodexReplyService(
@@ -164,7 +231,7 @@ void main() {
     );
 
     expect(draft.model, 'local-timeout-fallback-v2');
-    expect(draft.reply, contains('进一步准确核对'));
+    expect(draft.reply, contains('further checking'));
     expect(draft.reply, isNot(contains('senior customer service agent')));
     expect(draft.reply, isNot(contains('forwarded')));
     expect(draft.decision, 'human_review_required');
@@ -502,7 +569,7 @@ void main() {
 
     expect(draftRequiresHumanReview(guarded), isTrue);
     expect(guarded.decision, 'human_review_required');
-    expect(guarded.reply, contains('进一步准确核对'));
+    expect(guarded.reply, contains('more time to verify'));
   });
 
   test('recognizes refund and video-guide requests', () {
@@ -582,7 +649,7 @@ void main() {
     );
 
     expect(draftRequiresHumanReview(refund), isTrue);
-    expect(refund.reply, contains('退款申请'));
+    expect(refund.reply, contains('refund request'));
     expect(draftHumanReviewReason(refund), contains('refund'));
     expect(draftRequiresHumanReview(video), isFalse);
     expect(video.decision, 'draft');
@@ -683,7 +750,7 @@ void main() {
 
     expect(draftRequiresHumanReview(firstHuman), isFalse);
     expect(firstHuman.decision, 'ask_clarification');
-    expect(firstHuman.reply, contains('请问您遇到了什么问题'));
+    expect(firstHuman.reply, contains('What problem are you experiencing'));
     expect(firstHuman.reply.toLowerCase(), isNot(contains('human agent')));
     expect(draftRequiresHumanReview(repeatedHuman), isTrue);
     expect(isExplicitHumanTransfer(repeatedHuman), isTrue);
@@ -729,7 +796,7 @@ void main() {
     ]);
     expect(draft, isNotNull);
     expect(draft!.model, 'local-intent-router-v1');
-    expect(draft.reply, contains('您好'));
+    expect(draft.reply, contains('Hello'));
   });
 
   test('does not fast-route a substantive question', () {
@@ -771,7 +838,8 @@ void main() {
     ]);
 
     expect(draft, isNotNull);
-    expect(draft!.reply, LocalReplyRouter.transferWelcome);
+    expect(draft!.reply,
+        'Hello, welcome to Grozziie customer service. How can I help you?');
   });
 
   test('welcomes a greeting after transfer even with recent history', () {
@@ -792,7 +860,7 @@ void main() {
 
     expect(router.route(messages), isNull);
     expect(router.route(messages, transferNoticeAt: transferAt)?.reply,
-        LocalReplyRouter.transferWelcome);
+        'Hello, welcome to Grozziie customer service. How can I help you?');
     messages.insert(1, {
       'direction': 'outgoing',
       'body': LocalReplyRouter.transferWelcome,
@@ -818,7 +886,7 @@ void main() {
     ]);
 
     expect(draft, isNotNull);
-    expect(draft!.reply, '不客气，很高兴能帮到您！');
+    expect(draft!.reply, 'You are welcome. I am glad I could help!');
     expect(draft.usedRecordIds, ['intent:thanks']);
     expect(draft.reply, isNot(contains('M880')));
   });
@@ -863,7 +931,7 @@ void main() {
     ]);
 
     expect(draft, isNotNull);
-    expect(draft!.reply, contains('客服人员'));
+    expect(draft!.reply, contains('customer service representative'));
     expect(draft.reply.toLowerCase(), isNot(contains('ai')));
   });
 
@@ -878,7 +946,8 @@ void main() {
       ]);
 
       expect(draft, isNotNull);
-      expect(draft!.reply, contains('京东店铺'));
+      expect(
+          draft!.reply, contains(question == '可以加微信吗？' ? '京东店铺' : 'JD store'));
       expect(draft.reply.toLowerCase(), isNot(contains('tmall')));
       expect(draft.reply.toLowerCase(), isNot(contains('wechat')));
       expect(draft.reply, isNot(contains('微信')));
@@ -1713,7 +1782,7 @@ void main() {
     expect(guarded.decision, 'human_review_required');
     expect(draftRequiresHumanReview(guarded), isTrue);
     expect(guarded.attachments, isEmpty);
-    expect(guarded.reply, contains('产品图片'));
+    expect(guarded.reply, contains('product photos'));
     expect(guarded.reply, isNot(contains('senior customer service agent')));
     expect(guarded.reply, isNot(contains('forwarded')));
     expect(draftHumanReviewReason(guarded),
@@ -1743,7 +1812,7 @@ void main() {
       'What do you see in the photo?',
     );
 
-    expect(guarded.reply, contains('客服人员'));
+    expect(guarded.reply, contains('customer service representative'));
     expect(guarded.reply.toLowerCase(), isNot(contains('ai')));
     expect(guarded.reply.toLowerCase(), isNot(contains('analysis')));
   });
@@ -1769,7 +1838,7 @@ void main() {
     final guarded =
         service.enforceCustomerFacingPolicy(generated, 'Where is it?');
 
-    expect(guarded.reply, contains('继续为您核对'));
+    expect(guarded.reply, contains('continue checking it for you'));
     expect(guarded.reply.toLowerCase(), isNot(contains('human agent')));
     expect(draftRequiresHumanReview(guarded), isFalse);
   });
@@ -1864,6 +1933,39 @@ void main() {
     expect(modelStatesProductFactUnconfirmed(draft), isTrue);
   });
 
+  test('a carried visual question keeps the correct keyboard description', () {
+    final now = DateTime.now().toUtc();
+    final photo = <String, dynamic>{
+      'id': 'photo',
+      'direction': 'incoming',
+      'body': '[Customer sent an image; original copied from JD cache]',
+      'media': [
+        {'type': 'image'}
+      ],
+    };
+    final question = resolveAttachedMediaQuestion(history: [
+      {
+        'id': 'question',
+        'direction': 'incoming',
+        'body': 'what you saw in the picture i have shared?',
+        'sent_at': now.subtract(const Duration(minutes: 3)).toIso8601String()
+      },
+      photo,
+    ], currentTurn: [
+      photo
+    ], now: now);
+    final draft = service.parseResponse('''{
+      "reply":"The picture shows a computer keyboard and a mouse on a desk.",
+      "decision":"draft", "confidence":0.9, "risk_level":"low",
+      "model":"test", "used_record_ids":[], "actions":[], "attachments":[],
+      "auto_send_allowed":false, "human_review_required":false,
+      "required_slots":[], "risk_triggers":[], "image_descriptions":[], "reason":null
+    }''');
+    final guarded = service.enforceCustomerFacingPolicy(draft, question!);
+    expect(guarded.reply, contains('keyboard'));
+    expect(guarded.reply, isNot(contains('TP876')));
+  });
+
   test('customer-facing guard removes an unsolicited video inventory', () {
     final generated = service.parseResponse('''{
       "reply":"The video shows a desk, monitor, keyboard, cables, and a notebook. No JD product is visible.",
@@ -1885,7 +1987,7 @@ void main() {
     final guarded =
         service.enforceCustomerFacingPolicy(generated, 'did you find it now?');
 
-    expect(guarded.reply, contains('希望解决的具体问题'));
+    expect(guarded.reply, contains('specific problem you want to solve'));
     expect(guarded.reply, isNot(contains('视频')));
     expect(guarded.reply.toLowerCase(), isNot(contains('desk')));
     expect(guarded.reply.toLowerCase(), isNot(contains('monitor')));
@@ -1946,7 +2048,7 @@ void main() {
 
     expect(natural.reply.toLowerCase(), isNot(contains('jd purchase')));
     expect(natural.reply.toLowerCase(), isNot(contains('place your order')));
-    expect(natural.reply, contains('符合您刚才提到的需求'));
+    expect(natural.reply, contains('meets the requirements you mentioned'));
     expect(buying.reply, contains('JD purchase option'));
   });
 }

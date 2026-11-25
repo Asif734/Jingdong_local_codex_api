@@ -1,0 +1,42 @@
+{
+  "purpose": "Recorded JD media pixels and sender/header regression geometry for v30; no customer sidebar or names in image crops.",
+  "sourceSession": "0.1.28+29 / 2026-11-04 / pid41668",
+  "fixtures": [
+    {
+      "file": "upper-play-video.png",
+      "sourceEvidenceId": "a8f65b7a5fc406c99f28094671db2b7a147fabda58a9cd663e44ba51ee39ca24",
+      "cropPixelsTopLeftXYWH": [
+        788,
+        636,
+        320,
+        400
+      ],
+      "role": "video: upper-aligned triangle inside contrasted circular ring",
+      "sha256": "696655ea148a6741282c42b288944d228e5d85efb1107a5aa8f6d6e2a5611253"
+    },
+    {
+      "file": "printer-photo-no-play.png",
+      "sourceEvidenceId": "a8f65b7a5fc406c99f28094671db2b7a147fabda58a9cd663e44ba51ee39ca24",
+      "cropPixelsTopLeftXYWH": [
+        790,
+        870,
+        300,
+        160
+      ],
+      "role": "image negative: printer paper/hand, no playback overlay",
+      "sha256": "4264d7372fe196f696a6fd9f70cf5c5914e5de1420acb8b4433e00a2d0bf75cf"
+    },
+    {
+      "file": "partial-old-card.png",
+      "sourceEvidenceId": "690f444ea76f64a86744b3c40669236638a872596799632c61a175739cd3b6b1",
+      "cropPixelsTopLeftXYWH": [
+        788,
+        372,
+        320,
+        250
+      ],
+      "role": "partial previous video; its absent sender header must not borrow later text time",
+      "sha256": "fb68201d20b490f39bc31ce2cc15e2985c1952d9c11dbe298f8474cbe653f391"
+    }
+  ]
+}

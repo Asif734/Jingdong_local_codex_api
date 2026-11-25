@@ -1,0 +1,64 @@
+{
+  "sessionId": "run-1794276816902023-62ebd58adfb32936c42d24829f39089d",
+  "source": "work/jd-v45-log-review/capture-evidence",
+  "frames": {
+    "first-white": {
+      "recordedEvidenceId": "07c4544f3e3115b044c65b2c7c86f167fa98d57233ce54c71f21a40d7edccf97",
+      "region": [
+        0.27171,
+        0.52875,
+        0.42,
+        0.26338
+      ],
+      "pngSHA256": "662d48523af7f3f14e0c58877358ed74c8e991ae06cc0e3a7ecad2eb34c5bd0a",
+      "ocrSHA256": "88d3e9dfec0f98e683dba3cc6827a14d281d329395f5ea7e2a90c9df5d120d5f",
+      "captureSHA256": "ecd0ef942ae0c66eb6bb6699eea2e0400a5a3fcb7ea8a374c813dc88f355df30"
+    },
+    "first-loaded": {
+      "recordedEvidenceId": "8ea781c1c198e9510846d192bff82e9926724e190ee4a751c718d7ee3333a5c0",
+      "region": [
+        0.2718,
+        0.41298,
+        0.42,
+        0.20513
+      ],
+      "pngSHA256": "b82809cdddeee98fd954f1776fc86cbd1c733f0a5282e3a20843179542baef79",
+      "ocrSHA256": "de4862340f0b9bc55a7368d8f385a8345491f47910b12cd39f8ea22f1dfc1d83",
+      "captureSHA256": "c077332e316361a39234bad1ea6c2f8433411a47ff100a5736342207bd7792ba",
+      "originalSHA256": "b9eada4b8aaeeb7f6159ce991dcbd4c6736cb04d3bbad267ab42bf41d9517bf8"
+    },
+    "second-white": {
+      "recordedEvidenceId": "d09af6ccd4030e596a7fdb0d2d48f8e81d9f039b71574f379a48d9c1bba7ce2d",
+      "region": [
+        0.2718,
+        0.5286,
+        0.42,
+        0.26353
+      ],
+      "pngSHA256": "e913ae77be40958c5d8e3b19b7630c8b555994fd69ced3910d4dd7a7458495ff",
+      "ocrSHA256": "2927980b0b22df4e386d02762c9811e9757fe23fda96d5b0181aa4ceaf104905",
+      "captureSHA256": "30322df524e7ceb8f7f7951fd29348a6fc7e9f0b3d8ae5c32c33a8cc0e34f702"
+    },
+    "second-loaded": {
+      "recordedEvidenceId": "fddfd3506ea6d0222c50b7514609156cd4bcccc2423c6a901ced5b7a5a2660ee",
+      "region": [
+        0.24497,
+        0.53043,
+        0.09011,
+        0.19824
+      ],
+      "pngSHA256": "509e5e5ccc5440742bd2cd8f24396a1acb8670870c6b79bf61a8c625bfc71318",
+      "ocrSHA256": "d175dc04a146cbf94a43197ff871d191962c33072929c0347aad2ad1fd6e1037",
+      "captureSHA256": "9826f6cbeef2254089c33ebf698811e1fbbd57d3f2e88d132158fa8b8f5193ad",
+      "originalSHA256": "72608d289f96c8725d4dd11c83eb217d1845f04da1ab3eccde7f5aabc0e4b286"
+    },
+    "independent-resend": {
+      "recordedEvidenceId": "27aab3ca5d212c474716e61c627e45ef3c452f26c09c3b387c3440d21ec6f9c5",
+      "region": null,
+      "pngSHA256": "868cde157a7322366035505a07a7e236ac610f586a8d6805e14854f0c266edaa",
+      "ocrSHA256": "4a07d61a393155fb50f78e1d1ea92a93759e67bf20190abca74af983c242d83b",
+      "captureSHA256": "6763a6e2cb39ca2afd4e8d90f5863874f551dba85426b8bf9ed329b417a980e2",
+      "originalSHA256": "4a5256d3884c00e34d639a8cc65694221343e8ab4a23ca8df9ffe56933609ae9"
+    }
+  }
+}

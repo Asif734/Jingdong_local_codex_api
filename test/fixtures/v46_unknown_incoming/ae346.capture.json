@@ -1,0 +1,39 @@
+{
+  "pngSHA256": "a59e7e2f0402a7b9f8aca2e5f25ba66197e8d0347fed47bb80061395248a3ea9",
+  "imageWidth": 2880,
+  "windowBounds": {
+    "x": 0.0,
+    "width": 1440.0,
+    "title": "格志打印机小耿-咚咚融合工作台",
+    "height": 813.0,
+    "y": 30.0,
+    "windowId": 17539
+  },
+  "chatRegion": {
+    "top": 0.20418204182041821,
+    "left": 0.24027777777777778,
+    "right": 0.7479166666666667,
+    "bottom": 0.7921279212792128
+  },
+  "chatContentSHA256": "031f06c71c344e86db2e755857483e3960f0ec984cf507668b49f69071d0268a",
+  "imageHeight": 1626,
+  "imagePath": "/Users/m1air/Desktop/JD Automation/data/capture_evidence/ae34693aded092669a1995c9b2347d59fc557d3b331171bce1904a9c2d6e9536.png",
+  "automationSessionId": "run-1794276816902023-62ebd58adfb32936c42d24829f39089d",
+  "customer": "jd_5f2331ef08167",
+  "windowId": 17539,
+  "evidenceId": "ae34693aded092669a1995c9b2347d59fc557d3b331171bce1904a9c2d6e9536",
+  "manifestPath": "/Users/m1air/Desktop/JD Automation/data/capture_evidence/ae34693aded092669a1995c9b2347d59fc557d3b331171bce1904a9c2d6e9536.json",
+  "windowTitle": "格志打印机小耿-咚咚融合工作台",
+  "capturedAtMs": 1794277299861,
+  "automationSessionStartedAtMs": 1794276816901,
+  "unreadArrivalKey": "arrival:new-row:run-1794276816902023-62ebd58adfb32936c42d24829f39089d:11",
+  "admissionFrontier": null,
+  "captureRequestedBackfill": false,
+  "navigationCutoffSource": "current_viewport",
+  "replyActivationAllowed": true,
+  "capturePurpose": "live_signal",
+  "discoveryAnchorId": "ae34693aded092669a1995c9b2347d59fc557d3b331171bce1904a9c2d6e9536",
+  "captureCompletedClaimToken": "run-1794276816902023-62ebd58adfb32936c42d24829f39089d:1794277308603409:96",
+  "captureReplayOcr": false,
+  "mediaCoverageCutoffMs": 1794277299861
+}

@@ -1,4 +1,6 @@
 import '../domain/capture_models.dart';
+import 'customer_language.dart';
+import 'fixed_replies.dart';
 
 class LocalReplyRouter {
   const LocalReplyRouter();
@@ -34,6 +36,12 @@ class LocalReplyRouter {
     'awesome',
     'perfect',
     '好的谢谢',
+    '可以了谢谢',
+    '好了谢谢',
+    '解决了谢谢',
+    '正常了谢谢',
+    'itworksthanks',
+    'workingnowthanks',
     '谢谢',
     '谢谢你',
     '非常感谢',
@@ -41,7 +49,7 @@ class LocalReplyRouter {
   };
 
   AiDraft? route(List<Map<String, dynamic>> messages,
-      {DateTime? transferNoticeAt}) {
+      {DateTime? transferNoticeAt, CustomerLanguage? language}) {
     Map<String, dynamic>? latestIncoming;
     for (final message in messages.reversed) {
       if (message['direction'] == 'incoming') {
@@ -84,7 +92,7 @@ class LocalReplyRouter {
     final welcomeAlreadySent = transferNoticeAt != null &&
         messages.any((message) {
           if (message['direction'] != 'outgoing' ||
-              message['body'] != transferWelcome) {
+              !FixedReplies.isVariant(transferWelcome, message['body'])) {
             return false;
           }
           final sentAt =
@@ -103,7 +111,7 @@ class LocalReplyRouter {
       return null;
     }
 
-    final reply = isUnsupportedPlatform
+    final chineseReply = isUnsupportedPlatform
         ? jdOnlyChinese
         : isIdentityQuestion
             ? '我是京东店铺的客服人员，请问有什么可以帮您？'
@@ -112,6 +120,8 @@ class LocalReplyRouter {
                 : isThanks
                     ? '不客气，很高兴能帮到您！'
                     : transferWelcome;
+    final reply = FixedReplies.text(chineseReply,
+        language ?? CustomerLanguageResolver.resolve(messages).language);
     final response = <String, Object?>{
       'reply': reply,
       'decision': 'draft',

@@ -1,7 +1,7 @@
 name: jd_automation
 description: macOS JD Seller automatic customer-service assistant.
 publish_to: none
-version: 0.1.0+1
+version: 0.1.103+104
 
 environment:
   sdk: ">=3.3.0 <4.0.0"
@@ -18,6 +18,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^5.0.0
+  fake_async: ^1.3.3
 
 flutter:
   uses-material-design: true

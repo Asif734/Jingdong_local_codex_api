@@ -1,0 +1,127 @@
+{
+  "customer": "jd_41aeec7741d05",
+  "senderAt": "2026-11-08T02:26:01Z",
+  "note": "Six recorded observations of one received video; copies only. Clock confirmed by screenshots. Last observation is an inner panel crop, not a new image.",
+  "frames": [
+    {
+      "name": "loading",
+      "evidenceId": "fed562f8573cf56aa0ed8d17c6355c84fee15d3385dc3aa4e6630f67fcd373f3",
+      "capturedAtMs": 1794104762837,
+      "chatRegion": {
+        "right": 0.7479166666666667,
+        "bottom": 0.7921279212792128,
+        "left": 0.24027777777777778,
+        "top": 0.20418204182041821
+      },
+      "region": [
+        0.2709755003452301,
+        0.550586998462677,
+        0.16813769936561584,
+        0.16717380285263062
+      ],
+      "fingerprint": "00000019ffffffff",
+      "kind": "video",
+      "originalReceipt": "8d80ca791907235b6ca737177c00fd336b821d521cf9af3e881768973fccc8bc"
+    },
+    {
+      "name": "loaded",
+      "evidenceId": "cc667e379041511a9925ca97122d5d913fb664ec726e1a1ab3ec94d059542814",
+      "capturedAtMs": 1794104764249,
+      "chatRegion": {
+        "bottom": 0.7921279212792128,
+        "left": 0.24027777777777778,
+        "right": 0.7479166666666667,
+        "top": 0.20418204182041821
+      },
+      "region": [
+        0.27326388888888886,
+        0.45633456334563344,
+        0.1673611111111111,
+        0.16912669126691268
+      ],
+      "fingerprint": "3f3f01bf0181c7ff",
+      "kind": "video",
+      "originalReceipt": "654ac5d9a5c177cedc476f141750881d43e89ea2a380ac848efa606f4e9dbb54"
+    },
+    {
+      "name": "repeat",
+      "evidenceId": "14d753e14a0f746aff7a2613b86ae6b74f6b5fd4381338c9a974702bfa3f45ef",
+      "capturedAtMs": 1794104765851,
+      "chatRegion": {
+        "bottom": 0.7921279212792128,
+        "right": 0.7479166666666667,
+        "top": 0.20418204182041821,
+        "left": 0.24027777777777778
+      },
+      "region": [
+        0.27326388888888886,
+        0.45633456334563344,
+        0.1673611111111111,
+        0.16912669126691268
+      ],
+      "fingerprint": "7f3f81bf8181c7ff",
+      "kind": "video",
+      "originalReceipt": "9fe693677b37135ef8e641447acc972e16a9b66967b57dcc09172832a7c927e9"
+    },
+    {
+      "name": "holding",
+      "evidenceId": "0048ec513a1eb39ea5b9d459ac9d16e5ed5041db731d35062e6e1bf009640891",
+      "capturedAtMs": 1794104788142,
+      "chatRegion": {
+        "bottom": 0.7921279212792128,
+        "right": 0.7479166666666667,
+        "left": 0.24027777777777778,
+        "top": 0.20418204182041821
+      },
+      "region": [
+        0.27326388888888886,
+        0.3634686346863469,
+        0.1829861111111111,
+        0.16789667896678967
+      ],
+      "fingerprint": "878f819f818183ff",
+      "kind": "video",
+      "originalReceipt": "52fbc00844875e062dc404f9570d7eaa326d2a2cd583fb24644ea75554f1c130"
+    },
+    {
+      "name": "headerless",
+      "evidenceId": "c676c3c8f05e5261a4a9f16011b237aa57d9dafdf729f8eefac551cd0269ba2f",
+      "capturedAtMs": 1794104811296,
+      "chatRegion": {
+        "bottom": 0.7921279212792128,
+        "right": 0.7479166666666667,
+        "left": 0.24027777777777778,
+        "top": 0.20418204182041821
+      },
+      "region": [
+        0.27326388888888886,
+        0.24600246002460024,
+        0.1673611111111111,
+        0.18265682656826568
+      ],
+      "fingerprint": "ff0f0113010101ff",
+      "kind": "video",
+      "originalReceipt": "28b28b4a3aaa2f238623a4f47bdef202106de8393abffe825ccbd223ae7bf04f"
+    },
+    {
+      "name": "clipped",
+      "evidenceId": "e91e7b2407661d44f9b433e28572ef4da66788a8f4af67fabcf71c6fdeef7443",
+      "capturedAtMs": 1794104926982,
+      "chatRegion": {
+        "left": 0.24027777777777778,
+        "right": 0.7479166666666667,
+        "top": 0.20418204182041821,
+        "bottom": 0.7921279212792128
+      },
+      "region": [
+        0.28311067819595337,
+        0.6360258162021637,
+        0.12888234853744507,
+        0.08664220571517944
+      ],
+      "fingerprint": "ffffffff11010581",
+      "kind": "image",
+      "originalReceipt": "7eea559f5f893bd81d720ebfa74bd43d29b9e1c09f416eea7cf721ef434d69f9"
+    }
+  ]
+}

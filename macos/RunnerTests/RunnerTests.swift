@@ -4,6 +4,107 @@ import XCTest
 @testable import JD_Automation
 
 class RunnerTests: XCTestCase {
+  func testRegionDiagnosticsRecordMeasuredBackgroundAndRGBThreshold() {
+    func image(_ gray:CGFloat) -> CGImage {
+      let context=CGContext(data:nil,width:240,height:240,bitsPerComponent:8,bytesPerRow:0,
+        space:CGColorSpaceCreateDeviceRGB(),bitmapInfo:CGImageAlphaInfo.premultipliedLast.rawValue)!
+      context.setFillColor(red:gray,green:gray,blue:gray,alpha:1)
+      context.fill(CGRect(x:0,y:0,width:240,height:240))
+      return context.makeImage()!
+    }
+    let chat:[String:Double] = ["left":0,"right":1,"top":0,"bottom":1]
+    var conditions=[[String:Any]]()
+    XCTAssertTrue(jdUnboundMediaRegions(image:image(219.0/255),chatRegion:chat,
+      onDiagnostic:{conditions.append($0)}).isEmpty)
+    let blocked=conditions.first{$0["conditionId"] as? String == "region.neutral_background"}!
+    XCTAssertEqual(blocked["passed"] as? Bool,false)
+    XCTAssertEqual((blocked["actual"] as? [String:Any])?["backgroundRGB"] as? [Int],[219,219,219])
+    XCTAssertEqual((blocked["threshold"] as? [String:Any])?["minimum"] as? Int,220)
+    conditions=[]
+    _=jdUnboundMediaRegions(image:image(247.0/255),chatRegion:chat,onDiagnostic:{conditions.append($0)})
+    let rgb=conditions.first{$0["conditionId"] as? String == "region.foreground_rgb"}!
+    XCTAssertEqual((rgb["threshold"] as? [String:Any])?["minimumChannelDelta"] as? Int,5)
+    XCTAssertEqual((rgb["threshold"] as? [String:Any])?["edgeBackgroundDeltaExclusive"] as? Int,2)
+    XCTAssertEqual((rgb["actual"] as? [String:Any])?["foregroundPixels"] as? Int,0)
+  }
+
+  func testSellerTextIsNotAVideoPlayOverlay() {
+    let context=CGContext(data:nil,width:540,height:180,bitsPerComponent:8,bytesPerRow:0,
+      space:CGColorSpaceCreateDeviceRGB(),bitmapInfo:CGImageAlphaInfo.premultipliedLast.rawValue)!
+    context.setFillColor(NSColor(deviceRed:0.82,green:0.88,blue:1,alpha:1).cgColor)
+    context.fill(CGRect(x:0,y:0,width:540,height:180))
+    NSGraphicsContext.saveGraphicsState()
+    NSGraphicsContext.current=NSGraphicsContext(cgContext:context,flipped:false)
+    for (index,text) in ["Install the USB printer driver.","Use Wi-Fi or Bluetooth printing.","Download the app for your phone."].enumerated() {
+      (text as NSString).draw(at:CGPoint(x:10,y:130-index*45),withAttributes:
+        [.font:NSFont.systemFont(ofSize:28),.foregroundColor:NSColor.black])
+    }
+    NSGraphicsContext.restoreGraphicsState()
+    XCTAssertFalse(looksLikeVideoThumbnail(context.makeImage()!))
+  }
+
+  func testMediaClassifierRejectsWhitePhotosAndPreservesPlayControl() {
+
+func mediaFixture(_ mode: Int) -> CGImage {
+  let width = 400
+  let bitmap = NSBitmapImageRep(bitmapDataPlanes: nil, pixelsWide: width,
+    pixelsHigh: width, bitsPerSample: 8, samplesPerPixel: 4, hasAlpha: true,
+    isPlanar: false, colorSpaceName: .deviceRGB, bytesPerRow: 0, bitsPerPixel: 0)!
+  for y in 0..<width { for x in 0..<width {
+    let dx = Double(x) - 199.5, dy = Double(y) - (mode == 3 ? 85.5 : 199.5)
+    let radius = hypot(dx, dy)
+    let ring = abs(radius - 36) <= 2.5
+    let triangle = dx >= -10 && dx <= 18 && abs(dy) <= 15 * (18 - dx) / 28
+    let bright = mode == 0 || ((mode == 1 || mode == 3) && (ring || triangle)) || (mode == 2 && radius <= 45)
+    let grey: CGFloat = bright ? 1 : (mode == 3 ? 0.72 : 0.2)
+    bitmap.setColor(NSColor(deviceRed: grey, green: grey, blue: grey, alpha: 1), atX: x, y: y)
+  }}
+  return bitmap.cgImage!
+}
+    XCTAssertFalse(looksLikeVideoThumbnail(mediaFixture(0)))
+    XCTAssertTrue(looksLikeVideoThumbnail(mediaFixture(1)))
+    XCTAssertFalse(looksLikeVideoThumbnail(mediaFixture(2)))
+    XCTAssertTrue(looksLikeVideoThumbnail(mediaFixture(3)))
+    XCTAssertLessThan(mediaForegroundFraction(mediaFixture(0)), 0.025)
+    XCTAssertGreaterThanOrEqual(mediaForegroundFraction(mediaFixture(1)), 0.025)
+  }
+
+  func testUnreadBadgeIgnoresMirroredRowsAvatarsAndGreyClocks() {
+    func fixture(_ red: CGRect?, scale: Int = 1) -> CGImage {
+      let bitmap = NSBitmapImageRep(bitmapDataPlanes: nil, pixelsWide: 400 * scale,
+          pixelsHigh: 400 * scale, bitsPerSample: 8, samplesPerPixel: 4,
+          hasAlpha: true, isPlanar: false, colorSpaceName: .deviceRGB,
+          bytesPerRow: 0, bitsPerPixel: 0)!
+      memset(bitmap.bitmapData!, 255, bitmap.bytesPerRow * bitmap.pixelsHigh)
+      if let red {
+        for y in Int(red.minY) * scale..<Int(red.maxY) * scale {
+          for x in Int(red.minX) * scale..<Int(red.maxX) * scale {
+            bitmap.setColor(NSColor(deviceRed: 1, green: 0, blue: 0, alpha: 1), atX: x, y: y)
+          }
+        }
+      }
+      return bitmap.cgImage!
+    }
+    let row = CGRect(x: 0, y: 60, width: 200, height: 60)
+    let window = CGRect(x: 0, y: 0, width: 400, height: 400)
+    let badge = CGRect(x: 160, y: 80, width: 30, height: 18)
+    XCTAssertGreaterThanOrEqual(unreadRedPixels(frame: row, windowBounds: window, image: fixture(badge)), 8)
+    XCTAssertGreaterThanOrEqual(unreadRedPixels(frame: row, windowBounds: window, image: fixture(badge, scale: 2)), 8)
+    XCTAssertEqual(unreadRedPixels(frame: row, windowBounds: window,
+        image: fixture(CGRect(x: 160, y: 290, width: 30, height: 18))), 0)
+    XCTAssertEqual(unreadRedPixels(frame: row, windowBounds: window,
+        image: fixture(CGRect(x: 10, y: 80, width: 30, height: 18))), 0)
+    XCTAssertNil(unreadElapsedSeconds(frame: row, windowBounds: window, image: fixture(nil)))
+  }
+
+  func testRowOCRPrefixConfusionRequiresOtherwiseExactJDIdentity() {
+    XCTAssertTrue(rowOCRIdentityCandidateMatches("ja_6c67c99371fa4", "jd_6c67c99371fa4"))
+    XCTAssertTrue(rowOCRIdentityCandidateMatches("jd_4laeec7741d05", "jd_41aeec7741d05"))
+    XCTAssertFalse(rowOCRIdentityCandidateMatches("ja_6c67c99371fa5", "jd_6c67c99371fa4"))
+    XCTAssertFalse(rowOCRIdentityCandidateMatches("alice", "a1ice"))
+    XCTAssertFalse(rowOCRIdentityCandidateMatches("jd_41aeec7741d05", "jd_41aeec7741d05"))
+  }
+
   func testRetryPixelInspectionReturnsBeforeDeliveringSeparateEvent() {
     let inspector = QianniuOCRInspector()
     let snapshot = image(badges: [badge], bubbles: [bubble], scale: 2)
@@ -158,4 +259,20 @@ class RunnerTests: XCTestCase {
     XCTAssertEqual(verified.fingerprint, original.fingerprint)
     XCTAssertEqual(verified.point, original.point)
   }
+  func testCurrentFailedBubbleCannotConfirmDelivery() {
+    XCTAssertEqual(failedSendBubbles(image: image(badges: [badge], bubbles: [bubble]),
+      windowBounds: window, chatFrame: window, onlyLatestOutgoing: true).count, 1)
+  }
+  func testHistoricalFailureAboveNewSuccessfulBubbleDoesNotRejectNewSend() {
+    let screenshot = image(badges: [badge], bubbles: [bubble, CGRect(x: 204,y: 230,width: 160,height: 50)])
+    XCTAssertEqual(detect(screenshot).count, 1)
+    XCTAssertTrue(failedSendBubbles(image: screenshot, windowBounds: window,
+      chatFrame: window, onlyLatestOutgoing: true).isEmpty)
+  }
+  func testCurrentReceptionNoticeIsExplicitAndConservative() {
+    XCTAssertTrue(jdReceptionNoticeBlocksDelivery(["该顾客正在咨询其他客服，无法回复顾客消息"]))
+    XCTAssertFalse(jdReceptionNoticeBlocksDelivery(["您的同事将客户转接给您！"]))
+    XCTAssertFalse(jdReceptionNoticeBlocksDelivery(["发送", "旧转接记录"]))
+  }
+
 }

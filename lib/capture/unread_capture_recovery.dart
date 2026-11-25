@@ -1,3 +1,5 @@
+import 'response_timing_policy.dart';
+
 /// A sidebar unread signal is not proof that the message body was captured.
 /// Keep a separate clock until the newest incoming content is saved.
 class UnreadCaptureRecovery {
@@ -9,8 +11,8 @@ class UnreadCaptureRecovery {
     required this.knownOutgoingIds,
   });
 
-  static const relaxedOcrAfter = Duration(seconds: 20);
-  static const holdingAfter = Duration(seconds: 20);
+  static const relaxedOcrAfter = Duration(seconds: 6);
+  static const holdingAfter = ResponseTimingPolicy.holdingDispatchAfter;
   static const resendAfter = Duration(seconds: 50);
   static const detectedTurnClockTolerance = Duration(seconds: 15);
 
@@ -81,8 +83,8 @@ class UnreadCaptureRecovery {
   }
 
   final String customer;
-  final int unreadEvidence;
-  final DateTime detectedAt;
+  int unreadEvidence;
+  DateTime detectedAt;
   final Set<String> knownIncomingIds;
   final Set<String> knownOutgoingIds;
   bool holdingSent = false;
@@ -90,6 +92,35 @@ class UnreadCaptureRecovery {
   bool resendSent = false;
   bool videoProcessing = false;
   bool noticeSending = false;
+  bool mediaRecapturePending = false;
+  int mediaRecaptureAttempts = 0;
+
+  /// Identity discovery is not a new message. Keep the earliest clock while
+  /// preserving in-flight capture flags on this same recovery object.
+  bool inheritDetection(DateTime at, int evidence) {
+    if (evidence > unreadEvidence) unreadEvidence = evidence;
+    if (!at.isBefore(detectedAt)) return false;
+    detectedAt = at;
+    return true;
+  }
+
+  bool requestMediaRecapture() {
+    if (mediaRecaptureAttempts >= 2) {
+      mediaRecapturePending = false;
+      return false;
+    }
+    mediaRecaptureAttempts++;
+    mediaRecapturePending = true;
+    lastCaptureAttemptAt = null;
+    return true;
+  }
+
+  bool claimMediaRecapture() {
+    final pending = mediaRecapturePending;
+    mediaRecapturePending = false;
+    return pending;
+  }
+
   DateTime? lastCaptureAttemptAt;
   String? latestIncomingSenderKey;
   String? _tentativeRelaxedBody;
@@ -137,13 +168,17 @@ class UnreadCaptureRecovery {
 
   bool captureRetryDue(DateTime now) =>
       lastCaptureAttemptAt == null ||
-      !now.isBefore(lastCaptureAttemptAt!.add(const Duration(seconds: 8)));
+      !now.isBefore(lastCaptureAttemptAt!.add(holdingSent
+          ? const Duration(seconds: 8)
+          : const Duration(seconds: 2)));
 
   bool useRelaxedBodyOcr(DateTime now) =>
       !now.isBefore(detectedAt.add(relaxedOcrAfter));
 
-  bool holdingDue(DateTime now) =>
-      !holdingSent && !now.isBefore(detectedAt.add(holdingAfter));
+  bool holdingDue(DateTime now,
+          {Duration holdingDelay =
+              ResponseTimingPolicy.holdingDispatchAfter}) =>
+      !holdingSent && !now.isBefore(detectedAt.add(holdingDelay));
 
   bool resendDue(DateTime now) =>
       holdingSent &&
